@@ -38,6 +38,7 @@
 				83F37152140BB197005A7353 /* Copy Files */,
 			);
 			dependencies = (
+				556821541505341F00C6F12B /* PBXTargetDependency */,
 				8291C4E0148958F500A72540 /* PBXTargetDependency */,
 				8227756F14894A2100B19E27 /* PBXTargetDependency */,
 				820EB7631483FBEF008EC398 /* PBXTargetDependency */,
@@ -260,6 +261,20 @@
 		53D32E4D13B95F6200A6ACE0 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D32E4B13B95F5400A6ACE0 /* QTKit.framework */; };
 		53D32E4E13B95F9A00A6ACE0 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D32E3113B95E2800A6ACE0 /* AudioUnit.framework */; };
 		53D32E4F13B95F9A00A6ACE0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D32E3B13B95EAB00A6ACE0 /* AudioToolbox.framework */; };
+		5568212515052EAE00C6F12B /* OpenEmuSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6711807136367240034379A /* OpenEmuSystem.framework */; };
+		5568212615052EAE00C6F12B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6711810136368330034379A /* Cocoa.framework */; };
+		5568214715052EF900C6F12B /* Controller-Preferences-Info-JAP.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5568213715052EF900C6F12B /* Controller-Preferences-Info-JAP.plist */; };
+		5568214815052EF900C6F12B /* Controller-Preferences-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5568213815052EF900C6F12B /* Controller-Preferences-Info.plist */; };
+		5568214915052EF900C6F12B /* controller_fc.png in Resources */ = {isa = PBXBuildFile; fileRef = 5568213915052EF900C6F12B /* controller_fc.png */; };
+		5568214A15052EF900C6F12B /* controller_fc_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 5568213A15052EF900C6F12B /* controller_fc_mask.png */; };
+		5568214B15052EF900C6F12B /* controller_nes.png in Resources */ = {isa = PBXBuildFile; fileRef = 5568213B15052EF900C6F12B /* controller_nes.png */; };
+		5568214C15052EF900C6F12B /* controller_nes_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 5568213C15052EF900C6F12B /* controller_nes_mask.png */; };
+		5568214D15052EF900C6F12B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5568213D15052EF900C6F12B /* InfoPlist.strings */; };
+		5568214E15052EF900C6F12B /* famicom_library.png in Resources */ = {isa = PBXBuildFile; fileRef = 5568213F15052EF900C6F12B /* famicom_library.png */; };
+		5568214F15052EF900C6F12B /* nes_library.png in Resources */ = {isa = PBXBuildFile; fileRef = 5568214015052EF900C6F12B /* nes_library.png */; };
+		5568215015052EF900C6F12B /* OEPSXSystemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568214215052EF900C6F12B /* OEPSXSystemController.m */; };
+		5568215115052EF900C6F12B /* OEPSXSystemResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568214415052EF900C6F12B /* OEPSXSystemResponder.m */; };
+		556821551505345700C6F12B /* PSX.oesystemplugin in Copy Files */ = {isa = PBXBuildFile; fileRef = 5568213415052EAE00C6F12B /* PSX.oesystemplugin */; };
 		820EB7411483F9A2008EC398 /* OpenEmuSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6711807136367240034379A /* OpenEmuSystem.framework */; };
 		820EB7421483F9A2008EC398 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6711810136368330034379A /* Cocoa.framework */; };
 		820EB7641483FBFB008EC398 /* NeoGeo Pocket.oesystemplugin in Copy Files */ = {isa = PBXBuildFile; fileRef = 820EB74A1483F9A2008EC398 /* NeoGeo Pocket.oesystemplugin */; };
@@ -590,6 +605,20 @@
 			remoteGlobalIDString = 82444BA00F51256C007C171B;
 			remoteInfo = OpenEmuBase;
 		};
+		5568212015052EAE00C6F12B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C67117ED136367240034379A;
+			remoteInfo = OpenEmuSystem;
+		};
+		556821531505341F00C6F12B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5568211E15052EAE00C6F12B;
+			remoteInfo = PSX;
+		};
 		820EB73B1483F9A2008EC398 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
@@ -769,6 +798,7 @@
 			dstPath = "~/Library/Application Support/OpenEmu/Systems";
 			dstSubfolderSpec = 0;
 			files = (
+				556821551505345700C6F12B /* PSX.oesystemplugin in Copy Files */,
 				8291C4E1148958FC00A72540 /* SegaMasterSystem.oesystemplugin in Copy Files */,
 				8227757014894A3300B19E27 /* GameGear.oesystemplugin in Copy Files */,
 				820EB7641483FBFB008EC398 /* NeoGeo Pocket.oesystemplugin in Copy Files */,
@@ -1089,6 +1119,22 @@
 		53D32E3B13B95EAB00A6ACE0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		53D32E4513B95F0800A6ACE0 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		53D32E4B13B95F5400A6ACE0 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
+		5568213415052EAE00C6F12B /* PSX.oesystemplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSX.oesystemplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		5568213715052EF900C6F12B /* Controller-Preferences-Info-JAP.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Controller-Preferences-Info-JAP.plist"; sourceTree = "<group>"; };
+		5568213815052EF900C6F12B /* Controller-Preferences-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Controller-Preferences-Info.plist"; sourceTree = "<group>"; };
+		5568213915052EF900C6F12B /* controller_fc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controller_fc.png; sourceTree = "<group>"; };
+		5568213A15052EF900C6F12B /* controller_fc_mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controller_fc_mask.png; sourceTree = "<group>"; };
+		5568213B15052EF900C6F12B /* controller_nes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controller_nes.png; sourceTree = "<group>"; };
+		5568213C15052EF900C6F12B /* controller_nes_mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controller_nes_mask.png; sourceTree = "<group>"; };
+		5568213E15052EF900C6F12B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5568213F15052EF900C6F12B /* famicom_library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = famicom_library.png; sourceTree = "<group>"; };
+		5568214015052EF900C6F12B /* nes_library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nes_library.png; sourceTree = "<group>"; };
+		5568214115052EF900C6F12B /* OEPSXSystemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEPSXSystemController.h; sourceTree = "<group>"; };
+		5568214215052EF900C6F12B /* OEPSXSystemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OEPSXSystemController.m; sourceTree = "<group>"; };
+		5568214315052EF900C6F12B /* OEPSXSystemResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEPSXSystemResponder.h; sourceTree = "<group>"; };
+		5568214415052EF900C6F12B /* OEPSXSystemResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OEPSXSystemResponder.m; sourceTree = "<group>"; };
+		5568214515052EF900C6F12B /* OEPCSXRSystemResponderClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEPCSXRSystemResponderClient.h; sourceTree = "<group>"; };
+		5568214615052EF900C6F12B /* PSX-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PSX-Info.plist"; sourceTree = "<group>"; };
 		820EB74A1483F9A2008EC398 /* NeoGeo Pocket.oesystemplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NeoGeo Pocket.oesystemplugin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		820EB74E1483F9D3008EC398 /* controller_sms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controller_sms.png; sourceTree = "<group>"; };
 		820EB7511483F9D3008EC398 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -1390,7 +1436,7 @@
 		C67A36A90FE7F1F500A665E2 /* OECorePluginIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = OECorePluginIcon.icns; sourceTree = "<group>"; };
 		C67B0CB71363370B00F18A5D /* OpenEmuGameSystem-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OpenEmuGameSystem-Info.plist"; sourceTree = "<group>"; };
 		C67B0CB91363370B00F18A5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C67B0CD01363389A00F18A5D /* ForceFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ForceFeedback.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/ForceFeedback.framework; sourceTree = DEVELOPER_DIR; };
+		C67B0CD01363389A00F18A5D /* ForceFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ForceFeedback.framework; path = ../../../../../SDKs/MacOSX10.7.sdk/System/Library/Frameworks/ForceFeedback.framework; sourceTree = SDKROOT; };
 		C67B0D5E136352A300F18A5D /* OEPluginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEPluginController.h; sourceTree = "<group>"; };
 		C67DCEF00FC5FB5A0038A56E /* OEPreferenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEPreferenceViewController.h; sourceTree = "<group>"; };
 		C67DCEF10FC5FB5A0038A56E /* OEPreferenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OEPreferenceViewController.m; sourceTree = "<group>"; };
@@ -1492,6 +1538,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3887A8971024D796000FC4CF /* QuickLook.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5568212415052EAE00C6F12B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5568212515052EAE00C6F12B /* OpenEmuSystem.framework in Frameworks */,
+				5568212615052EAE00C6F12B /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1683,6 +1738,7 @@
 				1415540F1442B3B300A01683 /* N64.oesystemplugin */,
 				820EB74A1483F9A2008EC398 /* NeoGeo Pocket.oesystemplugin */,
 				8227754F148946DF00B19E27 /* GameGear.oesystemplugin */,
+				5568213415052EAE00C6F12B /* PSX.oesystemplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2462,6 +2518,28 @@
 			path = Preferences;
 			sourceTree = "<group>";
 		};
+		5568213615052EF900C6F12B /* PSX */ = {
+			isa = PBXGroup;
+			children = (
+				5568213715052EF900C6F12B /* Controller-Preferences-Info-JAP.plist */,
+				5568213815052EF900C6F12B /* Controller-Preferences-Info.plist */,
+				5568213915052EF900C6F12B /* controller_fc.png */,
+				5568213A15052EF900C6F12B /* controller_fc_mask.png */,
+				5568213B15052EF900C6F12B /* controller_nes.png */,
+				5568213C15052EF900C6F12B /* controller_nes_mask.png */,
+				5568213D15052EF900C6F12B /* InfoPlist.strings */,
+				5568213F15052EF900C6F12B /* famicom_library.png */,
+				5568214015052EF900C6F12B /* nes_library.png */,
+				5568214115052EF900C6F12B /* OEPSXSystemController.h */,
+				5568214215052EF900C6F12B /* OEPSXSystemController.m */,
+				5568214315052EF900C6F12B /* OEPSXSystemResponder.h */,
+				5568214415052EF900C6F12B /* OEPSXSystemResponder.m */,
+				5568214515052EF900C6F12B /* OEPCSXRSystemResponderClient.h */,
+				5568214615052EF900C6F12B /* PSX-Info.plist */,
+			);
+			path = PSX;
+			sourceTree = "<group>";
+		};
 		820EB74D1483F9D3008EC398 /* NeoGeoPocket */ = {
 			isa = PBXGroup;
 			children = (
@@ -2975,6 +3053,7 @@
 				C6480FC313648F670094FA33 /* SuperNES */,
 				C6B947B11364ECA700A425F0 /* GameBoy */,
 				C6B947E81365080B00A425F0 /* Genesis */,
+				5568213615052EF900C6F12B /* PSX */,
 				C646574A13771F12002A4F70 /* GameBoy Advance */,
 			);
 			name = "System Plugins";
@@ -3168,6 +3247,24 @@
 			name = OESaveStateQLPlugin;
 			productName = OESaveStateQLPlugin;
 			productReference = 3887A7F61024D1F9000FC4CF /* OESaveStateQLPlugin.qlgenerator */;
+			productType = "com.apple.product-type.bundle";
+		};
+		5568211E15052EAE00C6F12B /* PSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5568213115052EAE00C6F12B /* Build configuration list for PBXNativeTarget "PSX" */;
+			buildPhases = (
+				5568212115052EAE00C6F12B /* Sources */,
+				5568212415052EAE00C6F12B /* Frameworks */,
+				5568212715052EAE00C6F12B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5568211F15052EAE00C6F12B /* PBXTargetDependency */,
+			);
+			name = PSX;
+			productName = NES;
+			productReference = 5568213415052EAE00C6F12B /* PSX.oesystemplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 		820EB7391483F9A2008EC398 /* NeoGeoPocket */ = {
@@ -3413,6 +3510,7 @@
 				1415540E1442B3B300A01683 /* N64 */,
 				820EB7391483F9A2008EC398 /* NeoGeoPocket */,
 				8227753E148946DF00B19E27 /* GameGear */,
+				5568211E15052EAE00C6F12B /* PSX */,
 				82C9C96F0F080C7F0071460B /* Distribution */,
 				37C802FF101564A300356EF3 /* Build & Copy OpenEmuBase */,
 				83F37141140BB166005A7353 /* Build SystemPlugins */,
@@ -3436,6 +3534,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5568212715052EAE00C6F12B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5568214715052EF900C6F12B /* Controller-Preferences-Info-JAP.plist in Resources */,
+				5568214815052EF900C6F12B /* Controller-Preferences-Info.plist in Resources */,
+				5568214915052EF900C6F12B /* controller_fc.png in Resources */,
+				5568214A15052EF900C6F12B /* controller_fc_mask.png in Resources */,
+				5568214B15052EF900C6F12B /* controller_nes.png in Resources */,
+				5568214C15052EF900C6F12B /* controller_nes_mask.png in Resources */,
+				5568214D15052EF900C6F12B /* InfoPlist.strings in Resources */,
+				5568214E15052EF900C6F12B /* famicom_library.png in Resources */,
+				5568214F15052EF900C6F12B /* nes_library.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3790,6 +3904,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5568212115052EAE00C6F12B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5568215015052EF900C6F12B /* OEPSXSystemController.m in Sources */,
+				5568215115052EF900C6F12B /* OEPSXSystemResponder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		820EB73C1483F9A2008EC398 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -4081,6 +4204,16 @@
 			target = 1BEF2A9311682A530090F72B /* OpenEmuHelperApp */;
 			targetProxy = 3DAA589914464890001C09A8 /* PBXContainerItemProxy */;
 		};
+		5568211F15052EAE00C6F12B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C67117ED136367240034379A /* OpenEmuSystem */;
+			targetProxy = 5568212015052EAE00C6F12B /* PBXContainerItemProxy */;
+		};
+		556821541505341F00C6F12B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5568211E15052EAE00C6F12B /* PSX */;
+			targetProxy = 556821531505341F00C6F12B /* PBXContainerItemProxy */;
+		};
 		820EB73A1483F9A2008EC398 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C67117ED136367240034379A /* OpenEmuSystem */;
@@ -4201,6 +4334,14 @@
 				2A37F4BAFDCFA73011CA2CEA /* English */,
 			);
 			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		5568213D15052EF900C6F12B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5568213E15052EF900C6F12B /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		820EB7501483F9D3008EC398 /* InfoPlist.strings */ = {
@@ -4392,6 +4533,45 @@
 				INSTALL_PATH = /Library/QuickLook;
 				PRODUCT_NAME = OESaveStateQLPlugin;
 				WRAPPER_EXTENSION = qlgenerator;
+			};
+			name = Release;
+		};
+		5568213215052EAE00C6F12B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "PSX-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = PSX;
+				VALID_ARCHS = x86_64;
+				WRAPPER_EXTENSION = oesystemplugin;
+			};
+			name = Debug;
+		};
+		5568213315052EAE00C6F12B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "PSX-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = PSX;
+				VALID_ARCHS = x86_64;
+				WRAPPER_EXTENSION = oesystemplugin;
 			};
 			name = Release;
 		};
@@ -4942,6 +5122,15 @@
 			buildConfigurations = (
 				3887A7F81024D1FA000FC4CF /* Debug */,
 				3887A7F91024D1FA000FC4CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5568213115052EAE00C6F12B /* Build configuration list for PBXNativeTarget "PSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5568213215052EAE00C6F12B /* Debug */,
+				5568213315052EAE00C6F12B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
