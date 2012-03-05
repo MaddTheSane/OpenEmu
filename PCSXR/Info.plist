@@ -25,7 +25,7 @@
 	<key>OEGameCoreClass</key>
 	<string>PCSXRGameCore</string>
 	<key>OEGameCorePlayerCount</key>
-	<string>4</string>
+	<string>2</string>
 	<key>OEProjectURL</key>
 	<string>http://pcsxr.codeplex.com/</string>
 	<key>OESystemIdentifiers</key>
