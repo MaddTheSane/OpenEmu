@@ -58,10 +58,16 @@
                               [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardRightArrow], @"OEPSXButtonRight[1]" ,
                               [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardLeftArrow] , @"OEPSXButtonLeft[1]"  ,
                               [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardDownArrow] , @"OEPSXButtonDown[1]"  ,
-                              [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardA]         , @"OENESButtonA[1]"     ,
-                              [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardS]         , @"OENESButtonB[1]"     ,
-                              [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardSpacebar]  , @"OEPSXButtonStart[1]" ,
-                              [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardEscape]    , @"OEPSXButtonSelect[1]",
+                              [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardZ]         , @"OEPSXButtonCross[1]"     ,
+                              [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardX]         , @"OEPSXButtonCircle[1]"     ,
+                              [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardS]         , @"OEPSXButtonSquare[1]"     ,
+                              [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardD]         , @"OEPSXButtonTriange[1]"     ,
+                              [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardW]         , @"OEPSXButtonL1[1]"     ,
+                              [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardR]         , @"OEPSXButtonL2[1]"     ,
+                              [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardE]         , @"OEPSXButtonR1[1]"     ,
+                              [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardT]         , @"OEPSXButtonR2[1]"     ,
+                              [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardC]  , @"OEPSXButtonStart[1]" ,
+                              [NSNumber numberWithUnsignedInt:kHIDUsage_KeyboardV]    , @"OEPSXButtonSelect[1]",
                               nil];
     return controls;
 }
