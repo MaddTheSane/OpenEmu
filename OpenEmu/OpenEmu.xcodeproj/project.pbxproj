@@ -263,7 +263,6 @@
 		53D32E4F13B95F9A00A6ACE0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D32E3B13B95EAB00A6ACE0 /* AudioToolbox.framework */; };
 		5568212515052EAE00C6F12B /* OpenEmuSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6711807136367240034379A /* OpenEmuSystem.framework */; };
 		5568212615052EAE00C6F12B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6711810136368330034379A /* Cocoa.framework */; };
-		5568214715052EF900C6F12B /* Controller-Preferences-Info-JAP.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5568213715052EF900C6F12B /* Controller-Preferences-Info-JAP.plist */; };
 		5568214815052EF900C6F12B /* Controller-Preferences-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5568213815052EF900C6F12B /* Controller-Preferences-Info.plist */; };
 		5568214915052EF900C6F12B /* controller_fc.png in Resources */ = {isa = PBXBuildFile; fileRef = 5568213915052EF900C6F12B /* controller_fc.png */; };
 		5568214A15052EF900C6F12B /* controller_fc_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 5568213A15052EF900C6F12B /* controller_fc_mask.png */; };
@@ -1120,7 +1119,6 @@
 		53D32E4513B95F0800A6ACE0 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		53D32E4B13B95F5400A6ACE0 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		5568213415052EAE00C6F12B /* PSX.oesystemplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSX.oesystemplugin; sourceTree = BUILT_PRODUCTS_DIR; };
-		5568213715052EF900C6F12B /* Controller-Preferences-Info-JAP.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Controller-Preferences-Info-JAP.plist"; sourceTree = "<group>"; };
 		5568213815052EF900C6F12B /* Controller-Preferences-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Controller-Preferences-Info.plist"; sourceTree = "<group>"; };
 		5568213915052EF900C6F12B /* controller_fc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controller_fc.png; sourceTree = "<group>"; };
 		5568213A15052EF900C6F12B /* controller_fc_mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controller_fc_mask.png; sourceTree = "<group>"; };
@@ -2521,7 +2519,6 @@
 		5568213615052EF900C6F12B /* PSX */ = {
 			isa = PBXGroup;
 			children = (
-				5568213715052EF900C6F12B /* Controller-Preferences-Info-JAP.plist */,
 				5568213815052EF900C6F12B /* Controller-Preferences-Info.plist */,
 				5568213915052EF900C6F12B /* controller_fc.png */,
 				5568213A15052EF900C6F12B /* controller_fc_mask.png */,
@@ -3541,7 +3538,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5568214715052EF900C6F12B /* Controller-Preferences-Info-JAP.plist in Resources */,
 				5568214815052EF900C6F12B /* Controller-Preferences-Info.plist in Resources */,
 				5568214915052EF900C6F12B /* controller_fc.png in Resources */,
 				5568214A15052EF900C6F12B /* controller_fc_mask.png in Resources */,
@@ -4548,7 +4544,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "PSX-Info.plist";
+				INFOPLIST_FILE = "PSX/PSX-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = PSX;
@@ -4567,7 +4563,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "PSX-Info.plist";
+				INFOPLIST_FILE = "PSX/PSX-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = PSX;
 				VALID_ARCHS = x86_64;
