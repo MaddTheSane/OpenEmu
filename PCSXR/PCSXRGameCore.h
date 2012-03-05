@@ -30,23 +30,6 @@
 
 @class OERingBuffer;
 
-#define emu      ((Nes::Api::Emulator *)_emu)
-#define nesSound ((Nes::Api::Sound::Output *)_nesSound)
-#define nesVideo ((Nes::Api::Video::Output *) _nesVideo)
-#define controls ((Nes::Api::Input::Controllers *)_controls)
-
-extern NSString *const NESNTSC;
-extern NSString *const NESBrightness;
-extern NSString *const NESSaturation;
-extern NSString *const NESContrast;
-extern NSString *const NESSharpness;
-extern NSString *const NESColorRes;
-extern NSString *const NESColorBleed;
-extern NSString *const NESColorArtifacts;
-extern NSString *const NESColorFringing ;
-extern NSString *const NESHue;
-extern NSString *const NESUnlimitedSprites;
-
 OE_EXPORTED_CLASS
 @interface PCSXRGameCore : OEGameCore
 {

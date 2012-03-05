@@ -95,20 +95,6 @@ typedef uint8_t boolean;
 extern char* Pcsxr_locale_text(char* toloc);
 #define _(String) Pcsxr_locale_text(String)
 #define N_(String) String
-#else
-#ifndef PCSXRPLUG
-#warning please define the plug being built to use Mac OS X localization!
-#define _(msgid) msgid
-#define N_(msgid) msgid
-#else
-//Kludge to get the preprocessor to accept PCSXRPLUG as a variable.
-#define PLUGLOC_x(x,y) x ## y
-#define PLUGLOC_y(x,y) PLUGLOC_x(x,y)
-#define PLUGLOC PLUGLOC_y(PCSXRPLUG,_locale_text)
-extern char* PLUGLOC(char* toloc);
-#define _(String) PLUGLOC(String)
-#define N_(String) String
-#endif
 #endif
 #else
 

@@ -63,6 +63,11 @@
     return GL_RGB8;
 }
 
+- (BOOL)loadFileAtPath:(NSString*) path
+{
+
+}
+
 - (void)setupEmulation
 {
     DLog(@"Setup");
@@ -90,6 +95,7 @@
 - (void)dealloc
 {
 
+	[super dealloc];
 }
 
 - (void)didPushPCSXRButton:(OEPCSXRButton)button forPlayer:(NSUInteger)player;

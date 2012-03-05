@@ -29,9 +29,6 @@
 #import <OEGameCore.h>
 #import <OEGameCoreController.h>
 
-extern NSArray *NESRawControlNames;
-extern NSArray *NESUsedControlNames;
-
 OE_EXPORTED_CLASS
 @interface PCSXRGameController : OEGameCoreController
 @end

@@ -28,10 +28,6 @@
 #import "PCSXRGameController.h"
 #import "PCSXRGameCore.h"
 
-NSArray *NESRawControlNames = nil;
-NSArray *NESUsedControlNames = nil;
-NSArray *NESUsedSettingNames = nil;
-
 @implementation PCSXRGameController
 
 + (void)initialize
@@ -51,12 +47,12 @@ NSArray *NESUsedSettingNames = nil;
      
 - (NSArray *)genericControlNames
 {
-    return NESRawControlNames;
+	
 }
 
 - (NSArray *)usedSettingNames
 {
-    return NESUsedSettingNames;
+	
 }
 
 - (NSString *)gameSystemName;

@@ -70,20 +70,45 @@
 		553FC48A150498AD00871137 /* socket.c in Sources */ = {isa = PBXBuildFile; fileRef = 553FC460150498AD00871137 /* socket.c */; };
 		553FC48B150498AD00871137 /* spu.c in Sources */ = {isa = PBXBuildFile; fileRef = 553FC462150498AD00871137 /* spu.c */; };
 		553FC48D150499B900871137 /* PCSXR.icns in Resources */ = {isa = PBXBuildFile; fileRef = 553FC48C150499B900871137 /* PCSXR.icns */; };
+		5543DF3E1505728300820EC3 /* cdr-macosx.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEEB1505728300820EC3 /* cdr-macosx.c */; };
+		5543DF401505728300820EC3 /* cdr.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEED1505728300820EC3 /* cdr.c */; };
+		5543DF411505728300820EC3 /* cfg.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEEF1505728300820EC3 /* cfg.c */; };
+		5543DF421505728300820EC3 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEF01505728300820EC3 /* util.c */; };
+		5543DF431505728300820EC3 /* analog.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEF21505728300820EC3 /* analog.c */; };
+		5543DF441505728300820EC3 /* cfg.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEF31505728300820EC3 /* cfg.c */; };
+		5543DF451505728300820EC3 /* pad.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEF51505728300820EC3 /* pad.c */; };
+		5543DF461505728300820EC3 /* sdljoy.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEF71505728300820EC3 /* sdljoy.c */; };
+		5543DF471505728300820EC3 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEF81505728300820EC3 /* util.c */; };
+		5543DF481505728300820EC3 /* xkb.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEFA1505728300820EC3 /* xkb.c */; };
+		5543DF491505728300820EC3 /* cfg.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEFC1505728300820EC3 /* cfg.c */; };
+		5543DF4B1505728300820EC3 /* drawgl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF001505728300820EC3 /* drawgl.m */; };
+		5543DF4C1505728300820EC3 /* fps.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF031505728300820EC3 /* fps.c */; };
+		5543DF4D1505728300820EC3 /* gpu.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF051505728300820EC3 /* gpu.c */; };
+		5543DF4F1505728300820EC3 /* key.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF0B1505728300820EC3 /* key.c */; };
+		5543DF511505728300820EC3 /* menu.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF0E1505728300820EC3 /* menu.c */; };
+		5543DF521505728300820EC3 /* PluginConfigController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF111505728300820EC3 /* PluginConfigController.m */; };
+		5543DF531505728300820EC3 /* PluginGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF131505728300820EC3 /* PluginGLView.m */; };
+		5543DF541505728300820EC3 /* PluginWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF151505728300820EC3 /* PluginWindow.m */; };
+		5543DF551505728300820EC3 /* PluginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF171505728300820EC3 /* PluginWindowController.m */; };
+		5543DF561505728300820EC3 /* prim.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF181505728300820EC3 /* prim.c */; };
+		5543DF571505728300820EC3 /* soft.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF1A1505728300820EC3 /* soft.c */; };
+		5543DF581505728300820EC3 /* zn.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF1D1505728300820EC3 /* zn.c */; };
+		5543DF591505728300820EC3 /* adsr.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF1F1505728300820EC3 /* adsr.c */; };
+		5543DF5A1505728300820EC3 /* alsa.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF211505728300820EC3 /* alsa.c */; };
+		5543DF5B1505728300820EC3 /* cfg.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF221505728300820EC3 /* cfg.c */; };
+		5543DF5C1505728300820EC3 /* dma.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF241505728300820EC3 /* dma.c */; };
+		5543DF5D1505728300820EC3 /* externals.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF271505728300820EC3 /* externals.c */; };
+		5543DF5E1505728300820EC3 /* freeze.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF291505728300820EC3 /* freeze.c */; };
+		5543DF601505728300820EC3 /* openal.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF2D1505728300820EC3 /* openal.c */; };
+		5543DF631505728300820EC3 /* registers.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF311505728300820EC3 /* registers.c */; };
+		5543DF641505728300820EC3 /* reverb.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF341505728300820EC3 /* reverb.c */; };
+		5543DF661505728300820EC3 /* spu.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF371505728300820EC3 /* spu.c */; };
+		5543DF671505728300820EC3 /* xa.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF3A1505728300820EC3 /* xa.c */; };
+		5543DF69150579E700820EC3 /* PCSXRHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF68150579E600820EC3 /* PCSXRHelpers.m */; };
+		5543DF6C150588E800820EC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5543DF6A150588E800820EC3 /* Localizable.strings */; };
 		556820A815049FD400C6F12B /* ConfigurationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568208D15049FD400C6F12B /* ConfigurationController.m */; };
-		556820A915049FD400C6F12B /* EmuThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568208F15049FD400C6F12B /* EmuThread.m */; };
 		556820AA15049FD400C6F12B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568209115049FD400C6F12B /* main.m */; };
-		556820AB15049FD400C6F12B /* PcsxrController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568209315049FD400C6F12B /* PcsxrController.m */; };
-		556820AC15049FD400C6F12B /* PcsxrDiscHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568209515049FD400C6F12B /* PcsxrDiscHandler.m */; };
-		556820AD15049FD400C6F12B /* PcsxrFreezeStateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568209815049FD400C6F12B /* PcsxrFreezeStateHandler.m */; };
-		556820AE15049FD400C6F12B /* PcsxrMemCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568209A15049FD400C6F12B /* PcsxrMemCardController.m */; };
-		556820AF15049FD400C6F12B /* PcsxrMemCardHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568209C15049FD400C6F12B /* PcsxrMemCardHandler.m */; };
-		556820B015049FD400C6F12B /* PcsxrMemoryObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568209E15049FD400C6F12B /* PcsxrMemoryObject.m */; };
-		556820B115049FD400C6F12B /* PcsxrPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 556820A015049FD400C6F12B /* PcsxrPlugin.m */; };
-		556820B215049FD400C6F12B /* PcsxrPluginHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 556820A215049FD400C6F12B /* PcsxrPluginHandler.m */; };
 		556820B315049FD400C6F12B /* Plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = 556820A315049FD400C6F12B /* Plugin.c */; };
-		556820B415049FD400C6F12B /* PluginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 556820A515049FD400C6F12B /* PluginController.m */; };
-		556820B515049FD400C6F12B /* PluginList.m in Sources */ = {isa = PBXBuildFile; fileRef = 556820A715049FD400C6F12B /* PluginList.m */; };
 		82789B710E70D27D00C01C82 /* PCSXRGameCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 82789B700E70D27D00C01C82 /* PCSXRGameCore.m */; };
 		82C9CA720F0847310071460B /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 82C9CA710F0847310071460B /* dsa_pub.pem */; };
 		82CAFDD50FEDD8F100CCDC7E /* config.yaml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82CAFA890FED9C6B00CCDC7E /* config.yaml */; };
@@ -311,6 +336,86 @@
 		553FC463150498AD00871137 /* spu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spu.h; sourceTree = "<group>"; };
 		553FC464150498AD00871137 /* system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = system.h; sourceTree = "<group>"; };
 		553FC48C150499B900871137 /* PCSXR.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = PCSXR.icns; sourceTree = "<group>"; };
+		5543DEE91505728300820EC3 /* cdr-libcdio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "cdr-libcdio.c"; sourceTree = "<group>"; };
+		5543DEEA1505728300820EC3 /* cdr-linux.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "cdr-linux.c"; sourceTree = "<group>"; };
+		5543DEEB1505728300820EC3 /* cdr-macosx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "cdr-macosx.c"; sourceTree = "<group>"; };
+		5543DEEC1505728300820EC3 /* cdr-null.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "cdr-null.c"; sourceTree = "<group>"; };
+		5543DEED1505728300820EC3 /* cdr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cdr.c; sourceTree = "<group>"; };
+		5543DEEE1505728300820EC3 /* cdr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cdr.h; sourceTree = "<group>"; };
+		5543DEEF1505728300820EC3 /* cfg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cfg.c; sourceTree = "<group>"; };
+		5543DEF01505728300820EC3 /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
+		5543DEF21505728300820EC3 /* analog.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = analog.c; sourceTree = "<group>"; };
+		5543DEF31505728300820EC3 /* cfg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cfg.c; sourceTree = "<group>"; };
+		5543DEF41505728300820EC3 /* cfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cfg.h; sourceTree = "<group>"; };
+		5543DEF51505728300820EC3 /* pad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pad.c; sourceTree = "<group>"; };
+		5543DEF61505728300820EC3 /* pad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pad.h; sourceTree = "<group>"; };
+		5543DEF71505728300820EC3 /* sdljoy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sdljoy.c; sourceTree = "<group>"; };
+		5543DEF81505728300820EC3 /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
+		5543DEF91505728300820EC3 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		5543DEFA1505728300820EC3 /* xkb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xkb.c; sourceTree = "<group>"; };
+		5543DEFC1505728300820EC3 /* cfg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cfg.c; sourceTree = "<group>"; };
+		5543DEFD1505728300820EC3 /* cfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cfg.h; sourceTree = "<group>"; };
+		5543DEFE1505728300820EC3 /* draw.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = draw.c; sourceTree = "<group>"; };
+		5543DEFF1505728300820EC3 /* draw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = draw.h; sourceTree = "<group>"; };
+		5543DF001505728300820EC3 /* drawgl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = drawgl.m; sourceTree = "<group>"; };
+		5543DF011505728300820EC3 /* ExtendedKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedKeys.h; sourceTree = "<group>"; };
+		5543DF021505728300820EC3 /* externals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = externals.h; sourceTree = "<group>"; };
+		5543DF031505728300820EC3 /* fps.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fps.c; sourceTree = "<group>"; };
+		5543DF041505728300820EC3 /* fps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fps.h; sourceTree = "<group>"; };
+		5543DF051505728300820EC3 /* gpu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gpu.c; sourceTree = "<group>"; };
+		5543DF061505728300820EC3 /* gpu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gpu.h; sourceTree = "<group>"; };
+		5543DF071505728300820EC3 /* hq2x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hq2x.h; sourceTree = "<group>"; };
+		5543DF081505728300820EC3 /* hq3x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hq3x.h; sourceTree = "<group>"; };
+		5543DF0A1505728300820EC3 /* interp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interp.h; sourceTree = "<group>"; };
+		5543DF0B1505728300820EC3 /* key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = key.c; sourceTree = "<group>"; };
+		5543DF0C1505728300820EC3 /* key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = key.h; sourceTree = "<group>"; };
+		5543DF0E1505728300820EC3 /* menu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = menu.c; sourceTree = "<group>"; };
+		5543DF0F1505728300820EC3 /* menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menu.h; sourceTree = "<group>"; };
+		5543DF101505728300820EC3 /* PluginConfigController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginConfigController.h; sourceTree = "<group>"; };
+		5543DF111505728300820EC3 /* PluginConfigController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginConfigController.m; sourceTree = "<group>"; };
+		5543DF121505728300820EC3 /* PluginGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginGLView.h; sourceTree = "<group>"; };
+		5543DF131505728300820EC3 /* PluginGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginGLView.m; sourceTree = "<group>"; };
+		5543DF141505728300820EC3 /* PluginWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginWindow.h; sourceTree = "<group>"; };
+		5543DF151505728300820EC3 /* PluginWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginWindow.m; sourceTree = "<group>"; };
+		5543DF161505728300820EC3 /* PluginWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginWindowController.h; sourceTree = "<group>"; };
+		5543DF171505728300820EC3 /* PluginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginWindowController.m; sourceTree = "<group>"; };
+		5543DF181505728300820EC3 /* prim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prim.c; sourceTree = "<group>"; };
+		5543DF191505728300820EC3 /* prim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prim.h; sourceTree = "<group>"; };
+		5543DF1A1505728300820EC3 /* soft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = soft.c; sourceTree = "<group>"; };
+		5543DF1B1505728300820EC3 /* soft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = soft.h; sourceTree = "<group>"; };
+		5543DF1C1505728300820EC3 /* swap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = swap.h; sourceTree = "<group>"; };
+		5543DF1D1505728300820EC3 /* zn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zn.c; sourceTree = "<group>"; };
+		5543DF1F1505728300820EC3 /* adsr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = adsr.c; sourceTree = "<group>"; };
+		5543DF201505728300820EC3 /* adsr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adsr.h; sourceTree = "<group>"; };
+		5543DF211505728300820EC3 /* alsa.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = alsa.c; sourceTree = "<group>"; };
+		5543DF221505728300820EC3 /* cfg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cfg.c; sourceTree = "<group>"; };
+		5543DF231505728300820EC3 /* cfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cfg.h; sourceTree = "<group>"; };
+		5543DF241505728300820EC3 /* dma.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dma.c; sourceTree = "<group>"; };
+		5543DF251505728300820EC3 /* dma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dma.h; sourceTree = "<group>"; };
+		5543DF261505728300820EC3 /* dsoundoss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dsoundoss.h; sourceTree = "<group>"; };
+		5543DF271505728300820EC3 /* externals.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = externals.c; sourceTree = "<group>"; };
+		5543DF281505728300820EC3 /* externals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = externals.h; sourceTree = "<group>"; };
+		5543DF291505728300820EC3 /* freeze.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = freeze.c; sourceTree = "<group>"; };
+		5543DF2A1505728300820EC3 /* gauss_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gauss_i.h; sourceTree = "<group>"; };
+		5543DF2B1505728300820EC3 /* maccfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maccfg.h; sourceTree = "<group>"; };
+		5543DF2C1505728300820EC3 /* nullsnd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nullsnd.c; sourceTree = "<group>"; };
+		5543DF2D1505728300820EC3 /* openal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = openal.c; sourceTree = "<group>"; };
+		5543DF2E1505728300820EC3 /* oss.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = oss.c; sourceTree = "<group>"; };
+		5543DF2F1505728300820EC3 /* psemuxa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = psemuxa.h; sourceTree = "<group>"; };
+		5543DF301505728300820EC3 /* pulseaudio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pulseaudio.c; sourceTree = "<group>"; };
+		5543DF311505728300820EC3 /* registers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = registers.c; sourceTree = "<group>"; };
+		5543DF321505728300820EC3 /* registers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registers.h; sourceTree = "<group>"; };
+		5543DF331505728300820EC3 /* regs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = regs.h; sourceTree = "<group>"; };
+		5543DF341505728300820EC3 /* reverb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = reverb.c; sourceTree = "<group>"; };
+		5543DF351505728300820EC3 /* reverb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reverb.h; sourceTree = "<group>"; };
+		5543DF361505728300820EC3 /* sdl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sdl.c; sourceTree = "<group>"; };
+		5543DF371505728300820EC3 /* spu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = spu.c; sourceTree = "<group>"; };
+		5543DF381505728300820EC3 /* spu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spu.h; sourceTree = "<group>"; };
+		5543DF391505728300820EC3 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
+		5543DF3A1505728300820EC3 /* xa.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xa.c; sourceTree = "<group>"; };
+		5543DF3B1505728300820EC3 /* xa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xa.h; sourceTree = "<group>"; };
+		5543DF68150579E600820EC3 /* PCSXRHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCSXRHelpers.m; sourceTree = "<group>"; };
+		5543DF6B150588E800820EC3 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5568208B15049FD400C6F12B /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		5568208C15049FD400C6F12B /* ConfigurationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationController.h; sourceTree = "<group>"; };
 		5568208D15049FD400C6F12B /* ConfigurationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationController.m; sourceTree = "<group>"; };
@@ -398,6 +503,7 @@
 				82C9CA710F0847310071460B /* dsa_pub.pem */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+				5543DF6A150588E800820EC3 /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -524,6 +630,123 @@
 			path = ix86_64;
 			sourceTree = "<group>";
 		};
+		5543DEE71505728300820EC3 /* PSX Plug-ins */ = {
+			isa = PBXGroup;
+			children = (
+				5543DEE81505728300820EC3 /* CDROM */,
+				5543DEF11505728300820EC3 /* Controller */,
+				5543DEFB1505728300820EC3 /* GPU */,
+				5543DF1E1505728300820EC3 /* SPU */,
+			);
+			path = "PSX Plug-ins";
+			sourceTree = "<group>";
+		};
+		5543DEE81505728300820EC3 /* CDROM */ = {
+			isa = PBXGroup;
+			children = (
+				5543DEE91505728300820EC3 /* cdr-libcdio.c */,
+				5543DEEA1505728300820EC3 /* cdr-linux.c */,
+				5543DEEB1505728300820EC3 /* cdr-macosx.c */,
+				5543DEEC1505728300820EC3 /* cdr-null.c */,
+				5543DEED1505728300820EC3 /* cdr.c */,
+				5543DEEE1505728300820EC3 /* cdr.h */,
+				5543DEEF1505728300820EC3 /* cfg.c */,
+				5543DEF01505728300820EC3 /* util.c */,
+			);
+			path = CDROM;
+			sourceTree = "<group>";
+		};
+		5543DEF11505728300820EC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5543DEF21505728300820EC3 /* analog.c */,
+				5543DEF31505728300820EC3 /* cfg.c */,
+				5543DEF41505728300820EC3 /* cfg.h */,
+				5543DEF51505728300820EC3 /* pad.c */,
+				5543DEF61505728300820EC3 /* pad.h */,
+				5543DEF71505728300820EC3 /* sdljoy.c */,
+				5543DEF81505728300820EC3 /* util.c */,
+				5543DEF91505728300820EC3 /* util.h */,
+				5543DEFA1505728300820EC3 /* xkb.c */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5543DEFB1505728300820EC3 /* GPU */ = {
+			isa = PBXGroup;
+			children = (
+				5543DEFC1505728300820EC3 /* cfg.c */,
+				5543DEFD1505728300820EC3 /* cfg.h */,
+				5543DEFE1505728300820EC3 /* draw.c */,
+				5543DEFF1505728300820EC3 /* draw.h */,
+				5543DF001505728300820EC3 /* drawgl.m */,
+				5543DF011505728300820EC3 /* ExtendedKeys.h */,
+				5543DF021505728300820EC3 /* externals.h */,
+				5543DF031505728300820EC3 /* fps.c */,
+				5543DF041505728300820EC3 /* fps.h */,
+				5543DF051505728300820EC3 /* gpu.c */,
+				5543DF061505728300820EC3 /* gpu.h */,
+				5543DF071505728300820EC3 /* hq2x.h */,
+				5543DF081505728300820EC3 /* hq3x.h */,
+				5543DF0A1505728300820EC3 /* interp.h */,
+				5543DF0B1505728300820EC3 /* key.c */,
+				5543DF0C1505728300820EC3 /* key.h */,
+				5543DF0E1505728300820EC3 /* menu.c */,
+				5543DF0F1505728300820EC3 /* menu.h */,
+				5543DF101505728300820EC3 /* PluginConfigController.h */,
+				5543DF111505728300820EC3 /* PluginConfigController.m */,
+				5543DF121505728300820EC3 /* PluginGLView.h */,
+				5543DF131505728300820EC3 /* PluginGLView.m */,
+				5543DF141505728300820EC3 /* PluginWindow.h */,
+				5543DF151505728300820EC3 /* PluginWindow.m */,
+				5543DF161505728300820EC3 /* PluginWindowController.h */,
+				5543DF171505728300820EC3 /* PluginWindowController.m */,
+				5543DF181505728300820EC3 /* prim.c */,
+				5543DF191505728300820EC3 /* prim.h */,
+				5543DF1A1505728300820EC3 /* soft.c */,
+				5543DF1B1505728300820EC3 /* soft.h */,
+				5543DF1C1505728300820EC3 /* swap.h */,
+				5543DF1D1505728300820EC3 /* zn.c */,
+			);
+			path = GPU;
+			sourceTree = "<group>";
+		};
+		5543DF1E1505728300820EC3 /* SPU */ = {
+			isa = PBXGroup;
+			children = (
+				5543DF1F1505728300820EC3 /* adsr.c */,
+				5543DF201505728300820EC3 /* adsr.h */,
+				5543DF211505728300820EC3 /* alsa.c */,
+				5543DF221505728300820EC3 /* cfg.c */,
+				5543DF231505728300820EC3 /* cfg.h */,
+				5543DF241505728300820EC3 /* dma.c */,
+				5543DF251505728300820EC3 /* dma.h */,
+				5543DF261505728300820EC3 /* dsoundoss.h */,
+				5543DF271505728300820EC3 /* externals.c */,
+				5543DF281505728300820EC3 /* externals.h */,
+				5543DF291505728300820EC3 /* freeze.c */,
+				5543DF2A1505728300820EC3 /* gauss_i.h */,
+				5543DF2B1505728300820EC3 /* maccfg.h */,
+				5543DF2C1505728300820EC3 /* nullsnd.c */,
+				5543DF2D1505728300820EC3 /* openal.c */,
+				5543DF2E1505728300820EC3 /* oss.c */,
+				5543DF2F1505728300820EC3 /* psemuxa.h */,
+				5543DF301505728300820EC3 /* pulseaudio.c */,
+				5543DF311505728300820EC3 /* registers.c */,
+				5543DF321505728300820EC3 /* registers.h */,
+				5543DF331505728300820EC3 /* regs.h */,
+				5543DF341505728300820EC3 /* reverb.c */,
+				5543DF351505728300820EC3 /* reverb.h */,
+				5543DF361505728300820EC3 /* sdl.c */,
+				5543DF371505728300820EC3 /* spu.c */,
+				5543DF381505728300820EC3 /* spu.h */,
+				5543DF391505728300820EC3 /* stdafx.h */,
+				5543DF3A1505728300820EC3 /* xa.c */,
+				5543DF3B1505728300820EC3 /* xa.h */,
+			);
+			path = SPU;
+			sourceTree = "<group>";
+		};
 		5568208A15049FD400C6F12B /* MacOSX */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,8 +808,10 @@
 		82789B400E70D10700C01C82 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5543DEE71505728300820EC3 /* PSX Plug-ins */,
 				5568208A15049FD400C6F12B /* MacOSX */,
 				553FC417150498AD00871137 /* libpcsxcore */,
+				5543DF68150579E600820EC3 /* PCSXRHelpers.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -767,6 +992,7 @@
 				82C9CA720F0847310071460B /* dsa_pub.pem in Resources */,
 				553FC476150498AD00871137 /* README in Resources */,
 				553FC48D150499B900871137 /* PCSXR.icns in Resources */,
+				5543DF6C150588E800820EC3 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -840,19 +1066,43 @@
 				553FC48A150498AD00871137 /* socket.c in Sources */,
 				553FC48B150498AD00871137 /* spu.c in Sources */,
 				556820A815049FD400C6F12B /* ConfigurationController.m in Sources */,
-				556820A915049FD400C6F12B /* EmuThread.m in Sources */,
 				556820AA15049FD400C6F12B /* main.m in Sources */,
-				556820AB15049FD400C6F12B /* PcsxrController.m in Sources */,
-				556820AC15049FD400C6F12B /* PcsxrDiscHandler.m in Sources */,
-				556820AD15049FD400C6F12B /* PcsxrFreezeStateHandler.m in Sources */,
-				556820AE15049FD400C6F12B /* PcsxrMemCardController.m in Sources */,
-				556820AF15049FD400C6F12B /* PcsxrMemCardHandler.m in Sources */,
-				556820B015049FD400C6F12B /* PcsxrMemoryObject.m in Sources */,
-				556820B115049FD400C6F12B /* PcsxrPlugin.m in Sources */,
-				556820B215049FD400C6F12B /* PcsxrPluginHandler.m in Sources */,
 				556820B315049FD400C6F12B /* Plugin.c in Sources */,
-				556820B415049FD400C6F12B /* PluginController.m in Sources */,
-				556820B515049FD400C6F12B /* PluginList.m in Sources */,
+				5543DF3E1505728300820EC3 /* cdr-macosx.c in Sources */,
+				5543DF401505728300820EC3 /* cdr.c in Sources */,
+				5543DF411505728300820EC3 /* cfg.c in Sources */,
+				5543DF421505728300820EC3 /* util.c in Sources */,
+				5543DF431505728300820EC3 /* analog.c in Sources */,
+				5543DF441505728300820EC3 /* cfg.c in Sources */,
+				5543DF451505728300820EC3 /* pad.c in Sources */,
+				5543DF461505728300820EC3 /* sdljoy.c in Sources */,
+				5543DF471505728300820EC3 /* util.c in Sources */,
+				5543DF481505728300820EC3 /* xkb.c in Sources */,
+				5543DF491505728300820EC3 /* cfg.c in Sources */,
+				5543DF4B1505728300820EC3 /* drawgl.m in Sources */,
+				5543DF4C1505728300820EC3 /* fps.c in Sources */,
+				5543DF4D1505728300820EC3 /* gpu.c in Sources */,
+				5543DF4F1505728300820EC3 /* key.c in Sources */,
+				5543DF511505728300820EC3 /* menu.c in Sources */,
+				5543DF521505728300820EC3 /* PluginConfigController.m in Sources */,
+				5543DF531505728300820EC3 /* PluginGLView.m in Sources */,
+				5543DF541505728300820EC3 /* PluginWindow.m in Sources */,
+				5543DF551505728300820EC3 /* PluginWindowController.m in Sources */,
+				5543DF561505728300820EC3 /* prim.c in Sources */,
+				5543DF571505728300820EC3 /* soft.c in Sources */,
+				5543DF581505728300820EC3 /* zn.c in Sources */,
+				5543DF591505728300820EC3 /* adsr.c in Sources */,
+				5543DF5A1505728300820EC3 /* alsa.c in Sources */,
+				5543DF5B1505728300820EC3 /* cfg.c in Sources */,
+				5543DF5C1505728300820EC3 /* dma.c in Sources */,
+				5543DF5D1505728300820EC3 /* externals.c in Sources */,
+				5543DF5E1505728300820EC3 /* freeze.c in Sources */,
+				5543DF601505728300820EC3 /* openal.c in Sources */,
+				5543DF631505728300820EC3 /* registers.c in Sources */,
+				5543DF641505728300820EC3 /* reverb.c in Sources */,
+				5543DF661505728300820EC3 /* spu.c in Sources */,
+				5543DF671505728300820EC3 /* xa.c in Sources */,
+				5543DF69150579E700820EC3 /* PCSXRHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,6 +1133,14 @@
 				089C167EFE841241C02AAC07 /* English */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5543DF6A150588E800820EC3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5543DF6B150588E800820EC3 /* English */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
