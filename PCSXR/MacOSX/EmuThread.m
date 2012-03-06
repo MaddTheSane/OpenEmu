@@ -33,8 +33,6 @@ static pthread_mutex_t eventMutex;
 
 - (void)EmuThreadRun:(id)anObject
 {
-	NSAutoreleasePool *pool = [NSAutoreleasePool new];
-
 	[[NSNotificationCenter defaultCenter] addObserver:self
         selector:@selector(emuWindowDidClose:)
         name:@"emuWindowDidClose" object:nil];
@@ -70,13 +68,12 @@ static pthread_mutex_t eventMutex;
 
 	if (defrostPath) {
 		LoadState([defrostPath fileSystemRepresentation]);
-		[defrostPath release]; defrostPath = nil;
+		defrostPath = nil;
 	}
 
 	psxCpu->Execute();
 
 done:
-	[pool drain];
 	emuThread = nil;
 
 	return;
@@ -84,8 +81,6 @@ done:
 
 - (void)EmuThreadRunBios:(id)anObject
 {
-	NSAutoreleasePool *pool = [NSAutoreleasePool new];
-
 	[[NSNotificationCenter defaultCenter] addObserver:self
         selector:@selector(emuWindowDidClose:)
         name:@"emuWindowDidClose" object:nil];
@@ -110,7 +105,6 @@ done:
 	psxCpu->Execute();
 
 done:
-	[pool drain];
 	emuThread = nil;
 	
 	return;
@@ -120,8 +114,6 @@ done:
 {
 	// remove all registered observers
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:nil object:nil];
-
-	[super dealloc];
 }
 
 - (void)emuWindowDidClose:(NSNotification *)aNotification
@@ -149,10 +141,8 @@ done:
 	   and we can just handle events next time round */
 	if (pthread_mutex_trylock(&eventMutex) == 0) {
 		while (safeEvent) {
-			NSAutoreleasePool *pool = [NSAutoreleasePool new];
 			if (safeEvent & EMUEVENT_STOP) {
 				/* signify that the emulation has stopped */
-				[emuThread autorelease];
 				emuThread = nil;
 				paused = NO;
 				
@@ -163,7 +153,6 @@ done:
 				SysClose();
 				
 				//[[NSThread currentThread] autorelease];
-				[pool drain];
 				[NSThread exit];
 				return;
 			}
@@ -198,7 +187,6 @@ done:
 				/* wait until we're signalled */
 				pthread_cond_wait(&eventCond, &eventMutex);
 			}
-			[pool drain];
 		}
 		pthread_mutex_unlock(&eventMutex);
 	}
@@ -339,7 +327,6 @@ done:
 + (void)resetNow
 {
 	/* signify that the emulation has stopped */
-	[emuThread autorelease];
 	emuThread = nil;
 
 	ClosePlugins();
@@ -389,7 +376,7 @@ done:
 	if (CheckState(cPath) != 0)
 		return NO;
 
-	defrostPath = [path retain];
+	defrostPath = path;
 	[EmuThread reset];
 
 	GPU_displayText(_("*PCSXR*: Loaded State"));
