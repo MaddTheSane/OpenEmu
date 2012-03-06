@@ -45,6 +45,7 @@
 extern char* Pcsxr_locale_text(char* toloc);
 #define _(String) Pcsxr_locale_text(String)
 #define N_(String) String
+#endif
 #else
 #define _(x)  (x)
 #define N_(x) (x)
