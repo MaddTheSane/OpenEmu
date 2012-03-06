@@ -31,6 +31,7 @@
 #include <sys/time.h>
 #import <OpenGL/gl.h>
 #import "OEPCSXRSystemResponderClient.h"
+#import "EmuThread.h"
 
 #define SAMPLERATE 41100
 
@@ -65,17 +66,18 @@
 
 - (BOOL)loadFileAtPath:(NSString*) path
 {
-
+	return NO;
 }
 
 - (void)setupEmulation
 {
     DLog(@"Setup");
+	[EmuThread run];
 }
 
 - (void)stopEmulation
 {
-
+	[EmuThread stop];
 }
 
 # pragma mark -
@@ -89,13 +91,12 @@
 
 - (void)resetEmulation
 {
-
+	[EmuThread reset];
 }
 
 - (void)dealloc
 {
 
-	[super dealloc];
 }
 
 - (void)didPushPCSXRButton:(OEPCSXRButton)button forPlayer:(NSUInteger)player;
@@ -120,14 +121,14 @@
 
 - (BOOL)saveStateToFileAtPath:(NSString *)fileName
 {
-    const char* filename = [fileName fileSystemRepresentation];
-        
+	[EmuThread freezeAt:fileName which:1];
+	
     return YES;
 }
 
 - (BOOL)loadStateFromFileAtPath:(NSString *)fileName
 {    
-    return YES;
+	return [EmuThread defrostAt:fileName];
 }
 
 - (OEIntSize)bufferSize
