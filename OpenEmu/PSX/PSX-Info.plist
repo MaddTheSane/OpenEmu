@@ -37,8 +37,10 @@
 	</array>
 	<key>OEFileSuffixes</key>
 	<array>
-		<string>fds</string>
-		<string>nes</string>
+		<string>img</string>
+		<string>iso</string>
+		<string>bin</string>
+		<string>mdf</string>
 	</array>
 	<key>OEControlListKey</key>
 	<array>
