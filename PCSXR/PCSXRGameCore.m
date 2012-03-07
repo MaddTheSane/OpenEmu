@@ -32,6 +32,9 @@
 #import <OpenGL/gl.h>
 #import "OEPCSXRSystemResponderClient.h"
 #import "EmuThread.h"
+#include "psxcommon.h"
+#include "plugins.h"
+#include "misc.h"
 
 #define SAMPLERATE 41100
 
@@ -66,7 +69,8 @@
 
 - (BOOL)loadFileAtPath:(NSString*) path
 {
-	return NO;
+	SetIsoFile([path fileSystemRepresentation]);
+	return YES;
 }
 
 - (void)setupEmulation
@@ -133,7 +137,11 @@
 
 - (OEIntSize)bufferSize
 {
-
+	OEIntSize size;
+	//TODO: Handle PAL/SECAM sizes?
+	size.width = 640;
+	size.height = 480;
+	return size;
 }
 
 @end
