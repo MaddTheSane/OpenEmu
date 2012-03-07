@@ -133,7 +133,7 @@ extern u16 *iso_play_cdbuf;
 extern u16 iso_play_bufptr;
 extern long CALLBACK ISOinit(void);
 extern void CALLBACK SPUirq(void);
-extern SPUregisterCallback SPU_registerCallback;
+//extern SPUregisterCallback SPU_registerCallback;
 
 // A bit of a kludge, but it will get rid of the "macro redefined" warnings
 
@@ -208,7 +208,7 @@ extern SPUregisterCallback SPU_registerCallback;
 		cdr.Play = FALSE; \
 		cdr.FastForward = 0; \
 		cdr.FastBackward = 0; \
-		SPU_registerCallback( SPUirq ); \
+		SPUregisterCallback( SPUirq ); \
 	} \
 }
 
@@ -247,13 +247,13 @@ void cdrDecodedBufferInterrupt()
 
 	// check dbuf IRQ still active
 	if( cdr.Play == 0 ) return;
-	if( (SPU_readRegister( H_SPUctrl ) & 0x40) == 0 ) return;
-	if( (SPU_readRegister( H_SPUirqAddr ) * 8) >= 0x800 ) return;
+	if( (SPUreadRegister( H_SPUctrl ) & 0x40) == 0 ) return;
+	if( (SPUreadRegister( H_SPUirqAddr ) * 8) >= 0x800 ) return;
 
 
 
 	// turn off plugin SPU IRQ decoded buffer handling
-	SPU_registerCallback( 0 );
+	SPUregisterCallback( 0 );
 
 
 
@@ -286,8 +286,8 @@ void cdrDecodedBufferInterrupt()
 
 
 	// feed CDDA decoded buffer manually
-	SPU_writeRegister( H_SPUaddr,0 );
-	SPU_writeDMAMem( buf_ptr, 0x800 / 2 );
+	SPUwriteRegister( H_SPUaddr,0 );
+	SPUwriteDMAMem( buf_ptr, 0x800 / 2 );
 
 
 	// signal CDDA data ready
@@ -940,8 +940,8 @@ void cdrPlayInterrupt()
 		memset( cdr.Transfer, 0, CD_FRAMESIZE_RAW );
 
 
-	if( SPU_playCDDAchannel)
-		SPU_playCDDAchannel((short *)cdr.Transfer, CD_FRAMESIZE_RAW);
+	if( SPUplayCDDAchannel)
+		SPUplayCDDAchannel((short *)cdr.Transfer, CD_FRAMESIZE_RAW);
 
 	CDRPLAY_INT( cdReadTime );
 
@@ -1665,7 +1665,7 @@ void cdrReadInterrupt() {
 				if( cdr.Xa.stereo == 0 ) cdr.Xa.stereo = 1;
 #endif
 
-				SPU_playADPCMchannel(&cdr.Xa);
+				SPUplayADPCMchannel(&cdr.Xa);
 				cdr.FirstSector = 0;
 
 

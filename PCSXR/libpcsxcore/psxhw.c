@@ -181,7 +181,7 @@ u16 psxHwRead16(u32 add) {
 
 		default:
 			if (add >= 0x1f801c00 && add < 0x1f801e00) {
-            	hard = SPU_readRegister(add);
+            	hard = SPUreadRegister(add);
 			} else {
 				hard = psxHu16(add); 
 #ifdef PSXHW_LOG
@@ -230,7 +230,7 @@ u32 psxHwRead32(u32 add) {
 #endif
 
 		case 0x1f801810:
-			hard = GPU_readData();
+			hard = GPUreadData();
 #ifdef PSXHW_LOG
 			PSXHW_LOG("GPU DATA 32bit read %x\n", hard);
 #endif
@@ -484,7 +484,7 @@ void psxHwWrite16(u32 add, u16 value) {
 
 		default:
 			if (add>=0x1f801c00 && add<0x1f801e00) {
-            	SPU_writeRegister(add, value);
+            	SPUwriteRegister(add, value);
 				return;
 			}
 
@@ -664,12 +664,12 @@ void psxHwWrite32(u32 add, u32 value) {
 #ifdef PSXHW_LOG
 			PSXHW_LOG("GPU DATA 32bit write %x\n", value);
 #endif
-			GPU_writeData(value); return;
+			GPUwriteData(value); return;
 		case 0x1f801814:
 #ifdef PSXHW_LOG
 			PSXHW_LOG("GPU STATUS 32bit write %x\n", value);
 #endif
-			GPU_writeStatus(value); return;
+			GPUwriteStatus(value); return;
 
 		case 0x1f801820:
 			mdecWrite0(value); break;
@@ -727,13 +727,13 @@ void psxHwWrite32(u32 add, u32 value) {
 		default:
 			// Dukes of Hazard 2 - car engine noise
 			if (add>=0x1f801c00 && add<0x1f801e00) {
-        SPU_writeRegister(add, value&0xffff);
+        SPUwriteRegister(add, value&0xffff);
 				
 				add += 2;
 				value >>= 16;
 
 				if (add>=0x1f801c00 && add<0x1f801e00)
-					SPU_writeRegister(add, value&0xffff);
+					SPUwriteRegister(add, value&0xffff);
 				return;
 			}
 

@@ -517,7 +517,7 @@ int SaveState(const char *file) {
 
 	pMem = (unsigned char *)malloc(128 * 96 * 3);
 	if (pMem == NULL) return -1;
-	GPU_getScreenPic(pMem);
+	GPUgetScreenPic(pMem);
 	gzwrite(f, pMem, 128 * 96 * 3);
 	free(pMem);
 
@@ -532,17 +532,17 @@ int SaveState(const char *file) {
 	// gpu
 	gpufP = (GPUFreeze_t *)malloc(sizeof(GPUFreeze_t));
 	gpufP->ulFreezeVersion = 1;
-	GPU_freeze(1, gpufP);
+	GPUfreeze(1, gpufP);
 	gzwrite(f, gpufP, sizeof(GPUFreeze_t));
 	free(gpufP);
 
 	// spu
 	spufP = (SPUFreeze_t *) malloc(16);
-	SPU_freeze(2, spufP);
+	SPUfreeze(2, spufP);
 	Size = spufP->Size; gzwrite(f, &Size, 4);
 	free(spufP);
 	spufP = (SPUFreeze_t *) malloc(Size);
-	SPU_freeze(1, spufP);
+	SPUfreeze(1, spufP);
 	gzwrite(f, spufP, Size);
 	free(spufP);
 
@@ -592,14 +592,14 @@ int LoadState(const char *file) {
 	// gpu
 	gpufP = (GPUFreeze_t *)malloc(sizeof(GPUFreeze_t));
 	gzread(f, gpufP, sizeof(GPUFreeze_t));
-	GPU_freeze(0, gpufP);
+	GPUfreeze(0, gpufP);
 	free(gpufP);
 
 	// spu
 	gzread(f, &Size, 4);
 	spufP = (SPUFreeze_t *)malloc(Size);
 	gzread(f, spufP, Size);
-	SPU_freeze(0, spufP);
+	SPUfreeze(0, spufP);
 	free(spufP);
 
 	sioFreeze(f, 0);

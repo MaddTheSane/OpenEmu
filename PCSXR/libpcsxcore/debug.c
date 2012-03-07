@@ -403,7 +403,7 @@ void ProcessDebug() {
     while (paused) {
         GetClient();
         ProcessCommands();
-        GPU_updateLace();
+        GPUupdateLace();
         SysUpdate();
     }
 }

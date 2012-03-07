@@ -1449,7 +1449,7 @@ static void recLHU() {
 				//PUSHI  (addr);
 				MOV64ItoR(X86ARG1, addr);
 				//CALLFunc  ((uptr)SPU_readRegister);
-				MOV64ItoR(RAX, (uptr)SPU_readRegister);
+				MOV64ItoR(RAX, (uptr)SPUreadRegister);
 				CALL64R(RAX);
 				MOVZX32R16toR(EAX, EAX);
 				MOV32RtoM((uptr)&psxRegs.GPR.r[_Rt_], EAX);
@@ -1560,7 +1560,7 @@ static void recLW() {
 					if (!_Rt_) return;
 					iRegs[_Rt_].state = ST_UNK;
 
-					CALLFunc((uptr)GPU_readData);
+					CALLFunc((uptr)GPUreadData);
 					MOV32RtoM((uptr)&psxRegs.GPR.r[_Rt_], EAX);
 					return;
 
@@ -1568,7 +1568,7 @@ static void recLW() {
 					if (!_Rt_) return;
 					iRegs[_Rt_].state = ST_UNK;
 
-					CALLFunc((uptr)GPU_readStatus);
+					CALLFunc((uptr)GPUreadStatus);
 					MOV32RtoM((uptr)&psxRegs.GPR.r[_Rt_], EAX);
 					return;
 			}
@@ -1901,7 +1901,7 @@ static void recSH() {
 					MOV32MtoR(X86ARG2, (uptr)&psxRegs.GPR.r[_Rt_]);
 				}
 				MOV64ItoR(X86ARG1, addr);
-				CALLFunc  ((uptr)SPU_writeRegister);
+				CALLFunc  ((uptr)SPUwriteRegister);
 #ifndef __WIN32__
 				//resp+= 8;
 #endif
@@ -1976,7 +1976,7 @@ static void recSW() {
 					} else {
 						MOV32MtoR(X86ARG1, (uptr)&psxRegs.GPR.r[_Rt_]);
 					}
-					CALLFunc((uptr)GPU_writeData);
+					CALLFunc((uptr)GPUwriteData);
 #ifndef __WIN32__
 					//resp+= 4;
 #endif
@@ -1988,7 +1988,7 @@ static void recSW() {
 					} else {
 						MOV32MtoR(X86ARG1, (uptr)&psxRegs.GPR.r[_Rt_]);
 					}
-					CALLFunc((uptr)GPU_writeStatus);
+					CALLFunc((uptr)GPUwriteStatus);
 #ifndef __WIN32__
 					//resp+= 4;
 #endif

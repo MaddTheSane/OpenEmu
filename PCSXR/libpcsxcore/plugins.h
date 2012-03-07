@@ -28,28 +28,15 @@ extern "C" {
 
 //#define ENABLE_SIO1API 1
 
-#ifndef _WIN32
 
 typedef void* HWND;
 #define CALLBACK
 
-typedef long (*GPUopen)(unsigned long *, char *, char *);
-typedef long (*SPUopen)(void);
+extern long GPUopen(unsigned long *, char *, char *);
+extern long SPUopen(void);
 typedef long (*PADopen)(unsigned long *);
 typedef long (*NETopen)(unsigned long *);
 typedef long (*SIO1open)(unsigned long *);
-
-#else
-
-#include <windows.h>
-
-typedef long (CALLBACK* GPUopen)(HWND);
-typedef long (CALLBACK* SPUopen)(HWND);
-typedef long (CALLBACK* PADopen)(HWND);
-typedef long (CALLBACK* NETopen)(HWND);
-typedef long (CALLBACK* SIO1open)(HWND);
-
-#endif
 
 #include "spu.h"
 
@@ -61,72 +48,46 @@ void ReleasePlugins();
 int OpenPlugins();
 void ClosePlugins();
 
-typedef unsigned long (CALLBACK* PSEgetLibType)(void);
-typedef unsigned long (CALLBACK* PSEgetLibVersion)(void);
-typedef char *(CALLBACK* PSEgetLibName)(void);
+//typedef unsigned long (CALLBACK* PSEgetLibType)(void);
+//typedef unsigned long (CALLBACK* PSEgetLibVersion)(void);
+//typedef char *(CALLBACK* PSEgetLibName)(void);
 
 // GPU Functions
-typedef long (CALLBACK* GPUinit)(void);
-typedef long (CALLBACK* GPUshutdown)(void);
-typedef long (CALLBACK* GPUclose)(void);
-typedef void (CALLBACK* GPUwriteStatus)(uint32_t);
-typedef void (CALLBACK* GPUwriteData)(uint32_t);
-typedef void (CALLBACK* GPUwriteDataMem)(uint32_t *, int);
-typedef uint32_t (CALLBACK* GPUreadStatus)(void);
-typedef uint32_t (CALLBACK* GPUreadData)(void);
-typedef void (CALLBACK* GPUreadDataMem)(uint32_t *, int);
-typedef long (CALLBACK* GPUdmaChain)(uint32_t *,uint32_t);
-typedef void (CALLBACK* GPUupdateLace)(void);
-typedef long (CALLBACK* GPUconfigure)(void);
-typedef long (CALLBACK* GPUtest)(void);
-typedef void (CALLBACK* GPUabout)(void);
-typedef void (CALLBACK* GPUmakeSnapshot)(void);
-typedef void (CALLBACK* GPUkeypressed)(int);
-typedef void (CALLBACK* GPUdisplayText)(char *);
+extern long GPUinit(void);
+extern long GPUshutdown(void);
+extern long GPUclose(void);
+extern void GPUwriteStatus(uint32_t);
+extern void GPUwriteData(uint32_t);
+extern void GPUwriteDataMem(uint32_t *, int);
+extern uint32_t GPUreadStatus(void);
+extern uint32_t GPUreadData(void);
+extern void GPUreadDataMem(uint32_t *, int);
+extern long GPUdmaChain(uint32_t *,uint32_t);
+extern void GPUupdateLace(void);
+extern long GPUconfigure(void);
+extern long GPUtest(void);
+extern void GPUabout(void);
+extern void GPUmakeSnapshot(void);
+extern void GPUkeypressed(int);
+extern void GPUdisplayText(char *);
 typedef struct {
 	uint32_t ulFreezeVersion;
 	uint32_t ulStatus;
 	uint32_t ulControl[256];
 	unsigned char psxVRam[1024*512*2];
 } GPUFreeze_t;
-typedef long (CALLBACK* GPUfreeze)(uint32_t, GPUFreeze_t *);
-typedef long (CALLBACK* GPUgetScreenPic)(unsigned char *);
-typedef long (CALLBACK* GPUshowScreenPic)(unsigned char *);
-typedef void (CALLBACK* GPUclearDynarec)(void (CALLBACK *callback)(void));
-typedef void (CALLBACK* GPUhSync)(int);
-typedef void (CALLBACK* GPUvBlank)(int);
-typedef void (CALLBACK* GPUvisualVibration)(uint32_t, uint32_t);
-typedef void (CALLBACK* GPUcursor)(int, int, int);
-typedef void (CALLBACK* GPUaddVertex)(short,short,s64,s64,s64);
+extern long GPUfreeze(uint32_t, GPUFreeze_t *);
+extern long GPUgetScreenPic(unsigned char *);
+extern long GPUshowScreenPic(unsigned char *);
+extern void GPUclearDynarec(void (CALLBACK *callback)(void));
+extern void GPUhSync(int);
+extern void GPUvBlank(int);
+extern void GPUvisualVibration(uint32_t, uint32_t);
+extern void GPUcursor(int, int, int);
+extern void GPUaddVertex(short,short,s64,s64,s64);
 
-// GPU function pointers
-extern GPUupdateLace    GPU_updateLace;
-extern GPUinit          GPU_init;
-extern GPUshutdown      GPU_shutdown;
-extern GPUconfigure     GPU_configure;
-extern GPUtest          GPU_test;
-extern GPUabout         GPU_about;
-extern GPUopen          GPU_open;
-extern GPUclose         GPU_close;
-extern GPUreadStatus    GPU_readStatus;
-extern GPUreadData      GPU_readData;
-extern GPUreadDataMem   GPU_readDataMem;
-extern GPUwriteStatus   GPU_writeStatus;
-extern GPUwriteData     GPU_writeData;
-extern GPUwriteDataMem  GPU_writeDataMem;
-extern GPUdmaChain      GPU_dmaChain;
-extern GPUkeypressed    GPU_keypressed;
-extern GPUdisplayText   GPU_displayText;
-extern GPUmakeSnapshot  GPU_makeSnapshot;
-extern GPUfreeze        GPU_freeze;
-extern GPUgetScreenPic  GPU_getScreenPic;
-extern GPUshowScreenPic GPU_showScreenPic;
-extern GPUclearDynarec  GPU_clearDynarec;
-extern GPUhSync         GPU_hSync;
-extern GPUvBlank        GPU_vBlank;
-extern GPUvisualVibration GPU_visualVibration;
-extern GPUcursor        GPU_cursor;
-extern GPUaddVertex     GPU_addVertex;
+typedef long (CALLBACK* GPUshowScreenPicFunc)(unsigned char *);
+typedef long (CALLBACK* GPUdisplayTextFunc)( char *);
 
 // CD-ROM Functions
 typedef long (CALLBACK* CDRinit)(void);
@@ -187,21 +148,21 @@ extern CDRreadCDDA           CDR_readCDDA;
 extern CDRgetTE              CDR_getTE;
 
 // SPU Functions
-typedef long (CALLBACK* SPUinit)(void);
-typedef long (CALLBACK* SPUshutdown)(void);
-typedef long (CALLBACK* SPUclose)(void);
-typedef void (CALLBACK* SPUplaySample)(unsigned char);
-typedef void (CALLBACK* SPUwriteRegister)(unsigned long, unsigned short);
-typedef unsigned short (CALLBACK* SPUreadRegister)(unsigned long);
-typedef void (CALLBACK* SPUwriteDMA)(unsigned short);
-typedef unsigned short (CALLBACK* SPUreadDMA)(void);
-typedef void (CALLBACK* SPUwriteDMAMem)(unsigned short *, int);
-typedef void (CALLBACK* SPUreadDMAMem)(unsigned short *, int);
-typedef void (CALLBACK* SPUplayADPCMchannel)(xa_decode_t *);
-typedef void (CALLBACK* SPUregisterCallback)(void (CALLBACK *callback)(void));
-typedef long (CALLBACK* SPUconfigure)(void);
-typedef long (CALLBACK* SPUtest)(void);
-typedef void (CALLBACK* SPUabout)(void);
+extern long SPUinit(void);
+extern long SPUshutdown(void);
+extern long SPUclose(void);
+extern void SPUplaySample(unsigned char);
+extern void SPUwriteRegister(unsigned long, unsigned short);
+extern unsigned short SPUreadRegister(unsigned long);
+extern void SPUwriteDMA(unsigned short);
+extern unsigned short SPUreadDMA(void);
+extern void SPUwriteDMAMem(unsigned short *, int);
+extern void SPUreadDMAMem(unsigned short *, int);
+extern void SPUplayADPCMchannel(xa_decode_t *);
+extern void SPUregisterCallback(void (CALLBACK *callback)(void));
+extern long SPUconfigure(void);
+extern long SPUtest(void);
+extern void SPUabout(void);
 typedef struct {
 	unsigned char PluginName[8];
 	uint32_t PluginVersion;
@@ -211,30 +172,9 @@ typedef struct {
 	xa_decode_t xa;
 	unsigned char *SPUInfo;
 } SPUFreeze_t;
-typedef long (CALLBACK* SPUfreeze)(uint32_t, SPUFreeze_t *);
-typedef void (CALLBACK* SPUasync)(uint32_t);
-typedef void (CALLBACK* SPUplayCDDAchannel)(short *, int);
-
-// SPU function pointers
-extern SPUconfigure        SPU_configure;
-extern SPUabout            SPU_about;
-extern SPUinit             SPU_init;
-extern SPUshutdown         SPU_shutdown;
-extern SPUtest             SPU_test;
-extern SPUopen             SPU_open;
-extern SPUclose            SPU_close;
-extern SPUplaySample       SPU_playSample;
-extern SPUwriteRegister    SPU_writeRegister;
-extern SPUreadRegister     SPU_readRegister;
-extern SPUwriteDMA         SPU_writeDMA;
-extern SPUreadDMA          SPU_readDMA;
-extern SPUwriteDMAMem      SPU_writeDMAMem;
-extern SPUreadDMAMem       SPU_readDMAMem;
-extern SPUplayADPCMchannel SPU_playADPCMchannel;
-extern SPUfreeze           SPU_freeze;
-extern SPUregisterCallback SPU_registerCallback;
-extern SPUasync            SPU_async;
-extern SPUplayCDDAchannel  SPU_playCDDAchannel;
+extern long SPUfreeze(uint32_t, SPUFreeze_t *);
+extern void SPUasync(uint32_t);
+extern void SPUplayCDDAchannel(short *, int);
 
 // PAD Functions
 typedef long (CALLBACK* PADconfigure)(void);
@@ -305,8 +245,8 @@ typedef struct {
 	char CdromID[9];	// ie. 'SCPH12345', no \0 trailing character
 	char CdromLabel[11];
 	void *psxMem;
-	GPUshowScreenPic GPU_showScreenPic;
-	GPUdisplayText GPU_displayText;
+	GPUshowScreenPicFunc GPU_showScreenPic;
+	GPUdisplayTextFunc GPU_displayText;
 	PADsetSensitive PAD_setSensitive;
 	char GPUpath[256];	// paths must be absolute
 	char SPUpath[256];

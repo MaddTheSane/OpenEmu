@@ -225,7 +225,7 @@ static void *playthread(void *param)
 					memset( sndbuffer, 0, s );
 			}
 
-			SPU_playCDDAchannel((short *)sndbuffer, s);
+			SPUplayCDDAchannel((short *)sndbuffer, s);
 		}
 
 
@@ -921,7 +921,7 @@ static unsigned char * CALLBACK ISOgetBuffer(void) {
 // sector: byte 0 - minute; byte 1 - second; byte 2 - frame
 // does NOT uses bcd format
 static long CALLBACK ISOplay(unsigned char *time) {
-	if (SPU_playCDDAchannel != NULL) {
+	if (SPUplayCDDAchannel != NULL) {
 		if (subChanMixed) {
 			startCDDA(MSF2SECT(time[0], time[1], time[2]) * (CD_FRAMESIZE_RAW + SUB_FRAMESIZE));
 		}

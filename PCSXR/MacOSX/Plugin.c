@@ -31,7 +31,7 @@ void OnFile_Exit();
 unsigned long gpuDisp;
 
 long SPU__open(void) {
-	return SPU_open();
+	return SPUopen();
 }
 
 int StatesC = 0;
@@ -71,23 +71,23 @@ void SPUirq(void);
 int _OpenPlugins() {
 	int ret;
 
-	GPU_clearDynarec(clearDynarec);
+	GPUclearDynarec(clearDynarec);
 
 	ret = CDR_open();
 	if (ret < 0) { SysMessage(_("Error Opening CDR Plugin")); return -1; }
-	ret = SPU_open();
+	ret = SPUopen();
 	if (ret < 0) { SysMessage(_("Error Opening SPU Plugin")); return -1; }
-	SPU_registerCallback(SPUirq);
-	ret = GPU_open(&gpuDisp, "PCSXR", NULL);
+	SPUregisterCallback(SPUirq);
+	ret = GPUopen(&gpuDisp, "PCSXR", NULL);
 	if (ret < 0) { SysMessage(_("Error Opening GPU Plugin")); return -1; }
 	ret = PAD1_open(&gpuDisp);
 	if (ret < 0) { SysMessage(_("Error Opening PAD1 Plugin")); return -1; }
-    PAD1_registerVibration(GPU_visualVibration);
-    PAD1_registerCursor(GPU_cursor);
+    PAD1_registerVibration(GPUvisualVibration);
+    PAD1_registerCursor(GPUcursor);
 	ret = PAD2_open(&gpuDisp);
 	if (ret < 0) { SysMessage(_("Error Opening PAD2 Plugin")); return -1; }
-    PAD2_registerVibration(GPU_visualVibration);
-    PAD2_registerCursor(GPU_cursor);
+    PAD2_registerVibration(GPUvisualVibration);
+    PAD2_registerCursor(GPUcursor);
 
 	if (Config.UseNet && !NetOpened) {
 		netInfo info;
@@ -97,9 +97,9 @@ int _OpenPlugins() {
 		strncpy(info.CdromID, CdromId, 9);
 		strncpy(info.CdromLabel, CdromLabel, 9);
 		info.psxMem = psxM;
-		info.GPU_showScreenPic = GPU_showScreenPic;
-		info.GPU_displayText = GPU_displayText;
-		info.GPU_showScreenPic = GPU_showScreenPic;
+		info.GPU_showScreenPic = GPUshowScreenPic;
+		info.GPU_displayText = GPUdisplayText;
+		info.GPU_showScreenPic = GPUshowScreenPic;
 		info.PAD_setSensitive = PAD1_setSensitive;
 		sprintf(path, "%s%s", Config.BiosDir, Config.Bios);
 		strcpy(info.BIOSpath, path);
@@ -166,13 +166,13 @@ void ClosePlugins() {
 	//signal(SIGPIPE, SIG_DFL);
 	ret = CDR_close();
 	if (ret < 0) { SysMessage(_("Error Closing CDR Plugin")); return; }
-	ret = SPU_close();
+	ret = SPUclose();
 	if (ret < 0) { SysMessage(_("Error Closing SPU Plugin")); return; }
 	ret = PAD1_close();
 	if (ret < 0) { SysMessage(_("Error Closing PAD1 Plugin")); return; }
 	ret = PAD2_close();
 	if (ret < 0) { SysMessage(_("Error Closing PAD2 Plugin")); return; }
-	ret = GPU_close();
+	ret = GPUclose();
 	if (ret < 0) { SysMessage(_("Error Closing GPU Plugin")); return; }
 
 	if (Config.UseNet) {
@@ -184,17 +184,17 @@ void ResetPlugins() {
 	int ret;
 
 	CDR_shutdown();
-	GPU_shutdown();
-	SPU_shutdown();
+	GPUshutdown();
+	SPUshutdown();
 	PAD1_shutdown();
 	PAD2_shutdown();
 	if (Config.UseNet) NET_shutdown();
 
 	ret = CDR_init();
 	if (ret < 0) { SysMessage(_("CDRinit error: %d"), ret); return; }
-	ret = GPU_init();
+	ret = GPUinit();
 	if (ret < 0) { SysMessage(_("GPUinit error: %d"), ret); return; }
-	ret = SPU_init();
+	ret = SPUinit();
 	if (ret < 0) { SysMessage(_("SPUinit error: %d"), ret); return; }
 	ret = PAD1_init(1);
 	if (ret < 0) { SysMessage(_("PAD1init error: %d"), ret); return; }

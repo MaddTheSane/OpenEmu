@@ -1083,13 +1083,13 @@ void psxBios_GPU_dw() { // 0x46
 	PSXBIOS_LOG("psxBios_%s\n", biosA0n[0x46]);
 #endif
 
-	GPU_writeData(0xa0000000);
-	GPU_writeData((a1<<16)|(a0&0xffff));
-	GPU_writeData((a3<<16)|(a2&0xffff));
+	GPUwriteData(0xa0000000);
+	GPUwriteData((a1<<16)|(a0&0xffff));
+	GPUwriteData((a3<<16)|(a2&0xffff));
 	size = (a2*a3+1)/2;
 	ptr = (s32*)PSXM(Rsp[4]);  //that is correct?
 	do {
-		GPU_writeData(SWAP32(*ptr));
+		GPUwriteData(SWAP32(*ptr));
 		ptr++;
 	} while(--size);
 
@@ -1099,11 +1099,11 @@ void psxBios_GPU_dw() { // 0x46
 void psxBios_mem2vram() { // 0x47
 	int size;
 
-	GPU_writeData(0xa0000000);
-	GPU_writeData((a1<<16)|(a0&0xffff));
-	GPU_writeData((a3<<16)|(a2&0xffff));
+	GPUwriteData(0xa0000000);
+	GPUwriteData((a1<<16)|(a0&0xffff));
+	GPUwriteData((a3<<16)|(a2&0xffff));
 	size = (a2*a3+1)/2;
-	GPU_writeStatus(0x04000002);
+	GPUwriteStatus(0x04000002);
 	psxHwWrite32(0x1f8010f4,0);
 	psxHwWrite32(0x1f8010f0,psxHwRead32(0x1f8010f0)|0x800);
 	psxHwWrite32(0x1f8010a0,Rsp[4]);//might have a buggy...
@@ -1114,12 +1114,12 @@ void psxBios_mem2vram() { // 0x47
 }
 
 void psxBios_SendGPU() { // 0x48
-	GPU_writeStatus(a0);
+	GPUwriteStatus(a0);
 	pc0 = ra;
 }
 
 void psxBios_GPU_cw() { // 0x49
-	GPU_writeData(a0);
+	GPUwriteData(a0);
 	pc0 = ra;
 }
 
@@ -1127,7 +1127,7 @@ void psxBios_GPU_cwb() { // 0x4a
 	s32 *ptr = (s32*)Ra0;
 	int size = a1;
 	while(size--) {
-		GPU_writeData(SWAP32(*ptr));
+		GPUwriteData(SWAP32(*ptr));
 		ptr++;
 	}
 
@@ -1146,15 +1146,15 @@ void psxBios_GPU_SendPackets() { //4b:
 
 void psxBios_sys_a0_4c() { // 0x4c GPU relate
 	psxHwWrite32(0x1f8010a8,0x00000401);
-	GPU_writeData(0x0400000);
-	GPU_writeData(0x0200000);
-	GPU_writeData(0x0100000);
+	GPUwriteData(0x0400000);
+	GPUwriteData(0x0200000);
+	GPUwriteData(0x0100000);
 
 	pc0 = ra;
 }
 
 void psxBios_GPU_GetGPUStatus() { // 0x4d
-	v0 = GPU_readStatus();
+	v0 = GPUreadStatus();
 	pc0 = ra;
 }
 

@@ -27,34 +27,6 @@
 static char IsoFile[MAXPATHLEN] = "";
 static s64 cdOpenCaseTime = 0;
 
-GPUupdateLace         GPU_updateLace;
-GPUinit               GPU_init;
-GPUshutdown           GPU_shutdown;
-GPUconfigure          GPU_configure;
-GPUtest               GPU_test;
-GPUabout              GPU_about;
-GPUopen               GPU_open;
-GPUclose              GPU_close;
-GPUreadStatus         GPU_readStatus;
-GPUreadData           GPU_readData;
-GPUreadDataMem        GPU_readDataMem;
-GPUwriteStatus        GPU_writeStatus;
-GPUwriteData          GPU_writeData;
-GPUwriteDataMem       GPU_writeDataMem;
-GPUdmaChain           GPU_dmaChain;
-GPUkeypressed         GPU_keypressed;
-GPUdisplayText        GPU_displayText;
-GPUmakeSnapshot       GPU_makeSnapshot;
-GPUfreeze             GPU_freeze;
-GPUgetScreenPic       GPU_getScreenPic;
-GPUshowScreenPic      GPU_showScreenPic;
-GPUclearDynarec       GPU_clearDynarec;
-GPUhSync              GPU_hSync;
-GPUvBlank             GPU_vBlank;
-GPUvisualVibration    GPU_visualVibration;
-GPUcursor             GPU_cursor;
-GPUaddVertex          GPU_addVertex;
-
 CDRinit               CDR_init;
 CDRshutdown           CDR_shutdown;
 CDRopen               CDR_open;
@@ -74,26 +46,6 @@ CDRabout              CDR_about;
 CDRsetfilename        CDR_setfilename;
 CDRreadCDDA           CDR_readCDDA;
 CDRgetTE              CDR_getTE;
-
-SPUconfigure          SPU_configure;
-SPUabout              SPU_about;
-SPUinit               SPU_init;
-SPUshutdown           SPU_shutdown;
-SPUtest               SPU_test;
-SPUopen               SPU_open;
-SPUclose              SPU_close;
-SPUplaySample         SPU_playSample;
-SPUwriteRegister      SPU_writeRegister;
-SPUreadRegister       SPU_readRegister;
-SPUwriteDMA           SPU_writeDMA;
-SPUreadDMA            SPU_readDMA;
-SPUwriteDMAMem        SPU_writeDMAMem;
-SPUreadDMAMem         SPU_readDMAMem;
-SPUplayADPCMchannel   SPU_playADPCMchannel;
-SPUfreeze             SPU_freeze;
-SPUregisterCallback   SPU_registerCallback;
-SPUasync              SPU_async;
-SPUplayCDDAchannel    SPU_playCDDAchannel;
 
 PADconfigure          PAD1_configure;
 PADabout              PAD1_about;
@@ -798,24 +750,6 @@ void ReleasePlugins() {
 	if (hPAD2Driver != NULL) PAD2_shutdown();
 
 	if (Config.UseNet && hNETDriver != NULL) NET_shutdown();
-
-	if (hCDRDriver != NULL) SysCloseLibrary(hCDRDriver); hCDRDriver = NULL;
-	if (hGPUDriver != NULL) SysCloseLibrary(hGPUDriver); hGPUDriver = NULL;
-	if (hSPUDriver != NULL) SysCloseLibrary(hSPUDriver); hSPUDriver = NULL;
-	if (hPAD1Driver != NULL) SysCloseLibrary(hPAD1Driver); hPAD1Driver = NULL;
-	if (hPAD2Driver != NULL) SysCloseLibrary(hPAD2Driver); hPAD2Driver = NULL;
-
-	if (Config.UseNet && hNETDriver != NULL) {
-		SysCloseLibrary(hNETDriver); hNETDriver = NULL;
-	}
-
-#ifdef ENABLE_SIO1API
-	if (hSIO1Driver != NULL) {
-		SIO1_shutdown();
-		SysCloseLibrary(hSIO1Driver);
-		hSIO1Driver = NULL;
-	}
-#endif
 }
 
 void SetIsoFile(const char *filename) {

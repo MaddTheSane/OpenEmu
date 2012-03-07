@@ -359,11 +359,11 @@ done:
 	BOOL emuWasPaused = [EmuThread pauseSafe];
 	char Text[256];
 
-	GPU_freeze(2, (GPUFreeze_t *)&num);
+	GPUfreeze(2, (GPUFreeze_t *)&num);
 	int ret = SaveState([path fileSystemRepresentation]);
 	if (ret == 0) sprintf (Text, _("*PCSXR*: Saved State %d"), num+1);
 	else sprintf (Text, _("*PCSXR*: Error Saving State %d"), num+1);
-	GPU_displayText(Text);
+	GPUdisplayText(Text);
 
 	if (!emuWasPaused) {
 		[EmuThread resume];
@@ -379,7 +379,7 @@ done:
 	defrostPath = path;
 	[EmuThread reset];
 
-	GPU_displayText(_("*PCSXR*: Loaded State"));
+	GPUdisplayText(_("*PCSXR*: Loaded State"));
 	return YES;
 }
 

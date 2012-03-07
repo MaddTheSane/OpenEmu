@@ -270,7 +270,7 @@ void psxRcntUpdate()
     {
         psxRcntReset( 3 );
 
-        GPU_hSync(hSyncCount);
+        GPUhSync(hSyncCount);
 
         spuSyncCount++;
         hSyncCount++;
@@ -280,16 +280,16 @@ void psxRcntUpdate()
         {
             spuSyncCount = 0;
 
-            if( SPU_async )
+            if( SPUasync )
             {
-                SPU_async( SpuUpdInterval[Config.PsxType] * rcnts[3].target );
+                SPUasync( SpuUpdInterval[Config.PsxType] * rcnts[3].target );
             }
         }
 
         // VSync irq.
         if( hSyncCount == VBlankStart[Config.PsxType] )
         {
-            GPU_vBlank( 1 );
+            GPUvBlank( 1 );
 
             // For the best times. :D
             //setIrq( 0x01 );
@@ -300,10 +300,10 @@ void psxRcntUpdate()
         {
             hSyncCount = 0;
 
-            GPU_vBlank( 0 );
+            GPUvBlank( 0 );
             setIrq( 0x01 );
 
-            GPU_updateLace();
+            GPUupdateLace();
             EmuUpdate();
         }
     }

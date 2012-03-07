@@ -406,7 +406,7 @@ void gteRTPS() {
 	gteSY2 = limG2(F((s64)gteOFY + ((s64)gteIR2 * quotient)) >> 16);
 
     fquotient = flimE((float)(gteH << 16) / (float)gteSZ3);
-    GPU_addVertex(gteSX2,
+    GPUaddVertex(gteSX2,
                   gteSY2,
                   limG1_ia((s64)gteOFX + (s64)(gteIR1 * fquotient)), // TODO: MAC1 calc instead of IR1.
                   limG2_ia((s64)gteOFY + (s64)(gteIR2 * fquotient)), // TODO: MAC2 calc instead of IR2.
@@ -444,7 +444,7 @@ void gteRTPT() {
 		fSY(v) = limG2(F((s64)gteOFY + ((s64)gteIR2 * quotient)) >> 16);
 
         fquotient = flimE((float)(gteH << 16) / (float)fSZ(v));
-		GPU_addVertex(fSX(v),
+		GPUaddVertex(fSX(v),
                       fSY(v),
                       limG1_ia((s64)gteOFX + (s64)(gteIR1 * fquotient)), // TODO: MAC1 calc instead of IR1.
                       limG2_ia((s64)gteOFY + (s64)(gteIR2 * fquotient)), // TODO: MAC2 calc instead of IR2.
