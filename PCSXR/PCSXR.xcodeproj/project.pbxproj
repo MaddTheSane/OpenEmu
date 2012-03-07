@@ -81,15 +81,10 @@
 		5543DF471505728300820EC3 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEF81505728300820EC3 /* util.c */; };
 		5543DF481505728300820EC3 /* xkb.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEFA1505728300820EC3 /* xkb.c */; };
 		5543DF491505728300820EC3 /* cfg.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEFC1505728300820EC3 /* cfg.c */; };
-		5543DF4B1505728300820EC3 /* drawgl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF001505728300820EC3 /* drawgl.m */; };
 		5543DF4C1505728300820EC3 /* fps.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF031505728300820EC3 /* fps.c */; };
 		5543DF4D1505728300820EC3 /* gpu.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF051505728300820EC3 /* gpu.c */; };
 		5543DF4F1505728300820EC3 /* key.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF0B1505728300820EC3 /* key.c */; };
 		5543DF511505728300820EC3 /* menu.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF0E1505728300820EC3 /* menu.c */; };
-		5543DF521505728300820EC3 /* PluginConfigController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF111505728300820EC3 /* PluginConfigController.m */; };
-		5543DF531505728300820EC3 /* PluginGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF131505728300820EC3 /* PluginGLView.m */; };
-		5543DF541505728300820EC3 /* PluginWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF151505728300820EC3 /* PluginWindow.m */; };
-		5543DF551505728300820EC3 /* PluginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF171505728300820EC3 /* PluginWindowController.m */; };
 		5543DF561505728300820EC3 /* prim.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF181505728300820EC3 /* prim.c */; };
 		5543DF571505728300820EC3 /* soft.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF1A1505728300820EC3 /* soft.c */; };
 		5543DF581505728300820EC3 /* zn.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF1D1505728300820EC3 /* zn.c */; };
@@ -107,8 +102,8 @@
 		5543DF69150579E700820EC3 /* PCSXRHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF68150579E600820EC3 /* PCSXRHelpers.m */; };
 		5543DF6C150588E800820EC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5543DF6A150588E800820EC3 /* Localizable.strings */; };
 		556820A815049FD400C6F12B /* ConfigurationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568208D15049FD400C6F12B /* ConfigurationController.m */; };
-		556820AA15049FD400C6F12B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568209115049FD400C6F12B /* main.m */; };
 		556820B315049FD400C6F12B /* Plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = 556820A315049FD400C6F12B /* Plugin.c */; };
+		55D250161506929000E23267 /* EmuThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568208F15049FD400C6F12B /* EmuThread.m */; };
 		82789B710E70D27D00C01C82 /* PCSXRGameCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 82789B700E70D27D00C01C82 /* PCSXRGameCore.m */; };
 		82C9CA720F0847310071460B /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 82C9CA710F0847310071460B /* dsa_pub.pem */; };
 		82CAFDD50FEDD8F100CCDC7E /* config.yaml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82CAFA890FED9C6B00CCDC7E /* config.yaml */; };
@@ -1066,7 +1061,6 @@
 				553FC48A150498AD00871137 /* socket.c in Sources */,
 				553FC48B150498AD00871137 /* spu.c in Sources */,
 				556820A815049FD400C6F12B /* ConfigurationController.m in Sources */,
-				556820AA15049FD400C6F12B /* main.m in Sources */,
 				556820B315049FD400C6F12B /* Plugin.c in Sources */,
 				5543DF3E1505728300820EC3 /* cdr-macosx.c in Sources */,
 				5543DF401505728300820EC3 /* cdr.c in Sources */,
@@ -1079,15 +1073,10 @@
 				5543DF471505728300820EC3 /* util.c in Sources */,
 				5543DF481505728300820EC3 /* xkb.c in Sources */,
 				5543DF491505728300820EC3 /* cfg.c in Sources */,
-				5543DF4B1505728300820EC3 /* drawgl.m in Sources */,
 				5543DF4C1505728300820EC3 /* fps.c in Sources */,
 				5543DF4D1505728300820EC3 /* gpu.c in Sources */,
 				5543DF4F1505728300820EC3 /* key.c in Sources */,
 				5543DF511505728300820EC3 /* menu.c in Sources */,
-				5543DF521505728300820EC3 /* PluginConfigController.m in Sources */,
-				5543DF531505728300820EC3 /* PluginGLView.m in Sources */,
-				5543DF541505728300820EC3 /* PluginWindow.m in Sources */,
-				5543DF551505728300820EC3 /* PluginWindowController.m in Sources */,
 				5543DF561505728300820EC3 /* prim.c in Sources */,
 				5543DF571505728300820EC3 /* soft.c in Sources */,
 				5543DF581505728300820EC3 /* zn.c in Sources */,
@@ -1103,6 +1092,7 @@
 				5543DF661505728300820EC3 /* spu.c in Sources */,
 				5543DF671505728300820EC3 /* xa.c in Sources */,
 				5543DF69150579E700820EC3 /* PCSXRHelpers.m in Sources */,
+				55D250161506929000E23267 /* EmuThread.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
