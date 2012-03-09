@@ -127,6 +127,13 @@
 			remoteGlobalIDString = 82444BA10F51256C007C171B;
 			remoteInfo = OpenEmuBase;
 		};
+		5524E751150A420F004F6E07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82444BC40F512685007C171B /* OpenEmu.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 94D7E8C915073BA000FBDD85;
+			remoteInfo = NDS;
+		};
 		556821831505546200C6F12B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 82444BC40F512685007C171B /* OpenEmu.xcodeproj */;
@@ -269,6 +276,7 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		3D6030E914DF715100E9AF58 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5524E7B2150A4774004F6E07 /* cdromfuncs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cdromfuncs.h; sourceTree = "<group>"; };
 		553FC418150498AD00871137 /* cdriso.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cdriso.c; sourceTree = "<group>"; };
 		553FC419150498AD00871137 /* cdriso.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cdriso.h; sourceTree = "<group>"; };
 		553FC41A150498AD00871137 /* cdrom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cdrom.c; sourceTree = "<group>"; };
@@ -604,6 +612,7 @@
 				553FC462150498AD00871137 /* spu.c */,
 				553FC463150498AD00871137 /* spu.h */,
 				553FC464150498AD00871137 /* system.h */,
+				5524E7B2150A4774004F6E07 /* cdromfuncs.h */,
 			);
 			path = libpcsxcore;
 			sourceTree = "<group>";
@@ -796,6 +805,7 @@
 				83DD882E149BF2000055E009 /* NeoGeo Pocket.oesystemplugin */,
 				83DD8830149BF2000055E009 /* GameGear.oesystemplugin */,
 				556821841505546200C6F12B /* PSX.oesystemplugin */,
+				5524E752150A420F004F6E07 /* NDS.oesystemplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -883,6 +893,13 @@
 			fileType = wrapper.framework;
 			path = OpenEmuBase.framework;
 			remoteRef = 3DFAB009144643AA005EF0C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5524E752150A420F004F6E07 /* NDS.oesystemplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NDS.oesystemplugin;
+			remoteRef = 5524E751150A420F004F6E07 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		556821841505546200C6F12B /* PSX.oesystemplugin */ = {

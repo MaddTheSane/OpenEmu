@@ -23,29 +23,30 @@
 
 #include "plugins.h"
 #include "cdriso.h"
+#include "cdromfuncs.h"
 
 static char IsoFile[MAXPATHLEN] = "";
 static s64 cdOpenCaseTime = 0;
 
-CDRinit               CDR_init;
-CDRshutdown           CDR_shutdown;
-CDRopen               CDR_open;
-CDRclose              CDR_close;
-CDRtest               CDR_test;
-CDRgetTN              CDR_getTN;
-CDRgetTD              CDR_getTD;
-CDRreadTrack          CDR_readTrack;
-CDRgetBuffer          CDR_getBuffer;
-CDRplay               CDR_play;
-CDRstop               CDR_stop;
-CDRgetStatus          CDR_getStatus;
-CDRgetDriveLetter     CDR_getDriveLetter;
-CDRgetBufferSub       CDR_getBufferSub;
-CDRconfigure          CDR_configure;
-CDRabout              CDR_about;
-CDRsetfilename        CDR_setfilename;
-CDRreadCDDA           CDR_readCDDA;
-CDRgetTE              CDR_getTE;
+CDRinitFunc               CDR_init;
+CDRshutdownFunc           CDR_shutdown;
+CDRopenFunc               CDR_open;
+CDRcloseFunc              CDR_close;
+CDRtestFunc               CDR_test;
+CDRgetTNFunc              CDR_getTN;
+CDRgetTDFunc              CDR_getTD;
+CDRreadTrackFunc          CDR_readTrack;
+CDRgetBufferFunc          CDR_getBuffer;
+CDRplayFunc               CDR_play;
+CDRstopFunc               CDR_stop;
+CDRgetStatusFunc          CDR_getStatus;
+CDRgetDriveLetterFunc     CDR_getDriveLetter;
+CDRgetBufferSubFunc       CDR_getBufferSub;
+CDRconfigureFunc          CDR_configure;
+CDRaboutFunc              CDR_about;
+CDRsetfilenameFunc        CDR_setfilename;
+CDRreadCDDAFunc           CDR_readCDDA;
+CDRgetTEFunc              CDR_getTE;
 
 PADconfigure          PAD1_configure;
 PADabout              PAD1_about;
@@ -177,42 +178,6 @@ void CALLBACK GPU__addVertex(short sx,short sy,s64 fx,s64 fy,s64 fz) {}
 	LoadSym(GPU_##dest, GPU##dest, name, FALSE);
 
 static int LoadGPUplugin(const char *GPUdll) {
-	void *drv;
-
-	hGPUDriver = SysLoadLibrary(GPUdll);
-	if (hGPUDriver == NULL) {
-		GPU_configure = NULL;
-		SysMessage (_("Could not load GPU plugin %s!"), GPUdll); return -1;
-	}
-	drv = hGPUDriver;
-	LoadGpuSym1(init, "GPUinit");
-	LoadGpuSym1(shutdown, "GPUshutdown");
-	LoadGpuSym1(open, "GPUopen");
-	LoadGpuSym1(close, "GPUclose");
-	LoadGpuSym1(readData, "GPUreadData");
-	LoadGpuSym1(readDataMem, "GPUreadDataMem");
-	LoadGpuSym1(readStatus, "GPUreadStatus");
-	LoadGpuSym1(writeData, "GPUwriteData");
-	LoadGpuSym1(writeDataMem, "GPUwriteDataMem");
-	LoadGpuSym1(writeStatus, "GPUwriteStatus");
-	LoadGpuSym1(dmaChain, "GPUdmaChain");
-	LoadGpuSym1(updateLace, "GPUupdateLace");
-	LoadGpuSym0(keypressed, "GPUkeypressed");
-	LoadGpuSym0(displayText, "GPUdisplayText");
-	LoadGpuSym0(makeSnapshot, "GPUmakeSnapshot");
-	LoadGpuSym1(freeze, "GPUfreeze");
-	LoadGpuSym0(getScreenPic, "GPUgetScreenPic");
-	LoadGpuSym0(showScreenPic, "GPUshowScreenPic");
-	LoadGpuSym0(clearDynarec, "GPUclearDynarec");
-    LoadGpuSym0(hSync, "GPUhSync");
-    LoadGpuSym0(vBlank, "GPUvBlank");
-    LoadGpuSym0(visualVibration, "GPUvisualVibration");
-    LoadGpuSym0(cursor, "GPUcursor");
-	LoadGpuSym0(addVertex, "GPUaddVertex");
-	LoadGpuSym0(configure, "GPUconfigure");
-	LoadGpuSym0(test, "GPUtest");
-	LoadGpuSym0(about, "GPUabout");
-
 	return 0;
 }
 
@@ -246,40 +211,34 @@ long CALLBACK CDR__setfilename(char*filename) { return 0; }
 #define LoadCdrSymN(dest, name) \
 	LoadSym(CDR_##dest, CDR##dest, name, FALSE);
 
-static int LoadCDRplugin(const char *CDRdll) {
-	void *drv;
+#define SetCDRFunc(dest) \
+	CDR_##dest = CDR##dest
 
-	if (CDRdll == NULL) {
+static int LoadCDRplugin(const char *CDRdll) {
+	if (UsingIso()) {
 		cdrIsoInit();
 		return 0;
 	}
-
-	hCDRDriver = SysLoadLibrary(CDRdll);
-	if (hCDRDriver == NULL) {
-		CDR_configure = NULL;
-		SysMessage (_("Could not load CD-ROM plugin %s!"), CDRdll);  return -1;
-	}
-	drv = hCDRDriver;
-	LoadCdrSym1(init, "CDRinit");
-	LoadCdrSym1(shutdown, "CDRshutdown");
-	LoadCdrSym1(open, "CDRopen");
-	LoadCdrSym1(close, "CDRclose");
-	LoadCdrSym1(getTN, "CDRgetTN");
-	LoadCdrSym1(getTD, "CDRgetTD");
-	LoadCdrSym1(readTrack, "CDRreadTrack");
-	LoadCdrSym1(getBuffer, "CDRgetBuffer");
-	LoadCdrSym1(getBufferSub, "CDRgetBufferSub");
-	LoadCdrSym0(play, "CDRplay");
-	LoadCdrSym0(stop, "CDRstop");
-	LoadCdrSym0(getStatus, "CDRgetStatus");
-	LoadCdrSym0(getDriveLetter, "CDRgetDriveLetter");
-	LoadCdrSym0(configure, "CDRconfigure");
-	LoadCdrSym0(test, "CDRtest");
-	LoadCdrSym0(about, "CDRabout");
-	LoadCdrSym0(setfilename, "CDRsetfilename");
-	LoadCdrSymN(readCDDA, "CDRreadCDDA");
-	LoadCdrSymN(getTE, "CDRgetTE");
-
+	
+	SetCDRFunc(init);
+	SetCDRFunc(shutdown);
+	SetCDRFunc(open);
+	SetCDRFunc(close);
+	SetCDRFunc(getTN);
+	SetCDRFunc(getTD);
+	SetCDRFunc(readTrack);
+	SetCDRFunc(getBuffer);
+	SetCDRFunc(getBufferSub);
+	SetCDRFunc(play);
+	SetCDRFunc(stop);
+	SetCDRFunc(getStatus);
+	SetCDRFunc(getDriveLetter);
+	SetCDRFunc(configure);
+	SetCDRFunc(test);
+	SetCDRFunc(about);
+	SetCDRFunc(setfilename);
+	SetCDRFunc(readCDDA);
+	SetCDRFunc(getTE);
 	return 0;
 }
 
@@ -300,33 +259,6 @@ long CALLBACK SPU__test(void) { return 0; }
 	LoadSym(SPU_##dest, SPU##dest, name, FALSE);
 
 static int LoadSPUplugin(const char *SPUdll) {
-	void *drv;
-
-	hSPUDriver = SysLoadLibrary(SPUdll);
-	if (hSPUDriver == NULL) {
-		SPU_configure = NULL;
-		SysMessage (_("Could not load SPU plugin %s!"), SPUdll); return -1;
-	}
-	drv = hSPUDriver;
-	LoadSpuSym1(init, "SPUinit");
-	LoadSpuSym1(shutdown, "SPUshutdown");
-	LoadSpuSym1(open, "SPUopen");
-	LoadSpuSym1(close, "SPUclose");
-	LoadSpuSym0(configure, "SPUconfigure");
-	LoadSpuSym0(about, "SPUabout");
-	LoadSpuSym0(test, "SPUtest");
-	LoadSpuSym1(writeRegister, "SPUwriteRegister");
-	LoadSpuSym1(readRegister, "SPUreadRegister");
-	LoadSpuSym1(writeDMA, "SPUwriteDMA");
-	LoadSpuSym1(readDMA, "SPUreadDMA");
-	LoadSpuSym1(writeDMAMem, "SPUwriteDMAMem");
-	LoadSpuSym1(readDMAMem, "SPUreadDMAMem");
-	LoadSpuSym1(playADPCMchannel, "SPUplayADPCMchannel");
-	LoadSpuSym1(freeze, "SPUfreeze");
-	LoadSpuSym1(registerCallback, "SPUregisterCallback");
-	LoadSpuSymN(async, "SPUasync");
-	LoadSpuSymN(playCDDAchannel, "SPUplayCDDAchannel");
-
 	return 0;
 }
 
@@ -713,9 +645,9 @@ int LoadPlugins() {
 
 	ret = CDR_init();
 	if (ret < 0) { SysMessage (_("Error initializing CD-ROM plugin: %d"), ret); return -1; }
-	ret = GPU_init();
+	ret = GPUinit();
 	if (ret < 0) { SysMessage (_("Error initializing GPU plugin: %d"), ret); return -1; }
-	ret = SPU_init();
+	ret = SPUinit();
 	if (ret < 0) { SysMessage (_("Error initializing SPU plugin: %d"), ret); return -1; }
 	ret = PAD1_init(1);
 	if (ret < 0) { SysMessage (_("Error initializing Controller 1 plugin: %d"), ret); return -1; }
@@ -744,8 +676,8 @@ void ReleasePlugins() {
 	NetOpened = FALSE;
 
 	if (hCDRDriver != NULL || cdrIsoActive()) CDR_shutdown();
-	if (hGPUDriver != NULL) GPU_shutdown();
-	if (hSPUDriver != NULL) SPU_shutdown();
+	if (hGPUDriver != NULL) GPUshutdown();
+	if (hSPUDriver != NULL) SPUshutdown();
 	if (hPAD1Driver != NULL) PAD1_shutdown();
 	if (hPAD2Driver != NULL) PAD2_shutdown();
 
