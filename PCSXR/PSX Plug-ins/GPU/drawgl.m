@@ -16,8 +16,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#import "PluginWindowController.h"
-#import "PluginGLView.h"
 #include "ExtendedKeys.h"
 #include "externals.h"
 #include "draw.h"
@@ -49,14 +47,19 @@ char *			Xpixels;
 char *         pCaptionText;
 
 //static PluginWindowController *windowController;
-static PluginGLView *glView;
+//static PluginGLView *glView;
+static unsigned char* image = NULL;
+#define image_width  640
+#define image_height 480
+#define image_depth 32
+
 
 ////////////////////////////////////////////////////////////////////////
 
 void DoBufferSwap(void)                                // SWAP BUFFERS
 {
 #if 1
-	[glView swapBuffer];
+	//[glView swapBuffer];
 #else
 	static long long lastTickCount = -1;
 	static int skipCount = 0;
@@ -83,7 +86,7 @@ void DoBufferSwap(void)                                // SWAP BUFFERS
 void DoClearScreenBuffer(void)                         // CLEAR DX BUFFER
 {
 	// clear the screen, and DON'T flush it
-	[glView clearBuffer:NO];
+	//[glView clearBuffer:NO];
 }
 
 
@@ -92,7 +95,7 @@ void DoClearScreenBuffer(void)                         // CLEAR DX BUFFER
 void DoClearFrontBuffer(void)                          // CLEAR DX BUFFER
 {
 	// clear the screen, and flush it
-	[glView clearBuffer:YES];
+	//[glView clearBuffer:YES];
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -112,14 +115,17 @@ unsigned long ulInitDisplay(void)	// OPEN GAME WINDOW
 		szDispBuf[0]=0;
 		BuildDispMenu(0);
 	}
+	image = calloc(((image_width * image_height) / 3) * 4, image_depth >> 3);
+
 	
-	PluginWindowController *windowController = [PluginWindowController openGameView];
-	glView = [windowController openGLView];
+	//PluginWindowController *windowController = [PluginWindowController openGameView];
+	//glView = [windowController openGLView];
 	
-    NSString *title = [NSString stringWithCString:pCaptionText encoding:NSUTF8StringEncoding];
-	[[windowController window] setTitle:title];
+   // NSString *title = [NSString stringWithCString:pCaptionText encoding:NSUTF8StringEncoding];
+	//[[windowController window] setTitle:title];
 	
-	return (unsigned long)[windowController window];
+	//return (unsigned long)[windowController window];
+	return (unsigned long)image;
 }
 
 
@@ -127,12 +133,15 @@ unsigned long ulInitDisplay(void)	// OPEN GAME WINDOW
 
 void CloseDisplay(void)
 {
+#if 0
 	if (gameController) {
 		[gameController close];
 		[gameController release];
 		gameController = nil;
 		gameWindow = nil;
 	}
+#endif
+	free(image);
 }
 
 
@@ -176,7 +185,9 @@ void HandleKey(int keycode)
 {
 	switch (keycode) {
 		case GPU_FULLSCREEN_KEY:
-			[gameController setFullscreen:![gameController fullscreen]];
+			//[gameController setFullscreen:![gameController fullscreen]];
+			break;
+		default:
 			break;
 	}
 }

@@ -37,6 +37,8 @@
 /* Begin PBXBuildFile section */
 		3D60316214DF7D0B00E9AF58 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6030E914DF715100E9AF58 /* libz.dylib */; };
 		3DFAB00C144644A5005EF0C3 /* OpenEmuBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFAB00A144643AA005EF0C3 /* OpenEmuBase.framework */; };
+		5524E830150AC36F004F6E07 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5524E82F150AC36F004F6E07 /* IOKit.framework */; };
+		5524E831150AC50A004F6E07 /* drawgl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF001505728300820EC3 /* drawgl.m */; };
 		553FC465150498AD00871137 /* cdriso.c in Sources */ = {isa = PBXBuildFile; fileRef = 553FC418150498AD00871137 /* cdriso.c */; };
 		553FC466150498AD00871137 /* cdrom.c in Sources */ = {isa = PBXBuildFile; fileRef = 553FC41A150498AD00871137 /* cdrom.c */; };
 		553FC467150498AD00871137 /* cheat.c in Sources */ = {isa = PBXBuildFile; fileRef = 553FC41C150498AD00871137 /* cheat.c */; };
@@ -74,23 +76,13 @@
 		5543DF401505728300820EC3 /* cdr.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEED1505728300820EC3 /* cdr.c */; };
 		5543DF411505728300820EC3 /* cfg.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEEF1505728300820EC3 /* cfg.c */; };
 		5543DF421505728300820EC3 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEF01505728300820EC3 /* util.c */; };
-		5543DF431505728300820EC3 /* analog.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEF21505728300820EC3 /* analog.c */; };
-		5543DF441505728300820EC3 /* cfg.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEF31505728300820EC3 /* cfg.c */; };
-		5543DF451505728300820EC3 /* pad.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEF51505728300820EC3 /* pad.c */; };
-		5543DF461505728300820EC3 /* sdljoy.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEF71505728300820EC3 /* sdljoy.c */; };
-		5543DF471505728300820EC3 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEF81505728300820EC3 /* util.c */; };
-		5543DF481505728300820EC3 /* xkb.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEFA1505728300820EC3 /* xkb.c */; };
-		5543DF491505728300820EC3 /* cfg.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEFC1505728300820EC3 /* cfg.c */; };
 		5543DF4C1505728300820EC3 /* fps.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF031505728300820EC3 /* fps.c */; };
 		5543DF4D1505728300820EC3 /* gpu.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF051505728300820EC3 /* gpu.c */; };
 		5543DF4F1505728300820EC3 /* key.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF0B1505728300820EC3 /* key.c */; };
 		5543DF511505728300820EC3 /* menu.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF0E1505728300820EC3 /* menu.c */; };
 		5543DF561505728300820EC3 /* prim.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF181505728300820EC3 /* prim.c */; };
 		5543DF571505728300820EC3 /* soft.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF1A1505728300820EC3 /* soft.c */; };
-		5543DF581505728300820EC3 /* zn.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF1D1505728300820EC3 /* zn.c */; };
 		5543DF591505728300820EC3 /* adsr.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF1F1505728300820EC3 /* adsr.c */; };
-		5543DF5A1505728300820EC3 /* alsa.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF211505728300820EC3 /* alsa.c */; };
-		5543DF5B1505728300820EC3 /* cfg.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF221505728300820EC3 /* cfg.c */; };
 		5543DF5C1505728300820EC3 /* dma.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF241505728300820EC3 /* dma.c */; };
 		5543DF5D1505728300820EC3 /* externals.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF271505728300820EC3 /* externals.c */; };
 		5543DF5E1505728300820EC3 /* freeze.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF291505728300820EC3 /* freeze.c */; };
@@ -101,7 +93,6 @@
 		5543DF671505728300820EC3 /* xa.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF3A1505728300820EC3 /* xa.c */; };
 		5543DF69150579E700820EC3 /* PCSXRHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF68150579E600820EC3 /* PCSXRHelpers.m */; };
 		5543DF6C150588E800820EC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5543DF6A150588E800820EC3 /* Localizable.strings */; };
-		556820A815049FD400C6F12B /* ConfigurationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568208D15049FD400C6F12B /* ConfigurationController.m */; };
 		556820B315049FD400C6F12B /* Plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = 556820A315049FD400C6F12B /* Plugin.c */; };
 		55D250161506929000E23267 /* EmuThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568208F15049FD400C6F12B /* EmuThread.m */; };
 		82789B710E70D27D00C01C82 /* PCSXRGameCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 82789B700E70D27D00C01C82 /* PCSXRGameCore.m */; };
@@ -277,6 +268,7 @@
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		3D6030E914DF715100E9AF58 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		5524E7B2150A4774004F6E07 /* cdromfuncs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cdromfuncs.h; sourceTree = "<group>"; };
+		5524E82F150AC36F004F6E07 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		553FC418150498AD00871137 /* cdriso.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cdriso.c; sourceTree = "<group>"; };
 		553FC419150498AD00871137 /* cdriso.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cdriso.h; sourceTree = "<group>"; };
 		553FC41A150498AD00871137 /* cdrom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cdrom.c; sourceTree = "<group>"; };
@@ -466,6 +458,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5524E830150AC36F004F6E07 /* IOKit.framework in Frameworks */,
 				3D60316214DF7D0B00E9AF58 /* libz.dylib in Frameworks */,
 				3DFAB00C144644A5005EF0C3 /* OpenEmuBase.framework in Frameworks */,
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
@@ -526,6 +519,7 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5524E82F150AC36F004F6E07 /* IOKit.framework */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -1077,29 +1071,18 @@
 				553FC489150498AD00871137 /* sio.c in Sources */,
 				553FC48A150498AD00871137 /* socket.c in Sources */,
 				553FC48B150498AD00871137 /* spu.c in Sources */,
-				556820A815049FD400C6F12B /* ConfigurationController.m in Sources */,
 				556820B315049FD400C6F12B /* Plugin.c in Sources */,
 				5543DF3E1505728300820EC3 /* cdr-macosx.c in Sources */,
 				5543DF401505728300820EC3 /* cdr.c in Sources */,
 				5543DF411505728300820EC3 /* cfg.c in Sources */,
 				5543DF421505728300820EC3 /* util.c in Sources */,
-				5543DF431505728300820EC3 /* analog.c in Sources */,
-				5543DF441505728300820EC3 /* cfg.c in Sources */,
-				5543DF451505728300820EC3 /* pad.c in Sources */,
-				5543DF461505728300820EC3 /* sdljoy.c in Sources */,
-				5543DF471505728300820EC3 /* util.c in Sources */,
-				5543DF481505728300820EC3 /* xkb.c in Sources */,
-				5543DF491505728300820EC3 /* cfg.c in Sources */,
 				5543DF4C1505728300820EC3 /* fps.c in Sources */,
 				5543DF4D1505728300820EC3 /* gpu.c in Sources */,
 				5543DF4F1505728300820EC3 /* key.c in Sources */,
 				5543DF511505728300820EC3 /* menu.c in Sources */,
 				5543DF561505728300820EC3 /* prim.c in Sources */,
 				5543DF571505728300820EC3 /* soft.c in Sources */,
-				5543DF581505728300820EC3 /* zn.c in Sources */,
 				5543DF591505728300820EC3 /* adsr.c in Sources */,
-				5543DF5A1505728300820EC3 /* alsa.c in Sources */,
-				5543DF5B1505728300820EC3 /* cfg.c in Sources */,
 				5543DF5C1505728300820EC3 /* dma.c in Sources */,
 				5543DF5D1505728300820EC3 /* externals.c in Sources */,
 				5543DF5E1505728300820EC3 /* freeze.c in Sources */,
@@ -1110,6 +1093,7 @@
 				5543DF671505728300820EC3 /* xa.c in Sources */,
 				5543DF69150579E700820EC3 /* PCSXRHelpers.m in Sources */,
 				55D250161506929000E23267 /* EmuThread.m in Sources */,
+				5524E831150AC50A004F6E07 /* drawgl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1157,16 +1141,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					PCSXRCORE,
 					"PCSXR_VERSION=\\\"1.5\\\"",
 					"XA_HACK=1",
 					"_MACOSX=1",
 					__MACOSX__,
+					_MACGL,
+					_DARWIN,
 				);
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Application Support/OpenEmu/Cores";
+				OTHER_CFLAGS = "-falign-loops=16";
 				PRODUCT_NAME = PCSXR;
 				WARNING_CFLAGS = "-Wno-switch-enum";
 				WRAPPER_EXTENSION = oecoreplugin;
@@ -1177,16 +1165,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					PCSXRCORE,
 					"PCSXR_VERSION=\\\"1.5\\\"",
 					"XA_HACK=1",
 					"_MACOSX=1",
 					__MACOSX__,
+					_MACGL,
+					_DARWIN,
 				);
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Application Support/OpenEmu/Cores";
+				OTHER_CFLAGS = (
+					"-falign-loops=16",
+					"-funroll-loops",
+					"-fomit-frame-pointer",
+				);
 				PRODUCT_NAME = PCSXR;
 				WARNING_CFLAGS = "-Wno-switch-enum";
 				WRAPPER_EXTENSION = oecoreplugin;

@@ -80,7 +80,7 @@ char * pConfigFile = NULL;
   size+=sprintf(pB+size, "%s = %.1f\n", name, (double)var); \
  }
 
-void ReadConfigFile()
+void GPUReadConfigFile()
 {
  struct stat buf;
  FILE *in;char t[256];int len, size;
@@ -213,7 +213,7 @@ void AboutDlgProc(void)
 	ExecCfg(args);
 }
 
-void ReadConfig(void)
+void GPUReadConfig(void)
 {
  // defaults
  iResX=640;iResY=480;
@@ -232,7 +232,7 @@ void ReadConfig(void)
  iShowFPS=0;
 
  // read sets
- ReadConfigFile();
+ GPUReadConfigFile();
 
  // additional checks
  if(!iColDepth)       iColDepth=32;
@@ -240,7 +240,7 @@ void ReadConfig(void)
  SetFixes();
 }
 
-void WriteConfig(void) {
+void GPUWriteConfig(void) {
 
  struct stat buf;
  FILE *out;char t[256];int len, size;

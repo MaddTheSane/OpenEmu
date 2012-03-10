@@ -147,8 +147,6 @@ static const char *err;
 	if (checkerr) { CheckErr(name); } else SysLibError(); \
 }
 
-void *hGPUDriver = NULL;
-
 void CALLBACK GPU__displayText(char *pText) {
 	SysPrintf("%s\n", pText);
 }
@@ -167,21 +165,9 @@ void CALLBACK GPU__visualVibration(unsigned long iSmall, unsigned long iBig) {}
 void CALLBACK GPU__cursor(int player, int x, int y) {}
 void CALLBACK GPU__addVertex(short sx,short sy,s64 fx,s64 fy,s64 fz) {}
 
-#define LoadGpuSym1(dest, name) \
-	LoadSym(GPU_##dest, GPU##dest, name, TRUE);
-
-#define LoadGpuSym0(dest, name) \
-	LoadSym(GPU_##dest, GPU##dest, name, FALSE); \
-	if (GPU_##dest == NULL) GPU_##dest = (GPU##dest) GPU__##dest;
-
-#define LoadGpuSymN(dest, name) \
-	LoadSym(GPU_##dest, GPU##dest, name, FALSE);
-
 static int LoadGPUplugin(const char *GPUdll) {
 	return 0;
 }
-
-void *hCDRDriver = NULL;
 
 long CALLBACK CDR__play(unsigned char *sector) { return 0; }
 long CALLBACK CDR__stop(void) { return 0; }
@@ -200,16 +186,6 @@ long CALLBACK CDR__configure(void) { return 0; }
 long CALLBACK CDR__test(void) { return 0; }
 void CALLBACK CDR__about(void) {}
 long CALLBACK CDR__setfilename(char*filename) { return 0; }
-
-#define LoadCdrSym1(dest, name) \
-	LoadSym(CDR_##dest, CDR##dest, name, TRUE);
-
-#define LoadCdrSym0(dest, name) \
-	LoadSym(CDR_##dest, CDR##dest, name, FALSE); \
-	if (CDR_##dest == NULL) CDR_##dest = (CDR##dest) CDR__##dest;
-
-#define LoadCdrSymN(dest, name) \
-	LoadSym(CDR_##dest, CDR##dest, name, FALSE);
 
 #define SetCDRFunc(dest) \
 	CDR_##dest = CDR##dest
@@ -242,21 +218,9 @@ static int LoadCDRplugin(const char *CDRdll) {
 	return 0;
 }
 
-void *hSPUDriver = NULL;
-
 long CALLBACK SPU__configure(void) { return 0; }
 void CALLBACK SPU__about(void) {}
 long CALLBACK SPU__test(void) { return 0; }
-
-#define LoadSpuSym1(dest, name) \
-	LoadSym(SPU_##dest, SPU##dest, name, TRUE);
-
-#define LoadSpuSym0(dest, name) \
-	LoadSym(SPU_##dest, SPU##dest, name, FALSE); \
-	if (SPU_##dest == NULL) SPU_##dest = (SPU##dest) SPU__##dest;
-
-#define LoadSpuSymN(dest, name) \
-	LoadSym(SPU_##dest, SPU##dest, name, FALSE);
 
 static int LoadSPUplugin(const char *SPUdll) {
 	return 0;
@@ -675,9 +639,9 @@ void ReleasePlugins() {
 	}
 	NetOpened = FALSE;
 
-	if (hCDRDriver != NULL || cdrIsoActive()) CDR_shutdown();
-	if (hGPUDriver != NULL) GPUshutdown();
-	if (hSPUDriver != NULL) SPUshutdown();
+	if (/*hCDRDriver != NULL || cdrIsoActive()*/ TRUE ) CDR_shutdown();
+	if (/*hGPUDriver != NULL*/ TRUE) GPUshutdown();
+	if (/*hSPUDriver != NULL*/ TRUE) SPUshutdown();
 	if (hPAD1Driver != NULL) PAD1_shutdown();
 	if (hPAD2Driver != NULL) PAD2_shutdown();
 

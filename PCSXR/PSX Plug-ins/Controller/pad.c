@@ -29,18 +29,6 @@ int has_haptic;
 
 static void (*gpuVisualVibration)(uint32_t, uint32_t) = NULL;
 
-char *PSEgetLibName(void) {
-	return _("Gamepad/Keyboard/Mouse Input");
-}
-
-uint32_t PSEgetLibType(void) {
-	return PSE_LT_PAD;
-}
-
-uint32_t PSEgetLibVersion(void) {
-	return (1 << 16) | (2 << 8);
-}
-
 static int padDataLenght[] = {0, 2, 3, 1, 1, 3, 3, 3};
 void PADsetMode(const int pad, const int mode) {
 	g.PadState[pad].PadMode = mode;

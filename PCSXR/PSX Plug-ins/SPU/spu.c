@@ -1468,22 +1468,6 @@ void CALLBACK SPUregisterCDDAVolume(void (CALLBACK *CDDAVcallback)(unsigned shor
  cddavCallback = CDDAVcallback;
 }
 
-// COMMON PLUGIN INFO FUNCS
-char * CALLBACK PSEgetLibName(void)
-{
- return _(libraryName);
-}
-
-unsigned long CALLBACK PSEgetLibType(void)
-{
- return  PSE_LT_SPU;
-}
-
-unsigned long CALLBACK PSEgetLibVersion(void)
-{
- return (1 << 16) | (1 << 8);
-}
-
 char * SPUgetLibInfos(void)
 {
  return _(libraryInfo);
