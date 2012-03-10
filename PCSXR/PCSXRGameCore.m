@@ -36,7 +36,7 @@
 #include "plugins.h"
 #include "misc.h"
 
-#define SAMPLERATE 41100
+#define SAMPLERATE 44100
 
 @implementation PCSXRGameCore
 
