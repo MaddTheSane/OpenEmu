@@ -21,6 +21,7 @@
 #include "draw.h"
 #include "gpu.h"
 #include "menu.h"
+#include "drawgl.h"
 
 ////////////////////////////////////////////////////////////////////////////////////
 // misc globals
@@ -53,6 +54,10 @@ static unsigned char* image = NULL;
 #define image_height 480
 #define image_depth 32
 
+unsigned char* PSXVideoBuffer()
+{
+	return image;
+}
 
 ////////////////////////////////////////////////////////////////////////
 

@@ -269,6 +269,7 @@
 		3D6030E914DF715100E9AF58 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		5524E7B2150A4774004F6E07 /* cdromfuncs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cdromfuncs.h; sourceTree = "<group>"; };
 		5524E82F150AC36F004F6E07 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		5536FEA5150EB1800042C2B3 /* drawgl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = drawgl.h; sourceTree = "<group>"; };
 		553FC418150498AD00871137 /* cdriso.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cdriso.c; sourceTree = "<group>"; };
 		553FC419150498AD00871137 /* cdriso.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cdriso.h; sourceTree = "<group>"; };
 		553FC41A150498AD00871137 /* cdrom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cdrom.c; sourceTree = "<group>"; };
@@ -678,6 +679,7 @@
 				5543DEFE1505728300820EC3 /* draw.c */,
 				5543DEFF1505728300820EC3 /* draw.h */,
 				5543DF001505728300820EC3 /* drawgl.m */,
+				5536FEA5150EB1800042C2B3 /* drawgl.h */,
 				5543DF011505728300820EC3 /* ExtendedKeys.h */,
 				5543DF021505728300820EC3 /* externals.h */,
 				5543DF031505728300820EC3 /* fps.c */,
@@ -1152,6 +1154,11 @@
 					_DARWIN,
 				);
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../OpenEmu\"/**",
+					"core/**",
+					"$(SRCROOT)/\"PSX Plug-ins\"/GPU",
+				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Application Support/OpenEmu/Cores";
 				OTHER_CFLAGS = "-falign-loops=16";
@@ -1176,6 +1183,11 @@
 					_DARWIN,
 				);
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../OpenEmu\"/**",
+					"core/**",
+					"$(SRCROOT)/\"PSX Plug-ins\"/GPU",
+				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Application Support/OpenEmu/Cores";
 				OTHER_CFLAGS = (

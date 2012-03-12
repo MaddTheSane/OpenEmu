@@ -35,6 +35,7 @@
 #include "psxcommon.h"
 #include "plugins.h"
 #include "misc.h"
+#include "drawgl.h"
 
 #define SAMPLERATE 44100
 
@@ -52,6 +53,11 @@
     return self;
 }
 
+- (const void *)videoBuffer
+{
+	return PSXVideoBuffer();
+}
+
 - (GLenum)pixelFormat
 {
     return GL_BGRA;
@@ -64,7 +70,7 @@
 
 - (GLenum)internalPixelFormat
 {
-    return GL_RGB8;
+    return GL_RGBA;
 }
 
 - (BOOL)loadFileAtPath:(NSString*) path

@@ -47,12 +47,12 @@
      
 - (NSArray *)genericControlNames
 {
-	
+	return [NSArray array];
 }
 
 - (NSArray *)usedSettingNames
 {
-	
+	return [NSArray array];
 }
 
 - (NSString *)gameSystemName;
