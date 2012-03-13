@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "stdafx.h"
+#include "stdafx_spu.h"
 
 #define _IN_XA
 #include <stdint.h>

@@ -1135,7 +1135,7 @@ void psxBios_GPU_cwb() { // 0x4a
 }
    
 void psxBios_GPU_SendPackets() { //4b:	
-	GPU_writeStatus(0x04000002);
+	GPUwriteStatus(0x04000002);
 	psxHwWrite32(0x1f8010f4,0);
 	psxHwWrite32(0x1f8010f0,psxHwRead32(0x1f8010f0)|0x800);
 	psxHwWrite32(0x1f8010a0,a0);

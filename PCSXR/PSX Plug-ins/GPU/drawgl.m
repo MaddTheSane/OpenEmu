@@ -17,7 +17,7 @@
  ***************************************************************************/
 
 #include "ExtendedKeys.h"
-#include "externals.h"
+#include "externals_gpu.h"
 #include "draw.h"
 #include "gpu.h"
 #include "menu.h"

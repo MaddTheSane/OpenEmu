@@ -34,8 +34,6 @@ OE_EXPORTED_CLASS
 @interface PCSXRGameCore : OEGameCore
 {
     NSString             *romPath;
-    NSUInteger            width;
-    NSUInteger            height;
 }
 
 @property(copy) NSString *romPath;

@@ -17,11 +17,11 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.           *
  ***************************************************************************/
 
-#include "stdafx.h"
+#include "stdafx_spu.h"
 
 #define _IN_OSS
 
-#include "externals.h"
+#include "externals_spu.h"
 
 #ifdef __APPLE__
 #include <OpenAL/al.h>

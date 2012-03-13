@@ -24,7 +24,14 @@
  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
+#include "psxcommon.h"
+#include "plugins.h"
+#include "misc.h"
+#include "drawgl.h"
+#include "stdafx_spu.h"
+#define _IN_OSS
+#include "externals_spu.h"
+#undef BOOL
 #import "PCSXRGameCore.h"
 #import "PCSXRGameController.h"
 #import <OERingBuffer.h>
@@ -32,10 +39,34 @@
 #import <OpenGL/gl.h>
 #import "OEPCSXRSystemResponderClient.h"
 #import "EmuThread.h"
-#include "psxcommon.h"
-#include "plugins.h"
-#include "misc.h"
-#include "drawgl.h"
+
+#pragma mark SPU calls
+
+
+// SETUP SOUND
+void SetupSound(void)
+{
+	
+}
+
+// REMOVE SOUND
+void RemoveSound(void)
+{
+	
+}
+
+// GET BYTES BUFFERED
+unsigned long SoundGetBytesBuffered(void)
+{
+	return 0;
+}
+
+// FEED SOUND DATA
+void SoundFeedStreamData(unsigned char* pSound,long lBytes)
+{
+	
+}
+
 
 #define SAMPLERATE 44100
 
@@ -94,7 +125,7 @@
 
 - (void)executeFrame
 {
-
+	//TODO: find out the proper function(s) to call here!
 }
 
 # pragma mark -
@@ -127,6 +158,11 @@
 - (NSUInteger)channelCount
 {
     return 2;
+}
+
+- (NSTimeInterval)frameInterval
+{
+	return 60;
 }
 
 - (BOOL)saveStateToFileAtPath:(NSString *)fileName

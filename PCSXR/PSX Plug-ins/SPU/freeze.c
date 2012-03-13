@@ -15,11 +15,11 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "stdafx.h"
+#include "stdafx_spu.h"
 
 #define _IN_FREEZE
 
-#include "externals.h"
+#include "externals_spu.h"
 #include "registers.h"
 #include "spu.h"
 #include "regs.h"

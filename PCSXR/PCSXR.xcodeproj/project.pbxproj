@@ -86,7 +86,6 @@
 		5543DF5C1505728300820EC3 /* dma.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF241505728300820EC3 /* dma.c */; };
 		5543DF5D1505728300820EC3 /* externals.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF271505728300820EC3 /* externals.c */; };
 		5543DF5E1505728300820EC3 /* freeze.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF291505728300820EC3 /* freeze.c */; };
-		5543DF601505728300820EC3 /* openal.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF2D1505728300820EC3 /* openal.c */; };
 		5543DF631505728300820EC3 /* registers.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF311505728300820EC3 /* registers.c */; };
 		5543DF641505728300820EC3 /* reverb.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF341505728300820EC3 /* reverb.c */; };
 		5543DF661505728300820EC3 /* spu.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF371505728300820EC3 /* spu.c */; };
@@ -94,6 +93,7 @@
 		5543DF69150579E700820EC3 /* PCSXRHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF68150579E600820EC3 /* PCSXRHelpers.m */; };
 		5543DF6C150588E800820EC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5543DF6A150588E800820EC3 /* Localizable.strings */; };
 		556820B315049FD400C6F12B /* Plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = 556820A315049FD400C6F12B /* Plugin.c */; };
+		55C85D64150FAD3F00B1DFDB /* zn.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF1D1505728300820EC3 /* zn.c */; };
 		55D250161506929000E23267 /* EmuThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568208F15049FD400C6F12B /* EmuThread.m */; };
 		82789B710E70D27D00C01C82 /* PCSXRGameCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 82789B700E70D27D00C01C82 /* PCSXRGameCore.m */; };
 		82C9CA720F0847310071460B /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 82C9CA710F0847310071460B /* dsa_pub.pem */; };
@@ -355,7 +355,7 @@
 		5543DEFF1505728300820EC3 /* draw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = draw.h; sourceTree = "<group>"; };
 		5543DF001505728300820EC3 /* drawgl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = drawgl.m; sourceTree = "<group>"; };
 		5543DF011505728300820EC3 /* ExtendedKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedKeys.h; sourceTree = "<group>"; };
-		5543DF021505728300820EC3 /* externals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = externals.h; sourceTree = "<group>"; };
+		5543DF021505728300820EC3 /* externals_gpu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = externals_gpu.h; sourceTree = "<group>"; };
 		5543DF031505728300820EC3 /* fps.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fps.c; sourceTree = "<group>"; };
 		5543DF041505728300820EC3 /* fps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fps.h; sourceTree = "<group>"; };
 		5543DF051505728300820EC3 /* gpu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gpu.c; sourceTree = "<group>"; };
@@ -390,7 +390,7 @@
 		5543DF251505728300820EC3 /* dma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dma.h; sourceTree = "<group>"; };
 		5543DF261505728300820EC3 /* dsoundoss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dsoundoss.h; sourceTree = "<group>"; };
 		5543DF271505728300820EC3 /* externals.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = externals.c; sourceTree = "<group>"; };
-		5543DF281505728300820EC3 /* externals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = externals.h; sourceTree = "<group>"; };
+		5543DF281505728300820EC3 /* externals_spu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = externals_spu.h; sourceTree = "<group>"; };
 		5543DF291505728300820EC3 /* freeze.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = freeze.c; sourceTree = "<group>"; };
 		5543DF2A1505728300820EC3 /* gauss_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gauss_i.h; sourceTree = "<group>"; };
 		5543DF2B1505728300820EC3 /* maccfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maccfg.h; sourceTree = "<group>"; };
@@ -407,7 +407,7 @@
 		5543DF361505728300820EC3 /* sdl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sdl.c; sourceTree = "<group>"; };
 		5543DF371505728300820EC3 /* spu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = spu.c; sourceTree = "<group>"; };
 		5543DF381505728300820EC3 /* spu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spu.h; sourceTree = "<group>"; };
-		5543DF391505728300820EC3 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
+		5543DF391505728300820EC3 /* stdafx_spu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx_spu.h; sourceTree = "<group>"; };
 		5543DF3A1505728300820EC3 /* xa.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xa.c; sourceTree = "<group>"; };
 		5543DF3B1505728300820EC3 /* xa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xa.h; sourceTree = "<group>"; };
 		5543DF68150579E600820EC3 /* PCSXRHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCSXRHelpers.m; sourceTree = "<group>"; };
@@ -681,7 +681,7 @@
 				5543DF001505728300820EC3 /* drawgl.m */,
 				5536FEA5150EB1800042C2B3 /* drawgl.h */,
 				5543DF011505728300820EC3 /* ExtendedKeys.h */,
-				5543DF021505728300820EC3 /* externals.h */,
+				5543DF021505728300820EC3 /* externals_gpu.h */,
 				5543DF031505728300820EC3 /* fps.c */,
 				5543DF041505728300820EC3 /* fps.h */,
 				5543DF051505728300820EC3 /* gpu.c */,
@@ -723,7 +723,7 @@
 				5543DF251505728300820EC3 /* dma.h */,
 				5543DF261505728300820EC3 /* dsoundoss.h */,
 				5543DF271505728300820EC3 /* externals.c */,
-				5543DF281505728300820EC3 /* externals.h */,
+				5543DF281505728300820EC3 /* externals_spu.h */,
 				5543DF291505728300820EC3 /* freeze.c */,
 				5543DF2A1505728300820EC3 /* gauss_i.h */,
 				5543DF2B1505728300820EC3 /* maccfg.h */,
@@ -740,7 +740,7 @@
 				5543DF361505728300820EC3 /* sdl.c */,
 				5543DF371505728300820EC3 /* spu.c */,
 				5543DF381505728300820EC3 /* spu.h */,
-				5543DF391505728300820EC3 /* stdafx.h */,
+				5543DF391505728300820EC3 /* stdafx_spu.h */,
 				5543DF3A1505728300820EC3 /* xa.c */,
 				5543DF3B1505728300820EC3 /* xa.h */,
 			);
@@ -1088,7 +1088,6 @@
 				5543DF5C1505728300820EC3 /* dma.c in Sources */,
 				5543DF5D1505728300820EC3 /* externals.c in Sources */,
 				5543DF5E1505728300820EC3 /* freeze.c in Sources */,
-				5543DF601505728300820EC3 /* openal.c in Sources */,
 				5543DF631505728300820EC3 /* registers.c in Sources */,
 				5543DF641505728300820EC3 /* reverb.c in Sources */,
 				5543DF661505728300820EC3 /* spu.c in Sources */,
@@ -1096,6 +1095,7 @@
 				5543DF69150579E700820EC3 /* PCSXRHelpers.m in Sources */,
 				55D250161506929000E23267 /* EmuThread.m in Sources */,
 				5524E831150AC50A004F6E07 /* drawgl.m in Sources */,
+				55C85D64150FAD3F00B1DFDB /* zn.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

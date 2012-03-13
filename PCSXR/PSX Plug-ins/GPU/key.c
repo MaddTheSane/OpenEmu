@@ -17,7 +17,7 @@
 
 #define _IN_KEY
 
-#include "externals.h"
+#include "externals_gpu.h"
 #include "menu.h"
 #include "gpu.h"
 #include "draw.h"

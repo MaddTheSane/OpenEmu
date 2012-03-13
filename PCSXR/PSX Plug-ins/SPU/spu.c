@@ -15,11 +15,11 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "stdafx.h"
+#include "stdafx_spu.h"
 
 #define _IN_SPU
 
-#include "externals.h"
+#include "externals_spu.h"
 #include "cfg.h"
 #include "dsoundoss.h"
 #include "regs.h"
@@ -99,7 +99,7 @@ int             iVolume=3;
 int             iXAPitch=1;
 int             iUseTimer=2;
 int             iSPUIRQWait=1;
-int             iDebugMode=0;
+//int             iDebugMode=0;
 int             iRecordMode=0;
 int             iUseReverb=2;
 int             iUseInterpolation=2;

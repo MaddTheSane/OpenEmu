@@ -158,12 +158,12 @@ void CALLBACK GPU__makeSnapshot(void) {}
 void CALLBACK GPU__keypressed(int key) {}
 long CALLBACK GPU__getScreenPic(unsigned char *pMem) { return -1; }
 long CALLBACK GPU__showScreenPic(unsigned char *pMem) { return -1; }
-void CALLBACK GPU__clearDynarec(void (CALLBACK *callback)(void)) {}
-void CALLBACK GPU__hSync(int val) {}
+void CALLBACK GPUclearDynarec(void (CALLBACK *callback)(void)) {}
+void CALLBACK GPUhSync(int val) {}
 void CALLBACK GPU__vBlank(int val) {}
 void CALLBACK GPU__visualVibration(unsigned long iSmall, unsigned long iBig) {}
 void CALLBACK GPU__cursor(int player, int x, int y) {}
-void CALLBACK GPU__addVertex(short sx,short sy,s64 fx,s64 fy,s64 fz) {}
+void CALLBACK GPUaddVertex(short sx,short sy,s64 fx,s64 fy,s64 fz) {}
 
 static int LoadGPUplugin(const char *GPUdll) {
 	return 0;
@@ -212,7 +212,8 @@ static int LoadCDRplugin(const char *CDRdll) {
 	SetCDRFunc(configure);
 	SetCDRFunc(test);
 	SetCDRFunc(about);
-	SetCDRFunc(setfilename);
+	//SetCDRFunc(setfilename);
+	CDR_setfilename = CDR__setfilename;
 	SetCDRFunc(readCDDA);
 	SetCDRFunc(getTE);
 	return 0;

@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "stdafx.h"
+#include "stdafx_spu.h"
 #include "registers.h"
 
 #define _IN_REVERB

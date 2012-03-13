@@ -17,7 +17,7 @@
 
 #define _IN_PRIMDRAW
 
-#include "externals.h"
+#include "externals_gpu.h"
 #include "gpu.h"
 #include "draw.h"
 #include "soft.h"

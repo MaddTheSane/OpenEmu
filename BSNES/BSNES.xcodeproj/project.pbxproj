@@ -115,13 +115,6 @@
 			remoteGlobalIDString = 5568213415052EAE00C6F12B;
 			remoteInfo = PSX;
 		};
-		550363F71508120C00BF3ECD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 826FE1131014D8CF0023A8E9 /* OpenEmu.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 94D7E8C915073BA000FBDD85;
-			remoteInfo = NDS;
-		};
 		822837AF101A209F0031D125 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
@@ -2462,13 +2455,6 @@
 			fileType = wrapper.cfbundle;
 			path = PSX.oesystemplugin;
 			remoteRef = 550363F51508120C00BF3ECD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		550363F81508120C00BF3ECD /* NDS.oesystemplugin */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = NDS.oesystemplugin;
-			remoteRef = 550363F71508120C00BF3ECD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		826FE11D1014D8CF0023A8E9 /* OpenEmu.app */ = {

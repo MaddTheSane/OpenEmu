@@ -81,3 +81,53 @@ void SysMessage(const char *fmt, ...) {
     NSDictionary *userInfo = [NSDictionary dictionaryWithObject:msg forKey:NSLocalizedFailureReasonErrorKey];
     [NSApp presentError:[NSError errorWithDomain:@"Unknown Domain" code:-1 userInfo:userInfo]];
 }
+
+// Close mem and plugins
+void SysClose() {
+    EmuShutdown();
+    ReleasePlugins();
+		
+    if (emuLog != NULL) fclose(emuLog);
+	
+    sysInited = NO;
+}
+
+void OnFile_Exit() {
+    SysClose();
+    //exit(0);
+}
+
+// Called periodically from the emu thread
+void SysUpdate() {
+	PAD1_keypressed();
+	PAD2_keypressed();
+	[emuThread handleEvents];
+}
+
+// Returns to the Gui
+void SysRunGui() {
+	
+}
+
+#define SHOULDNOTUSE NSLog(@"The function %s shouldn't be used under OpenEmu!", __FUNCTION__)
+
+void *SysLoadLibrary(const char *lib) {
+	SHOULDNOTUSE;
+	return NULL;
+}
+
+void *SysLoadSym(void *lib, const char *sym) {
+	SHOULDNOTUSE;
+	return NULL;
+}
+
+const char *SysLibError() {
+	SHOULDNOTUSE;
+	return "not available";
+}
+
+void SysCloseLibrary(void *lib) {
+	SHOULDNOTUSE;
+}
+
+

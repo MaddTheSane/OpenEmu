@@ -15,11 +15,11 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "stdafx.h"
+#include "stdafx_spu.h"
 
 #define _IN_REGISTERS
 
-#include "externals.h"
+#include "externals_spu.h"
 #include "registers.h"
 #include "regs.h"
 #include "reverb.h"

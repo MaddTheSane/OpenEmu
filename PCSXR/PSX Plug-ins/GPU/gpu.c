@@ -21,7 +21,7 @@
 
 #define _IN_GPU
 
-#include "externals.h"
+#include "externals_gpu.h"
 #include "gpu.h"
 #include "draw.h"
 #include "cfg.h"

@@ -17,7 +17,7 @@
 
 #define _IN_SOFT
 
-#include "externals.h"
+#include "externals_gpu.h"
 #include "soft.h"
 
 //#define VC_INLINE

@@ -19,7 +19,7 @@
 
 #include <unistd.h>
 
-#include "externals.h"
+#include "externals_gpu.h"
 #include "fps.h"
 #include "gpu.h"
 

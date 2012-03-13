@@ -17,7 +17,7 @@
 
 #define _IN_MENU
 
-#include "externals.h"
+#include "externals_gpu.h"
 #include "draw.h"
 #include "menu.h"
 #include "gpu.h"
