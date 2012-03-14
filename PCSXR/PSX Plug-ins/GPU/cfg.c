@@ -25,7 +25,7 @@
 #undef TRUE
 #define MAKELONG(low,high)     ((unsigned long)(((unsigned short)(low)) | (((unsigned long)((unsigned short)(high))) << 16)))
 
-#include "externals.h"
+#include "externals_gpu.h"
 #include "cfg.h"
 #include "gpu.h"
 
@@ -164,53 +164,6 @@ void GPUReadConfigFile()
  if(iUseFixes>1) iUseFixes=1;
 
  free(pB);
-}
-
-void ExecCfg(char *arg) {
-	char cfg[256];
-	struct stat buf;
-
-	strcpy(cfg, "./cfgDFXVideo");
-	if (stat(cfg, &buf) != -1) {
-		if (fork() == 0) {
-			execl(cfg, "cfgDFXVideo", arg, NULL);
-			exit(0);
-		}
-		return;
-	}
-
-	strcpy(cfg, "./cfg/cfgDFXVideo");
-	if (stat(cfg, &buf) != -1) {
-		if (fork() == 0) {
-			execl(cfg, "cfgDFXVideo", arg, NULL);
-			exit(0);
-		}
-		return;
-	}
-
-	sprintf(cfg, "%s/.pcsxr/plugins/cfg/cfgDFXVideo", getenv("HOME"));
-	if (stat(cfg, &buf) != -1) {
-		if (fork() == 0) {
-			execl(cfg, "cfgDFXVideo", arg, NULL);
-			exit(0);
-		}
-		return;
-	}
-
-	printf("ERROR: cfgDFXVideo file not found!\n");
-}
-
-void SoftDlgProc(void)
-{
-	ExecCfg("CFG");
-}
-
-void AboutDlgProc(void)
-{
-	char args[256];
-
-	sprintf(args, "ABOUT");
-	ExecCfg(args);
 }
 
 void GPUReadConfig(void)

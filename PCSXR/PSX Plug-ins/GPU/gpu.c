@@ -1578,24 +1578,6 @@ long CALLBACK GPUgetMode(void)
 }
 
 ////////////////////////////////////////////////////////////////////////
-// call config dlg
-////////////////////////////////////////////////////////////////////////
-
-long CALLBACK GPUconfigure(void)
-{
-#ifdef _WINDOWS
- HWND hWP=GetActiveWindow();
-
- DialogBox(hInst,MAKEINTRESOURCE(IDD_CFGSOFT),
-           hWP,(DLGPROC)SoftDlgProc);
-#else
- SoftDlgProc();
-#endif
-
- return 0;
-}
-
-////////////////////////////////////////////////////////////////////////
 // sets all kind of act fixes
 ////////////////////////////////////////////////////////////////////////
 
@@ -1664,38 +1646,6 @@ long CALLBACK GPUdmaChain(uint32_t * baseAddrL, uint32_t addr)
  GPUIsIdle;
 
  return 0;
-}
-
-////////////////////////////////////////////////////////////////////////
-// show about dlg
-////////////////////////////////////////////////////////////////////////
-
-#ifdef _WINDOWS
-BOOL CALLBACK AboutDlgProc(HWND hW, UINT uMsg, WPARAM wParam, LPARAM lParam)
-{
- switch(uMsg)
-  {
-   case WM_COMMAND:
-    {
-     switch(LOWORD(wParam))
-      {case IDOK:     EndDialog(hW,TRUE);return TRUE;}
-    }
-  }
- return FALSE;
-}
-#endif
-
-void CALLBACK GPUabout(void)                           // ABOUT
-{
-#ifdef _WINDOWS
- HWND hWP=GetActiveWindow();                           // to be sure
- DialogBox(hInst,MAKEINTRESOURCE(IDD_ABOUT),
-           hWP,(DLGPROC)AboutDlgProc);
-#else
- AboutDlgProc();
-#endif
-
- return;
 }
 
 ////////////////////////////////////////////////////////////////////////

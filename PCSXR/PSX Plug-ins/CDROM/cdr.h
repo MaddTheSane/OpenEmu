@@ -213,8 +213,8 @@ unsigned char* GetBThreaded();
 
 long CDRstop(void);
 
-void LoadConf();
-void SaveConf();
+void CDRLoadConf();
+void CDRSaveConf();
 
 #ifdef DEBUG
 #define PRINTF printf

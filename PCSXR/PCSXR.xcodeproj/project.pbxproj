@@ -95,6 +95,8 @@
 		556820B315049FD400C6F12B /* Plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = 556820A315049FD400C6F12B /* Plugin.c */; };
 		55C85D64150FAD3F00B1DFDB /* zn.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF1D1505728300820EC3 /* zn.c */; };
 		55D250161506929000E23267 /* EmuThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568208F15049FD400C6F12B /* EmuThread.m */; };
+		55F13A97151012B00095B5A9 /* cfg.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DEFC1505728300820EC3 /* cfg.c */; };
+		55F13AAB151013BC0095B5A9 /* cfg.c in Sources */ = {isa = PBXBuildFile; fileRef = 5543DF221505728300820EC3 /* cfg.c */; };
 		82789B710E70D27D00C01C82 /* PCSXRGameCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 82789B700E70D27D00C01C82 /* PCSXRGameCore.m */; };
 		82C9CA720F0847310071460B /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 82C9CA710F0847310071460B /* dsa_pub.pem */; };
 		82CAFDD50FEDD8F100CCDC7E /* config.yaml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82CAFA890FED9C6B00CCDC7E /* config.yaml */; };
@@ -1096,6 +1098,8 @@
 				55D250161506929000E23267 /* EmuThread.m in Sources */,
 				5524E831150AC50A004F6E07 /* drawgl.m in Sources */,
 				55C85D64150FAD3F00B1DFDB /* zn.c in Sources */,
+				55F13A97151012B00095B5A9 /* cfg.c in Sources */,
+				55F13AAB151013BC0095B5A9 /* cfg.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

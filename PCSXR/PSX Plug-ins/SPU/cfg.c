@@ -15,11 +15,11 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "stdafx.h"
+#include "stdafx_spu.h"
 
 #define _IN_CFG
 
-#include "externals.h"
+#include "externals_spu.h"
 
 ////////////////////////////////////////////////////////////////////////
 // LINUX CONFIG/ABOUT HANDLING
@@ -27,64 +27,11 @@
 
 #include <unistd.h>
 
-////////////////////////////////////////////////////////////////////////
-// START EXTERNAL CFG TOOL
-////////////////////////////////////////////////////////////////////////
-
-void StartCfgTool(char * pCmdLine)
-{
- FILE * cf;
- char filename[255];
-
- strcpy(filename,"cfgDFSound");
- cf=fopen(filename,"rb");
- if(cf!=NULL)
-  {
-   fclose(cf);
-   if(fork()==0)
-    {
-     execl("./cfgDFSound","cfgDFSound",pCmdLine,NULL);
-     exit(0);
-    }
-  }
- else
-  {
-   strcpy(filename,"cfg/cfgDFSound");
-   cf=fopen(filename,"rb");
-   if(cf!=NULL)
-    {
-     fclose(cf);
-     if(fork()==0)
-      {
-       chdir("cfg");
-       execl("./cfgDFSound","cfgDFSound",pCmdLine,NULL);
-       exit(0);
-      }
-    }
-   else
-    {
-     sprintf(filename,"%s/cfgDFSound",getenv("HOME"));
-     cf=fopen(filename,"rb");
-     if(cf!=NULL)
-      {
-       fclose(cf);
-       if(fork()==0)
-       {
-        chdir(getenv("HOME"));
-        execl("./cfgDFSound","cfgDFSound",pCmdLine,NULL);
-        exit(0);
-       }
-      }
-     else printf("Sound error: cfgDFSound not found!\n");
-    }
-  }
-}
-
 /////////////////////////////////////////////////////////
 // READ LINUX CONFIG FILE
 /////////////////////////////////////////////////////////
 
-void ReadConfigFile(void)
+void SPUReadConfigFile(void)
 {
  FILE *in;char t[256];int len;
  char * pB, * p;
@@ -158,7 +105,7 @@ void ReadConfigFile(void)
 // READ CONFIG called by spu funcs
 /////////////////////////////////////////////////////////
 
-void ReadConfig(void)
+void SPUReadConfig(void)
 {
  iVolume=2;
  iXAPitch=0;
@@ -169,5 +116,5 @@ void ReadConfig(void)
  iDisStereo=0;
  iFreqResponse=0;
 
- ReadConfigFile();
+ SPUReadConfigFile();
 }

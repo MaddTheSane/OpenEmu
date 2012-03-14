@@ -209,9 +209,11 @@ static int LoadCDRplugin(const char *CDRdll) {
 	SetCDRFunc(stop);
 	SetCDRFunc(getStatus);
 	SetCDRFunc(getDriveLetter);
-	SetCDRFunc(configure);
+	//SetCDRFunc(configure);
+	CDR_configure = CDR__configure;
 	SetCDRFunc(test);
-	SetCDRFunc(about);
+	//SetCDRFunc(about);
+	CDR_about = CDR__about;
 	//SetCDRFunc(setfilename);
 	CDR_setfilename = CDR__setfilename;
 	SetCDRFunc(readCDDA);

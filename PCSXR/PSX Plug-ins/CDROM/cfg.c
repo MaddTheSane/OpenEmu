@@ -23,7 +23,7 @@
 
 void AboutDlgProc();
 void ConfDlgProc();
-void ReadConfig();
+void CDRReadConfig();
 
 char CdromDev[256];
 long ReadMode;
@@ -32,7 +32,7 @@ long CacheSize;
 long CdrSpeed;
 long SpinDown;
 
-void LoadConf() {
+void CDRLoadConf() {
 	strcpy(CdromDev, "");
 	ReadMode = THREADED;
 	UseSubQ = 0;
@@ -40,14 +40,9 @@ void LoadConf() {
 	CdrSpeed = 0;
 	SpinDown = SPINDOWN_VENDOR_SPECIFIC;
 
-	ReadConfig();
+	CDRReadConfig();
 }
 
-long CDRconfigure() {
-	ConfDlgProc();
-	return 0;
-}
-
-void CDRabout() {
-	AboutDlgProc();
+void CDRReadConfig() {
+	//TODO: implement config options.
 }

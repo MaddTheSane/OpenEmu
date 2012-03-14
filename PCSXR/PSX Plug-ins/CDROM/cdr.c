@@ -69,7 +69,7 @@ long CDRshutdown(void) {
 }
 
 long CDRopen(void) {
-	LoadConf();
+	CDRLoadConf();
 
 #ifndef _MACOSX
 	if (IsCdHandleOpen())
@@ -513,16 +513,4 @@ long CDRtest(void) {
 	CloseCdHandle();
 #endif
 	return 0;
-}
-
-char *PSEgetLibName(void) {
-	return _(LibName);
-}
-
-unsigned long PSEgetLibType(void) {
-	return PSE_LT_CDR;
-}
-
-unsigned long PSEgetLibVersion(void) {
-	return 1 << 16;
 }

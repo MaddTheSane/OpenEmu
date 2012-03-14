@@ -1343,7 +1343,7 @@ long CALLBACK SPUinit(void)
  iSPUIRQWait = 1;
  lastch = -1;
 
- ReadConfig();                                         // read user stuff
+ SPUReadConfig();                                         // read user stuff
  SetupStreams();                                       // prepare streaming
 
  return 0;
@@ -1434,7 +1434,7 @@ long CALLBACK SPUconfigure(void)
  DialogBox(hInst,MAKEINTRESOURCE(IDD_CFGDLG),
            GetActiveWindow(),(DLGPROC)DSoundDlgProc);
 #elif defined (_MACOSX)
- DoConfiguration();
+// DoConfiguration();
 #else
  StartCfgTool("CFG");
 #endif
@@ -1449,7 +1449,7 @@ void CALLBACK SPUabout(void)
  DialogBox(hInst,MAKEINTRESOURCE(IDD_ABOUT),
            GetActiveWindow(),(DLGPROC)AboutDlgProc);
 #elif defined (_MACOSX)
- DoAbout();
+// DoAbout();
 #else
  StartCfgTool("ABOUT");
 #endif

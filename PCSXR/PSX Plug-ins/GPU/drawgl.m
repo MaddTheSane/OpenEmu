@@ -41,6 +41,7 @@ int            iUseScanLines=0;
 int            iUseNoStretchBlt=0;
 int            iFastFwd=0;
 int            iDebugMode=0;
+int            iMaintainAspect = 0;
 int            iFVDisplay=0;
 PSXPoint_t     ptCursorPoint[8];
 unsigned short usCursorActive=0;

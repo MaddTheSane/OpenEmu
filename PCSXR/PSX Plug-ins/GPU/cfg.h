@@ -18,15 +18,13 @@
 #ifndef _GPU_CFG_H_
 #define _GPU_CFG_H_
 
-void ReadConfig(void);
-void WriteConfig(void);
-void ReadWinSizeConfig(void);
+void GPUReadConfig(void);
+void GPUWriteConfig(void);
+void GPUReadWinSizeConfig(void);
 
 #ifdef _WINDOWS
 BOOL CALLBACK SoftDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam ); 
 #else
-void SoftDlgProc(void);
-void AboutDlgProc(void);
 #endif
 
 #endif
