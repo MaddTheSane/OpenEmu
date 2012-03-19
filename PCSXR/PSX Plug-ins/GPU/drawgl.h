@@ -10,5 +10,6 @@
 #define PCSXR_drawgl_h
 
 extern unsigned char* PSXVideoBuffer();
+extern void GPUTick();
 
 #endif

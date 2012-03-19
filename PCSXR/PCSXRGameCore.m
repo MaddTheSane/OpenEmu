@@ -106,7 +106,28 @@ void SoundFeedStreamData(unsigned char* pSound,long lBytes)
 - (BOOL)loadFileAtPath:(NSString*) path
 {
 	SetIsoFile([path fileSystemRepresentation]);
+	//FIXME: find out CD-ROM ID before executing [EmuThread run].
 	[EmuThread run];
+	{
+		NSFileManager *manager = [NSFileManager defaultManager];
+		NSURL *supportURL = [manager URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:NULL];
+		NSURL *url = [supportURL URLByAppendingPathComponent:@"OpenEmu/PSX/MemCards"];
+		NSURL *memCardURL = nil;
+		int i;
+		for (i = 1; i > 2; i++) {
+			memCardURL = [url URLByAppendingPathComponent:[NSString stringWithFormat:@"%s-%3.3d.mcd", CdromId, i]];
+			const char* mcdFile = [[memCardURL path] fileSystemRepresentation];
+			if (![manager fileExistsAtPath:[memCardURL path]]) {
+				CreateMcd(mcdFile);
+			}
+			if (i == 1) {
+				strlcpy(Config.Mcd1, mcdFile, MAXPATHLEN);
+			} else {
+				strlcpy(Config.Mcd2, mcdFile, MAXPATHLEN);
+			}
+		}
+		LoadMcds(Config.Mcd1, Config.Mcd2);
+	}
 	return YES;
 }
 
@@ -126,9 +147,16 @@ void SoundFeedStreamData(unsigned char* pSound,long lBytes)
         url = [supportURL URLByAppendingPathComponent:@"OpenEmu/PSX/MemCards"];
 		if (![url checkResourceIsReachableAndReturnError:NULL])
             [manager createDirectoryAtPath:[url path] withIntermediateDirectories:YES attributes:nil error:NULL];
+		url = [supportURL URLByAppendingPathComponent:@"OpenEmu/PSX/Patches"];
+		if (![url checkResourceIsReachableAndReturnError:NULL])
+            [manager createDirectoryAtPath:[url path] withIntermediateDirectories:YES attributes:nil error:NULL];
+
 		url = [supportURL URLByAppendingPathComponent:@"OpenEmu/PSX/Bios"];
 		const char *str = [[url path] fileSystemRepresentation];
 		if (str != nil) strncpy(Config.BiosDir, str, MAXPATHLEN);
+		url = [supportURL URLByAppendingPathComponent:@"OpenEmu/PSX/Patches"];
+		str = [[url path] fileSystemRepresentation];
+		if (str != nil) strncpy(Config.PatchesDir, str, MAXPATHLEN);
 
 		NSString *biosDir = [manager stringWithFileSystemRepresentation:Config.BiosDir length:strlen(Config.BiosDir)];
 		NSArray *bioses = [manager contentsOfDirectoryAtPath:biosDir error:NULL];
@@ -146,8 +174,7 @@ void SoundFeedStreamData(unsigned char* pSound,long lBytes)
 				}
 			}
 		}
-
-
+		
 		if (([biosList count] > 0)) {
 			str = [(NSString *)[biosList objectAtIndex:0] fileSystemRepresentation];
 			if (str != nil) strncpy(Config.Bios, str, MAXPATHLEN);
@@ -157,6 +184,12 @@ void SoundFeedStreamData(unsigned char* pSound,long lBytes)
 			strcpy(Config.Bios, "HLE");
 		}
 	}
+	
+	Config.Xa = YES;
+	Config.Mdec = YES;
+	Config.Cdda = YES;
+	Config.PsxAuto = YES;
+	Config.PsxType = PSX_TYPE_NTSC; //This will probably be changed later in execution.
 }
 
 - (void)stopEmulation
@@ -169,6 +202,7 @@ void SoundFeedStreamData(unsigned char* pSound,long lBytes)
 - (void)executeFrame
 {
 	//TODO: find out the proper function(s) to call here!
+	GPUTick();
 }
 
 # pragma mark -
@@ -205,7 +239,11 @@ void SoundFeedStreamData(unsigned char* pSound,long lBytes)
 
 - (NSTimeInterval)frameInterval
 {
-	return 60;
+	if (Config.PsxType == PSX_TYPE_NTSC) {
+		return 60;
+	} else {
+		return 50;
+	}
 }
 
 - (BOOL)saveStateToFileAtPath:(NSString *)fileName
