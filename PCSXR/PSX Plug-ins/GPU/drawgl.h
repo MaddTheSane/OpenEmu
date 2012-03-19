@@ -11,5 +11,7 @@
 
 extern unsigned char* PSXVideoBuffer();
 extern void GPUTick();
+// setGPUDefaults is used to avoid conflicts with externals_gpu.h and externals_spu.h
+extern void setGPUDefaults();
 
 #endif

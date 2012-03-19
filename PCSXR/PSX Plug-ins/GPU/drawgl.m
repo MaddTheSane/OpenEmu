@@ -55,6 +55,7 @@ static unsigned char* image = NULL;
 #define image_width  640
 #define image_height 480
 #define image_depth 32
+#define MAKELONG(low,high)     ((unsigned long)(((unsigned short)(low)) | (((unsigned long)((unsigned short)(high))) << 16)))
 
 static int mylog2(int val)
 {
@@ -71,9 +72,30 @@ unsigned char* PSXVideoBuffer()
 	return image;
 }
 
+void setGPUDefaults()
+{
+	iResX = 640;
+	iResY = 480;
+	iWinSize = MAKELONG(iResX, iResY);
+	iColDepth = 32;
+	iWindowMode = 1;
+	iMaintainAspect = 0;
+	UseFrameLimit = 1;
+	UseFrameSkip = 0;
+	iFrameLimit = 2;
+	fFrameRate = 60;
+	dwCfgFixes = 0;
+	iUseFixes = 0;
+	iUseNoStretchBlt = 0;
+	iUseDither = 0;
+	iShowFPS = 0;
+}
+
 void GPUTick()
 {
-	int image_width2 = mylog2(image_width);
+	static int image_width2 = 0;
+	if (image_width2 == 0) 
+		image_width2 = mylog2(image_width);
 	//int image_height2 = mylog2(image_height);
 
 	

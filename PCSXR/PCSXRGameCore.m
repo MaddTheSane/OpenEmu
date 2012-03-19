@@ -134,6 +134,7 @@ void SoundFeedStreamData(unsigned char* pSound,long lBytes)
 - (void)setupEmulation
 {
 	DLog(@"Setup");
+	//PCSXR Core
 	memset(&Config, 0, sizeof(Config));
     Config.UseNet = NO;
 	Config.Cpu = CPU_DYNAREC; //We don't have to worry about misaligned stack error on x86_64
@@ -190,6 +191,21 @@ void SoundFeedStreamData(unsigned char* pSound,long lBytes)
 	Config.Cdda = YES;
 	Config.PsxAuto = YES;
 	Config.PsxType = PSX_TYPE_NTSC; //This will probably be changed later in execution.
+
+	//PCSXR GPU
+	setGPUDefaults();
+	
+	//PCSXR SPU
+	iVolume = 5;
+	iXAPitch = 0;
+	iSPUIRQWait = 1;
+	iUseTimer = 2;
+	iUseReverb = 2;
+	iUseInterpolation = 2;
+	iDisStereo = 0;
+	iFreqResponse = 0;
+
+	
 }
 
 - (void)stopEmulation
