@@ -262,6 +262,9 @@ void *CdrThread(void *arg) {
 		locked = 1;
 
 		pthread_cond_wait(&cond, &mut);
+#ifdef __APPLE__
+		pthread_setname_np("PCSX CDROM");
+#endif
 
 		if (stopth == 2) pthread_exit(NULL);
 		// refill the buffer

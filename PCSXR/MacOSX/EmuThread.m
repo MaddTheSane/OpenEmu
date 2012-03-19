@@ -33,6 +33,8 @@ static pthread_mutex_t eventMutex;
 
 - (void)EmuThreadRun:(id)anObject
 {
+	[[NSThread currentThread] setName:@"PSX CPU thread"];
+
 	[[NSNotificationCenter defaultCenter] addObserver:self
         selector:@selector(emuWindowDidClose:)
         name:@"emuWindowDidClose" object:nil];
@@ -81,6 +83,8 @@ done:
 
 - (void)EmuThreadRunBios:(id)anObject
 {
+	[[NSThread currentThread] setName:@"PSX CPU thread"];
+
 	[[NSNotificationCenter defaultCenter] addObserver:self
         selector:@selector(emuWindowDidClose:)
         name:@"emuWindowDidClose" object:nil];
