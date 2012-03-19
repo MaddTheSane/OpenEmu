@@ -42,7 +42,6 @@
 
 #pragma mark SPU calls
 
-
 // SETUP SOUND
 void SetupSound(void)
 {
@@ -107,13 +106,57 @@ void SoundFeedStreamData(unsigned char* pSound,long lBytes)
 - (BOOL)loadFileAtPath:(NSString*) path
 {
 	SetIsoFile([path fileSystemRepresentation]);
+	[EmuThread run];
 	return YES;
 }
 
 - (void)setupEmulation
 {
-    DLog(@"Setup");
-	[EmuThread run];
+	DLog(@"Setup");
+	memset(&Config, 0, sizeof(Config));
+    Config.UseNet = NO;
+	Config.Cpu = CPU_DYNAREC; //We don't have to worry about misaligned stack error on x86_64
+	{
+		NSFileManager *manager = [NSFileManager defaultManager];
+		NSURL *supportURL = [manager URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:NULL];
+		NSURL *url = [supportURL URLByAppendingPathComponent:@"OpenEmu/PSX/Bios"];
+		if (![url checkResourceIsReachableAndReturnError:NULL])
+			[manager createDirectoryAtPath:[url path] withIntermediateDirectories:YES attributes:nil error:NULL];
+		NSMutableArray *biosList = [NSMutableArray arrayWithCapacity:1];
+        url = [supportURL URLByAppendingPathComponent:@"OpenEmu/PSX/MemCards"];
+		if (![url checkResourceIsReachableAndReturnError:NULL])
+            [manager createDirectoryAtPath:[url path] withIntermediateDirectories:YES attributes:nil error:NULL];
+		url = [supportURL URLByAppendingPathComponent:@"OpenEmu/PSX/Bios"];
+		const char *str = [[url path] fileSystemRepresentation];
+		if (str != nil) strncpy(Config.BiosDir, str, MAXPATHLEN);
+
+		NSString *biosDir = [manager stringWithFileSystemRepresentation:Config.BiosDir length:strlen(Config.BiosDir)];
+		NSArray *bioses = [manager contentsOfDirectoryAtPath:biosDir error:NULL];
+		if (bioses) {
+			NSUInteger i;
+			for (i = 0; i < [bioses count]; i++) {
+				NSString *file = [bioses objectAtIndex:i];
+				NSDictionary *attrib = [manager attributesOfItemAtPath:[[biosDir stringByAppendingPathComponent:file] stringByResolvingSymlinksInPath] error:NULL];
+				
+				if ([[attrib fileType] isEqualToString:NSFileTypeRegular]) {
+					unsigned long long size = [attrib fileSize];
+					if (([attrib fileSize] % (256 * 1024)) == 0 && size > 0) {
+						[biosList addObject:file];
+					}
+				}
+			}
+		}
+
+
+		if (([biosList count] > 0)) {
+			str = [(NSString *)[biosList objectAtIndex:0] fileSystemRepresentation];
+			if (str != nil) strncpy(Config.Bios, str, MAXPATHLEN);
+			else strcpy(Config.Bios, "HLE");
+		} else {
+			Config.HLE = YES;
+			strcpy(Config.Bios, "HLE");
+		}
+	}
 }
 
 - (void)stopEmulation
