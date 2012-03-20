@@ -196,7 +196,7 @@ void SoundFeedStreamData(unsigned char* pSound,long lBytes)
 	setGPUDefaults();
 	
 	//PCSXR SPU
-	iVolume = 5;
+	iVolume = 5; //We'll have OpenEmu manage the volume.
 	iXAPitch = 0;
 	iSPUIRQWait = 1;
 	iUseTimer = 2;

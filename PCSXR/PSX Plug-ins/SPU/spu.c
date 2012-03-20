@@ -1343,7 +1343,7 @@ long CALLBACK SPUinit(void)
  iSPUIRQWait = 1;
  lastch = -1;
 
- SPUReadConfig();                                         // read user stuff
+ //SPUReadConfig();                                         // read user stuff
  SetupStreams();                                       // prepare streaming
 
  return 0;

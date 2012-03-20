@@ -134,6 +134,13 @@
 			remoteGlobalIDString = 5568213415052EAE00C6F12B;
 			remoteInfo = PSX;
 		};
+		55AFA4691518F54000B5351D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82444BC40F512685007C171B /* OpenEmu.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 945E42FB1517F2B500057D08;
+			remoteInfo = Arcade;
+		};
 		82444BCC0F512685007C171B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 82444BC40F512685007C171B /* OpenEmu.xcodeproj */;
@@ -804,6 +811,7 @@
 				83DD8830149BF2000055E009 /* GameGear.oesystemplugin */,
 				556821841505546200C6F12B /* PSX.oesystemplugin */,
 				5524E752150A420F004F6E07 /* NDS.oesystemplugin */,
+				55AFA46A1518F54000B5351D /* Arcade.oesystemplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -905,6 +913,13 @@
 			fileType = wrapper.cfbundle;
 			path = PSX.oesystemplugin;
 			remoteRef = 556821831505546200C6F12B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		55AFA46A1518F54000B5351D /* Arcade.oesystemplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Arcade.oesystemplugin;
+			remoteRef = 55AFA4691518F54000B5351D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		82444BCD0F512685007C171B /* OpenEmu.app */ = {

@@ -87,7 +87,7 @@ extern void GPUcursor(int, int, int);
 extern void GPUaddVertex(short,short,s64,s64,s64);
 
 typedef long (CALLBACK* GPUshowScreenPicFunc)(unsigned char *);
-typedef long (CALLBACK* GPUdisplayTextFunc)( char *);
+typedef void (CALLBACK* GPUdisplayTextFunc)( char *);
 
 // CD-ROM Functions
 typedef long (CALLBACK* CDRinitFunc)(void);

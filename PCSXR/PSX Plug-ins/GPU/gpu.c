@@ -502,7 +502,7 @@ long GPUopen(unsigned long * disp,char * CapText,char * CfgFile)
  pCaptionText=CapText;
 
 
- GPUReadConfig();                                         // read registry
+ //GPUReadConfig();                                         // read registry
 
  InitFPS();
 
