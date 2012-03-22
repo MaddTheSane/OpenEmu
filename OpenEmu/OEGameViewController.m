@@ -83,6 +83,9 @@
 {
     if((self = [super init]))
     {
+        controlsWindow = [[OEHUDControlsBarWindow alloc] initWithGameViewController:self];
+        [controlsWindow setReleasedWhenClosed:YES];
+        
         [self setRom:aRom];        
         NSURL *url = [[self rom] URL];
 
@@ -95,14 +98,8 @@
         }
 
         NSView *view = [[NSView alloc] initWithFrame:(NSRect){{ 0.0, 0.0 }, { 1.0, 1.0 }}];
-        
-        gameView = [[OEGameView alloc] initWithFrame:(NSRect){{ 0.0, 0.0 }, { 1.0, 1.0 }}];
-        [gameView setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
-        [view addSubview:gameView];
-        
         [self setView:view];
 
-        
         NSError *error = nil;
         
         if(![self OE_loadFromURL:url core:core error:&error])
@@ -117,14 +114,9 @@
             return nil;
         }
         
-        controlsWindow = [[OEHUDControlsBarWindow alloc] initWithGameViewController:self];
-        [controlsWindow setReleasedWhenClosed:YES];
-
         [[self rom] markAsPlayedNow];
-
-        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-        [nc addObserver:self selector:@selector(viewDidChangeFrame:)  name:NSViewFrameDidChangeNotification object:gameView];
     }
+    
     NSLog(@"OEGameViewController init");
     return self;
 }
@@ -229,11 +221,6 @@
     {
         [self OE_terminateEmulationWithoutNotification];
         
-        [gameView removeFromSuperview];
-        gameView = [[OEGameView alloc] initWithFrame:[[self view] bounds]];
-        [gameView setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
-        [[self view] addSubview:gameView];
-        
         NSURL   *url   = [[self rom] URL];
         NSError *error = nil;
         if(![self OE_loadFromURL:url core:core error:&error])
@@ -259,6 +246,11 @@
     if(!emulationRunning) return;
     NSLog(@"terminateEmulation");
     
+    [self pauseGame];
+    
+    if([[OEHUDAlert saveAutoSaveGameAlert] runModal])
+        [self saveStateWithName:OESaveStateAutosaveName];
+    
     [self OE_terminateEmulationWithoutNotification];
     
     if([[self delegate] respondsToSelector:@selector(emulationDidFinishForGameViewController:)])
@@ -269,15 +261,15 @@
 
 - (void)OE_terminateEmulationWithoutNotification
 {
-    if([[OEHUDAlert saveAutoSaveGameAlert] runModal])
-        [self saveStateWithName:OESaveStateAutosaveName];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSViewFrameDidChangeNotification object:gameView];
+    [gameView removeFromSuperview];
+    gameView = nil;
     
     emulationRunning = NO;
     [gameView setRootProxy:nil];
     [gameView setGameResponder:nil];
     
     [gameController removeSettingObserver:[rootProxy gameCore]];
-    //[gameWindow makeFirstResponder:nil];
     
     gameSystemController = nil;
     gameSystemResponder  = nil;
@@ -334,7 +326,14 @@
     if([[self coreIdentifier] isNotEqualTo:[state coreIdentifier]])
     {
         NSLog(@"Invalid save state for current core");
-        return;
+        OEHUDAlert *alert = [OEHUDAlert alertWithMessageText:@"This save state was created with a different core. Do you want to switch to that core now?" defaultButton:@"OK" alternateButton:@"Cancel"];
+        [alert showSuppressionButtonForUDKey:UDAutoSwitchCoreAlertSuppressionKey];
+        if([alert runModal])
+        {
+            OECorePlugin *core = [OECorePlugin corePluginWithBundleIdentifier:[state coreIdentifier]];
+            [self restartUsingCore:core];
+        }
+        else return;
     }
     
     NSString *path = [[state stateFileURL] path];
@@ -368,8 +367,8 @@
     [alert setCallbackHandler:
      ^(OEHUDAlert *alert, NSUInteger result)
      {
-         [self saveStateWithName:[alert stringValue]];
-         
+         if(result == NSAlertDefaultReturn)
+             [self saveStateWithName:[alert stringValue]];
          [self playGame];
      }];
     
@@ -384,8 +383,6 @@
         return;
     }
     
-    [self pauseGame];
-    
     __block BOOL    success                 = NO;
     NSString        *temporaryDirectoryPath = NSTemporaryDirectory();
     NSURL           *temporaryDirectoryURL  = [NSURL fileURLWithPath:temporaryDirectoryPath];
@@ -395,7 +392,7 @@
         return [NSURL URLWithString:[NSString stringWithUUID] relativeToURL:temporaryDirectoryURL];
     }];
     
-    success = [[rootProxy gameCore] saveStateToFileAtPath:[temporaryStateFileURL path]];
+    success = [rootProxy saveStateToFileAtPath:[temporaryStateFileURL path]];
     if(!success)
     {
         NSLog(@"Could not create save state file at url: %@", temporaryStateFileURL);
@@ -438,7 +435,7 @@
 - (BOOL)loadStateFromFile:(NSString*)fileName error:(NSError**)error
 {
     if(error != NULL) *error = nil;
-    return [[rootProxy gameCore] loadStateFromFileAtPath:fileName];
+    return [rootProxy loadStateFromFileAtPath:fileName];
 }
 
 #pragma mark -
@@ -527,9 +524,15 @@
 - (BOOL)OE_loadFromURL:(NSURL *)aurl core:(OECorePlugin *)core error:(NSError **)outError
 {
     NSString *romPath = [aurl path];
-    
     if([[NSFileManager defaultManager] fileExistsAtPath:romPath])
     {
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+        
+        gameView = [[OEGameView alloc] initWithFrame:[[self view] bounds]];
+        [gameView setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+        [[self view] addSubview:gameView];
+        [nc addObserver:self selector:@selector(viewDidChangeFrame:)  name:NSViewFrameDidChangeNotification object:gameView];
+        
         emulationRunning = YES;
         if(!core)
             core = [self OE_coreForFileExtension:[aurl pathExtension] error:outError];
@@ -564,6 +567,9 @@
                 [gameView setRootProxy:rootProxy];
                 [gameView setGameResponder:gameSystemResponder];
             }
+
+            [[[self view] window] makeFirstResponder:gameView];
+            [gameView resizeSubviewsWithOldSize:[[self view] frame].size];
             
             return YES;
         }
