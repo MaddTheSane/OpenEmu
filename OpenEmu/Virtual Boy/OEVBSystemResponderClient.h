@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OEVBButton
+typedef NS_ENUM(short, OEVBButton)
 {
     OEVBButtonLeftUp,
     OEVBButtonLeftDown,
@@ -45,7 +45,7 @@ typedef enum _OEVBButton
     OEVBButtonStart,
     OEVBButtonSelect,
     OEVBButtonCount
-} OEVBButton;
+};
 
 @protocol OEVBSystemResponderClient <OESystemResponderClient, NSObject>
 

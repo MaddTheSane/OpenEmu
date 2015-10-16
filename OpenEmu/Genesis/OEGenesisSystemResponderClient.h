@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OEGenesisButton
+typedef NS_ENUM(short, OEGenesisButton)
 {
     OEGenesisButtonUp,
     OEGenesisButtonDown,
@@ -43,7 +43,7 @@ typedef enum _OEGenesisButton
     OEGenesisButtonStart,
     OEGenesisButtonMode,
     OEGenesisButtonCount,
-} OEGenesisButton;
+};
 
 @protocol OEGenesisSystemResponderClient <OESystemResponderClient, NSObject>
 

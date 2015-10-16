@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OEWSButton
+typedef NS_ENUM(short, OEWSButton)
 {
 	OEWSButtonX1,
 	OEWSButtonX3,
@@ -43,7 +43,7 @@ typedef enum _OEWSButton
     OEWSButtonStart,
 	OEWSButtonSound,
 	OEWSButtonCount
-} OEWSButton;
+};
 
 @protocol OEWSSystemResponderClient <OESystemResponderClient, NSObject>
 

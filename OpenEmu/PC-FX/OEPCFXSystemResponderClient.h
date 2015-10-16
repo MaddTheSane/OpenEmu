@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OEPCFXButton
+typedef NS_ENUM(short, OEPCFXButton)
 {
     OEPCFXButtonUp,
     OEPCFXButtonDown,
@@ -43,7 +43,7 @@ typedef enum _OEPCFXButton
     OEPCFXButtonRun,
     OEPCFXButtonSelect,
     OEPCFXButtonCount,
-} OEPCFXButton;
+};
 
 @protocol OEPCFXSystemResponderClient <OESystemResponderClient, NSObject>
 

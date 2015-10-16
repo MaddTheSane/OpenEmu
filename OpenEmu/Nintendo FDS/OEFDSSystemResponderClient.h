@@ -26,7 +26,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum _OEFDSButton
+typedef NS_ENUM(short, OEFDSButton)
 {
     OEFDSButtonUp,
     OEFDSButtonDown,
@@ -38,7 +38,7 @@ typedef enum _OEFDSButton
     OEFDSButtonSelect,
 	OEFDSButtonChangeSide,
     OEFDSButtonCount
-} OEFDSButton;
+};
 
 @protocol OEFDSSystemResponderClient <OESystemResponderClient, NSObject>
 

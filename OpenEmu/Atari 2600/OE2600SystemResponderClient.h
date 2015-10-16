@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OE2600Button
+typedef NS_ENUM(short, OE2600Button)
 {
 	OE2600ButtonUp,
 	OE2600ButtonDown,
@@ -44,7 +44,7 @@ typedef enum _OE2600Button
     OE2600ButtonReset,
 	OE2600ButtonSelect,
 	OE2600ButtonCount
-} OE2600Button;
+};
 
 @protocol OE2600SystemResponderClient <OESystemResponderClient, NSObject>
 

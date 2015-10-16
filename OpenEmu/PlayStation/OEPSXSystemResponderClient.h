@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OEPSXButton
+typedef NS_ENUM(short, OEPSXButton)
 {
 	OEPSXButtonUp,
 	OEPSXButtonDown,
@@ -56,7 +56,7 @@ typedef enum _OEPSXButton
     OEPSXRightAnalogLeft,
     OEPSXRightAnalogRight,
     OEPSXButtonCount
-} OEPSXButton;
+};
 
 @protocol OEPSXSystemResponderClient <OESystemResponderClient, NSObject>
 

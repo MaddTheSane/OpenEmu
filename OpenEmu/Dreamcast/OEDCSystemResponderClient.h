@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OEDCButton
+typedef NS_ENUM(short, OEDCButton)
 {
 	OEDCButtonUp,
 	OEDCButtonDown,
@@ -46,7 +46,7 @@ typedef enum _OEDCButton
     OEDCAnalogLeft,
     OEDCAnalogRight,
     OEDCButtonCount
-} OEDCButton;
+};
 
 @protocol OEDCSystemResponderClient <OESystemResponderClient, NSObject>
 

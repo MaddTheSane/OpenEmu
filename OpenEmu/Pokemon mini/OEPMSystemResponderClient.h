@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OEPMButton
+typedef NS_ENUM(short, OEPMButton)
 {
     OEPMButtonMenu,
     OEPMButtonA,
@@ -40,7 +40,7 @@ typedef enum _OEPMButton
     OEPMButtonRight,
     OEPMButtonPower,
     OEPMButtonShake
-} OEPMButton;
+};
 
 
 @protocol OEPMSystemResponderClient <OESystemResponderClient, NSObject>

@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OEArcadeButton
+typedef NS_ENUM(short, OEArcadeButton)
 {
     OEArcadeButtonUp,
     OEArcadeButtonDown,
@@ -44,7 +44,7 @@ typedef enum _OEArcadeButton
     OEArcadeButtonInsertCoin,
     OEArcadeButtonService,
     OEArcadeButtonCount,
-} OEArcadeButton;
+};
 
 @protocol OEArcadeSystemResponderClient <OESystemResponderClient, NSObject>
 

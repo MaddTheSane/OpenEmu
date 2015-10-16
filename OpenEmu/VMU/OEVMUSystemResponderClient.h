@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OEVMUButton
+typedef NS_ENUM(short, OEVMUButton)
 {
 	OEVMUButtonUp,
 	OEVMUButtonDown,
@@ -39,7 +39,7 @@ typedef enum _OEVMUButton
     OEVMUButtonSleep,
     OEVMUButtonMode,
 	OEVMUButtonCount
-} OEVMUButton;
+};
 
 @protocol OEVMUSystemResponderClient <OESystemResponderClient, NSObject>
 

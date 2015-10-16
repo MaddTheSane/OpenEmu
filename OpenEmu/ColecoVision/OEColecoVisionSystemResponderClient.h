@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OEColecoVisionButton
+typedef NS_ENUM(short, OEColecoVisionButton)
 {
 	OEColecoVisionButtonUp,
 	OEColecoVisionButtonDown,
@@ -49,7 +49,7 @@ typedef enum _OEColecoVisionButton
     OEColecoVisionButtonAsterisk,
     OEColecoVisionButtonPound,
 	OEColecoVisionButtonCount
-} OEColecoVisionButton;
+};
 
 @protocol OEColecoVisionSystemResponderClient <OESystemResponderClient, NSObject>
 

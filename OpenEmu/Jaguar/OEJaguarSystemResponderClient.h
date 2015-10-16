@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OEJaguarButton
+typedef NS_ENUM(short, OEJaguarButton)
 {
 	OEJaguarButtonUp,
 	OEJaguarButtonDown,
@@ -52,7 +52,7 @@ typedef enum _OEJaguarButton
     OEJaguarButtonAsterisk,
     OEJaguarButtonPound,
 	OEJaguarButtonCount
-} OEJaguarButton;
+};
 
 @protocol OEJaguarSystemResponderClient <OESystemResponderClient, NSObject>
 

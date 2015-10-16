@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OEVectrexButton
+typedef NS_ENUM(short, OEVectrexButton)
 {
     OEVectrexAnalogUp,
     OEVectrexAnalogDown,
@@ -39,7 +39,7 @@ typedef enum _OEVectrexButton
     OEVectrexButton3,
     OEVectrexButton4,
     OEVectrexButtonCount
-} OEVectrexButton;
+};
 
 @protocol OEVectrexSystemResponderClient <OESystemResponderClient, NSObject>
 

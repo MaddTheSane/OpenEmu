@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OE7800Button
+typedef NS_ENUM(short, OE7800Button)
 {
 	OE7800ButtonUp,
 	OE7800ButtonDown,
@@ -42,7 +42,7 @@ typedef enum _OE7800Button
     OE7800ButtonLeftDiff,
     OE7800ButtonRightDiff,
 	OE7800ButtonCount
-} OE7800Button;
+};
 
 @protocol OE7800SystemResponderClient <OESystemResponderClient, NSObject>
 

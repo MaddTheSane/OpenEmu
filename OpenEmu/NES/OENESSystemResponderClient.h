@@ -26,7 +26,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-typedef enum _OENESButton
+typedef NS_ENUM(short, OENESButton)
 {
     OENESButtonUp,
     OENESButtonDown,
@@ -37,7 +37,7 @@ typedef enum _OENESButton
     OENESButtonStart,
     OENESButtonSelect,
     OENESButtonCount
-} OENESButton;
+};
 
 @protocol OENESSystemResponderClient <OESystemResponderClient, NSObject>
 

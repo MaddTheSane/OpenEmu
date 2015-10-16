@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OE5200Button
+typedef NS_ENUM(short, OE5200Button)
 {
 	OE5200ButtonUp,
 	OE5200ButtonDown,
@@ -52,7 +52,7 @@ typedef enum _OE5200Button
     OE5200ButtonAsterisk,
     OE5200ButtonPound,
 	OE5200ButtonCount
-} OE5200Button;
+};
 
 @protocol OE5200SystemResponderClient <OESystemResponderClient, NSObject>
 

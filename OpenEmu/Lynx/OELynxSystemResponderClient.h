@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OELynxButton
+typedef NS_ENUM(short, OELynxButton)
 {
 	OELynxButtonUp,
 	OELynxButtonDown,
@@ -39,7 +39,7 @@ typedef enum _OELynxButton
     OELynxButtonOption1,
 	OELynxButtonOption2,
 	OELynxButtonCount
-} OELynxButton;
+};
 
 @protocol OELynxSystemResponderClient <OESystemResponderClient, NSObject>
 

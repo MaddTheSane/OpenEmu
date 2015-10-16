@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OESaturnButton
+typedef NS_ENUM(short, OESaturnButton)
 {
 	OESaturnButtonUp,
 	OESaturnButtonDown,
@@ -44,7 +44,7 @@ typedef enum _OESaturnButton
     OESaturnButtonR,
     OESaturnButtonStart,
 	OESaturnButtonCount
-} OESaturnButton;
+};
 
 @protocol OESaturnSystemResponderClient <OESystemResponderClient, NSObject>
 

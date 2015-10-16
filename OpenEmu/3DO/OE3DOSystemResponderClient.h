@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef NS_ENUM(NSInteger, OE3DOButton)
+typedef NS_ENUM(short, OE3DOButton)
 {
     OE3DOButtonUp,
     OE3DOButtonDown,

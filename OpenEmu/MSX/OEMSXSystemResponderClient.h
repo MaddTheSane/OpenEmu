@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum
+typedef NS_ENUM(short, OEMSXJoystickButton)
 {
     OEMSXJoystickUp,
     OEMSXJoystickDown,
@@ -36,9 +36,9 @@ typedef enum
     OEMSXJoystickRight,
     OEMSXButtonA,
     OEMSXButtonB,
-} OEMSXJoystickButton;
+};
 
-typedef enum
+typedef NS_ENUM(char, OEMSXKey)
 {
     // These names reflect the labels on the European keyboard, except
     // as otherwise indicated
@@ -143,7 +143,7 @@ typedef enum
     OEMSXKeyNumpadPoint = 0x5A,
     OEMSXKeyNumpadComma = 0x5B,
     OEMSXKeyNumpadPlus  = 0x5C,
-} OEMSXKey;
+};
 
 @protocol OEMSXSystemResponderClient <OESystemResponderClient, NSObject>
 

@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OEGBButton
+typedef NS_ENUM(short, OEGBButton)
 {
     OEGBButtonUp,
     OEGBButtonDown,
@@ -39,7 +39,7 @@ typedef enum _OEGBButton
     OEGBButtonStart,
     OEGBButtonSelect,
     OEGBButtonCount,
-} OEGBButton;
+};
 
 @protocol OEGBSystemResponderClient <OESystemResponderClient, NSObject>
 
