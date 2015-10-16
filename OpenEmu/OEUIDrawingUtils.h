@@ -25,7 +25,7 @@
  */
 #import <Foundation/Foundation.h>
 
-typedef enum {
+typedef NS_ENUM(int, OEUIState) {
 	OEUIStateInactive,
 	OEUIStateEnabled,
 	OEUIStateActive,
@@ -37,9 +37,9 @@ typedef enum {
 	OEUIStateUnfocusedSelected,
 	OEUIStateFocusedUnselected,
 	OEUIStateFocusedSelected,
-} OEUIState;
+};
 
-typedef enum {
+typedef NS_ENUM(int, OEButtonState) {
 	OEButtonStateSelectedDisabled,
 	OEButtonStateUnselectedDisabled,
 	
@@ -54,4 +54,4 @@ typedef enum {
 	
 	OEButtonStateSelectedNormal,
 	OEButtonStateUnselectedNormal
-} OEButtonState;
+};

@@ -28,12 +28,12 @@
 #import <Cg/cg.h>
 #import <Cg/cgGL.h>
 
-typedef enum
+typedef NS_ENUM(NSInteger, OEScaleType)
 {
     OEScaleTypeSource,
     OEScaleTypeViewPort,
     OEScaleTypeAbsolute
-} OEScaleType;
+};
 
 static const NSUInteger OEFramesSaved = 8;
 static const NSUInteger OEMultipasses = 10;

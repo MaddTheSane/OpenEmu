@@ -68,7 +68,7 @@ NSString *const OEGameDocumentErrorDomain = @"OEGameDocumentErrorDomain";
 // - (void)document:(NSDocument *)doc shouldClose:(BOOL)shouldClose  contextInfo:(void  *)contextInfo
 #define CAN_CLOSE_REPLY ((void(*)(id, SEL, NSDocument *, BOOL, void *))objc_msgSend)
 
-typedef enum : NSUInteger
+typedef NS_ENUM(NSUInteger, OEEmulationStatus)
 {
     OEEmulationStatusNotSetup,
     OEEmulationStatusSetup,
@@ -76,7 +76,7 @@ typedef enum : NSUInteger
     OEEmulationStatusPlaying,
     OEEmulationStatusPaused,
     OEEmulationStatusTerminating,
-} OEEmulationStatus;
+};
 
 @interface OEGameDocument ()
 {

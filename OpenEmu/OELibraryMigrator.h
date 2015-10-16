@@ -27,9 +27,9 @@
 #import <Foundation/Foundation.h>
 
 extern NSString *const OEMigrationErrorDomain;
-typedef enum : NSUInteger {
+typedef NS_ENUM(NSInteger, OEMigrationErrorCode) {
     OEMigrationCanceled = -10,
-} OEMigrationErrorCode;
+};
 
 @interface OELibraryMigrator : NSObject
 - (id)initWithStoreURL:(NSURL*)url;

@@ -31,20 +31,20 @@
 #pragma mark -
 #pragma mark Enumerations
 
-typedef enum : NSUInteger
+typedef NS_ENUM(NSUInteger, OEMenuStyle)
 {
     OEMenuStyleDark,
     OEMenuStyleLight
-} OEMenuStyle;
+};
 
-typedef enum : NSUInteger
+typedef NS_ENUM(NSUInteger, OERectEdge)
 {
     OENoEdge,
     OEMinYEdge,
     OEMaxYEdge,
     OEMinXEdge,
     OEMaxXEdge
-} OERectEdge;
+};
 
 #pragma mark -
 #pragma mark Menu option keys

@@ -28,7 +28,7 @@
 
 @protocol OESystemResponderClient;
 
-typedef enum _OE3DOButton
+typedef NS_ENUM(NSInteger, OE3DOButton)
 {
     OE3DOButtonUp,
     OE3DOButtonDown,
@@ -42,7 +42,7 @@ typedef enum _OE3DOButton
     OE3DOButtonP,
     OE3DOButtonX,
     OE3DOButtonCount
-} OE3DOButton;
+};
 
 @protocol OE3DOSystemResponderClient <OESystemResponderClient, NSObject>
 

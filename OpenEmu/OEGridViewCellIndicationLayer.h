@@ -25,13 +25,13 @@
  */
 
 
-typedef enum
+typedef NS_ENUM(NSInteger, OEGridViewCellIndicationType)
 {
     OEGridViewCellIndicationTypeNone,
     OEGridViewCellIndicationTypeFileMissing,
     OEGridViewCellIndicationTypeProcessing,
     OEGridViewCellIndicationTypeDropOn,
-} OEGridViewCellIndicationType;
+};
 
 @interface OEGridViewCellIndicationLayer : CALayer
 

@@ -26,12 +26,12 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum  {
+typedef NS_ENUM(NSInteger, OEImportExitStatus)  {
     OEImportExitNone,
     OEImportExitErrorResolvable,
     OEImportExitErrorFatal,
     OEImportExitSuccess,
-} OEImportExitStatus;
+};
 
 extern NSString * const OEImportManualSystems;
 

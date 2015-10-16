@@ -43,7 +43,7 @@
  looking for the most appropriate object, based a system's state, the default state mask is used if no other state mask
  could be found.
  */
-enum
+typedef NS_OPTIONS(NSUInteger, OEThemeState)
 {
     OEThemeInputStateWindowInactive = 1 <<  0,
     OEThemeInputStateWindowActive   = 1 <<  1,
@@ -61,7 +61,7 @@ enum
     
     OEThemeInputStateModifierNone        = 1 << 13,
     OEThemeInputStateModifierAlternate   = 1 << 14,
-};
+//};
 
 #pragma mark -
 #pragma mark Input state wild card masks
@@ -71,8 +71,8 @@ enum
  object to apply.  'Any' input states can be set explicitly, if an input state is unspecified then the 'Any' mask is
  set implicitly.
  */
-enum
-{
+//enum
+//{
     OEThemeStateAnyWindowActivity = OEThemeInputStateWindowInactive | OEThemeInputStateWindowActive,
     OEThemeStateAnyToggle         = OEThemeInputStateToggleOff      | OEThemeInputStateToggleOn      | OEThemeInputStateToggleMixed,
     OEThemeStateAnySelection      = OEThemeInputStateUnpressed      | OEThemeInputStatePressed,
@@ -82,7 +82,6 @@ enum
     OEThemeStateAnyModifier       = OEThemeInputStateModifierNone   | OEThemeInputStateModifierAlternate,
     OEThemeStateDefault           = 0xFFFFF,
 };
-typedef NSUInteger OEThemeState;
 
 #pragma mark -
 #pragma mark Common theme object attributes
@@ -106,7 +105,7 @@ extern OEThemeState  OEThemeStateFromString(NSString *state);
     NSMutableArray *_states;              // Used for implicit selection of object for desired state
 }
 
-- (id)initWithDefinition:(id)definition;
+- (instancetype)initWithDefinition:(id)definition;
 
 // Must be overridden by subclasses to be able to parse customized UI element
 + (id)parseWithDefinition:(NSDictionary *)definition;

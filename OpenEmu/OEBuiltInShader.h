@@ -26,17 +26,17 @@
 
 #import "OEGameShader.h"
 
-typedef enum OEBuiltInShaderType : NSUInteger {
+typedef NS_ENUM(NSUInteger, OEBuiltInShaderType) {
     OEBuiltInShaderTypeLinear,
     OEBuiltInShaderTypeNearestNeighbor,
 
     OEBuiltInShaderTypeCount,
     OEBuiltInShaderTypeUnknown = NSNotFound,
-} OEBuiltInShaderType;
+};
 
 @interface OEBuiltInShader : OEGameShader
 + (NSString *)shaderNameForBuiltInShaderType:(OEBuiltInShaderType)type;
 + (OEBuiltInShaderType)builtInShaderTypeShaderName:(NSString *)type;
-- (id)initWithBuiltInShaderType:(OEBuiltInShaderType)type;
+- (instancetype)initWithBuiltInShaderType:(OEBuiltInShaderType)type;
 @property(readonly) OEBuiltInShaderType type;
 @end

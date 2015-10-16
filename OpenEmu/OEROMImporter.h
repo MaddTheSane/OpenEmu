@@ -43,7 +43,7 @@ extern NSString *const OEImportErrorDomainFatal;
 extern NSString *const OEImportErrorDomainResolvable;
 extern NSString *const OEImportErrorDomainSuccess;
 
-typedef enum : NSInteger {
+typedef NS_ENUM(NSInteger, OEImportErrorCode) {
     OEImportErrorCodeAlreadyInDatabase     = -1,
     OEImportErrorCodeMultipleSystems       = 2,
     OEImportErrorCodeNoSystem              = 3,
@@ -51,16 +51,16 @@ typedef enum : NSInteger {
     OEImportErrorCodeAdditionalFiles       = 5,
     OEImportErrorCodeNoHash                = 6,
     OEImportErrorCodeNoGame                = 7,
-} OEImportErrorCode;
+};
 
 #pragma mark - Importer Status
-typedef enum : NSInteger {
+typedef NS_ENUM(NSInteger, OEImporterStatus) {
     OEImporterStatusStopped  = 1,
     OEImporterStatusRunning  = 2,
    // OEImporterStatusPausing  = 3,
     OEImporterStatusPaused   = 4,
    // OEImporterStatusStopping = 5,
-} OEImporterStatus;
+};
 
 @class OELibraryDatabase;
 @protocol OEROMImporterDelegate;

@@ -26,13 +26,13 @@
 
 #import "OEGameShader.h"
 
-typedef enum
+typedef NS_ENUM(NSInteger, OENTSCFilterType)
 {
     OENTSCFilterTypeNone,
     OENTSCFilterTypeRGB,
     OENTSCFilterTypeSVideo,
     OENTSCFilterTypeComposite
-} OENTSCFilterType;
+};
 
 @interface OEMultipassShader : OEGameShader
 

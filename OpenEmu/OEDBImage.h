@@ -26,11 +26,11 @@
 
 #import "OEDBItem.h"
 
-typedef enum : NSUInteger
+typedef NS_ENUM(NSUInteger, OEBitmapImageFileType)
 {
     OEBitmapImageFileTypeOriginal = 7,
     OEBitmapImageFileTypeDefault  = 8,
-} OEBitmapImageFileType;
+};
 
 @class OELibraryDatabase, OEDBGame;
 @interface OEDBImage : OEDBItem
