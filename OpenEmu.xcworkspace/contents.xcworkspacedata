@@ -56,6 +56,9 @@
       location = "group:O2EM/O2EM.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:pcsxr/PCSX-R.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:picodrive/Picodrive.xcodeproj">
    </FileRef>
    <FileRef

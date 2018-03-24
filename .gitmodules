@@ -82,3 +82,6 @@
 [submodule "OpenEmuXPCCommunicator"]
 	path = OpenEmuXPCCommunicator
 	url = git@github.com:OpenEmu/OpenEmuXPCCommunicator.git
+[submodule "pcsxr"]
+	path = pcsxr
+	url = https://github.com/MaddTheSane/PCSX-Reloaded.git
