@@ -60,7 +60,6 @@ NSString *const OEGameVolumeKey = @"volume";
 NSString *const OEGameDefaultVideoFilterKey = @"videoFilter";
 NSString *const OEGameSystemVideoFilterKeyFormat = @"videoFilter.%@";
 NSString *const OEGameCoresInBackgroundKey = @"gameCoreInBackgroundThread";
-NSString *const OEDontShowGameTitleInWindowKey = @"dontShowGameTitleInWindow";
 NSString *const OEAutoSwitchCoreAlertSuppressionKey = @"changeCoreWhenLoadingStateWitoutConfirmation";
 NSString *const OEBackgroundPauseKey = @"backgroundPause";
 NSString *const OEBackgroundControllerPlayKey = @"backgroundControllerPlay";
@@ -159,7 +158,7 @@ NSString *const OEScreenshotPropertiesKey = @"screenshotProperties";
 {
     [super viewWillDisappear];
 
-    [_controlsWindow hide];
+    [_controlsWindow hideAnimated:NO];
     [_controlsWindow setGameWindow:nil];
     [[self OE_rootWindow] removeChildWindow:_controlsWindow];
 }

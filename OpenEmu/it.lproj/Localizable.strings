@@ -524,6 +524,12 @@
 
 "Category" = "Categoria";   // shown when the corresponding item does not fit in the main window's toolbar
 
+"An issue was detected with one of your controllers." = "Si è verificato un problema con un controller.";  // Headline for bindings repaired alert
+
+"The button profile for one of your controllers does not match the profile detected the last time it was connected to OpenEmu. Some of the controls associated to the affected controller were reset.\n\nYou can go to the Controls preferences to check which associations were affected." = "La configurazione dei pulsanti di uno dei controller è cambiata dall'ultima volta in cui il controller è stato usato con OpenEmu. Alcuni controlli associati a questo controller sono stati reimpostati.\n\nPuoi andare nelle Preferenze Controlli per verificare quali impostazioni sono state modificate.";  // Message for bindings repaired alert
+
+"Keycode 0x%lX" = "Codice 0x%lX";  // TODO  // Fallback for unknown keys
+
 
 /* Secrets */
 
@@ -565,9 +571,7 @@
 
 "Show options button" = "Mostra il pulsante Opzioni";
 
-"Show quicksave notification during gameplay" = "Mostra notifiche di salvataggio veloce durante il gioco";
-
-"Show screenshot notification during gameplay" = "Mostra le notifiche di salvataggio delle istantanee durante il gioco";
+"Show notifications during gameplay" = "Mostra le notifiche durante il gioco";
 
 "Use quicksave slots" = "Usa slot salvataggi veloci";
 
@@ -644,3 +648,7 @@
 "ECM compressed binary detected." = "È stato individuato un file binario in formato ECM.";
 
 "ECM compressed binaries cannot be imported. Please read the disc importing guide." = "I file binari compressi in formato ECM non possono essere importati. Leggi la guida all'importazione dei dischi di gioco.";
+
+"Threshold for analog controls bound to buttons" = "Sensibilità pulsanti associati a controlli analogici";
+
+"Range: %@ to %@" = "Intervallo valido: %@ ÷ %@";  // Range indicator tooltip for numeric text boxes in the Debug Preferences

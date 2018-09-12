@@ -524,6 +524,12 @@
 
 "Category" = "Category";   // TODO shown when the corresponding item does not fit in the main window's toolbar
 
+"An issue was detected with one of your controllers." = "An issue was detected with one of your controllers.";  //TODO // Headline for bindings repaired alert
+
+"The button profile for one of your controllers does not match the profile detected the last time it was connected to OpenEmu. Some of the controls associated to the affected controller were reset.\n\nYou can go to the Controls preferences to check which associations were affected." = "The button profile for one of your controllers does not match the profile detected the last time it was connected to OpenEmu. Some of the controls associated to the affected controller were reset.\n\nYou can go to the Controls preferences to check which associations were affected.";  // TODO // Message for bindings repaired alert
+
+"Keycode 0x%lX" = "Keycode 0x%lX";  // TODO  // Fallback for unknown keys
+
 
 /* Secrets */
 
@@ -565,9 +571,7 @@
 
 "Show options button" = "Показать кнопку опций";
 
-"Show quicksave notification during gameplay" = "Показать уведомление о быстром сохранении в процессе игры";
-
-"Show screenshot notification during gameplay" = "Show screenshot notification during gameplay"; // TODO
+"Show notifications during gameplay" = "Показать уведомления в процессе игры";
 
 "Use quicksave slots" = "Использовать слоты быстрых сохранений";
 
@@ -644,3 +648,7 @@
 "ECM compressed binary detected." = "ECM compressed binary detected.";  // TODO
 
 "ECM compressed binaries cannot be imported. Please read the disc importing guide." = "ECM compressed binaries cannot be imported. Please read the disc importing guide.";  // TODO
+
+"Threshold for analog controls bound to buttons" = "Threshold for analog controls bound to buttons";    // TODO
+
+"Range: %@ to %@" = "Range: %@ to %@";  // Range indicator tooltip for numeric text boxes in the Debug Preferences // TODO

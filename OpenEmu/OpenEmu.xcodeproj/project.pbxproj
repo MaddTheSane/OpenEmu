@@ -262,6 +262,7 @@
 		5A221ABE1BFDB922002FDD10 /* sg1000_library@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A221ABD1BFDB922002FDD10 /* sg1000_library@2x.png */; };
 		5A221B101BFE9671002FDD10 /* 3do_library.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A221B0F1BFE9671002FDD10 /* 3do_library.png */; };
 		5A221B121BFE96A1002FDD10 /* 3do_library@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A221B111BFE96A1002FDD10 /* 3do_library@2x.png */; };
+		5A2CE89A206EA61B00790F89 /* NSArray+OEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CE899206EA61B00790F89 /* NSArray+OEAdditions.m */; };
 		5A3BB0361D964A1C00E10F27 /* OEAttributedTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3BB0351D964A1C00E10F27 /* OEAttributedTextFieldCell.m */; };
 		5A3BB0391D964A4500E10F27 /* OECenteredTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3BB0381D964A4500E10F27 /* OECenteredTextFieldCell.m */; };
 		5A3BB03E1D964C1100E10F27 /* OEControlsKeyHeadlineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3BB03B1D964C1100E10F27 /* OEControlsKeyHeadlineCell.m */; };
@@ -279,7 +280,6 @@
 		5A6E80A71DCA6B210022F2AE /* OEGameCollectionViewController+TouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E80A61DCA6B210022F2AE /* OEGameCollectionViewController+TouchBar.swift */; };
 		5A79F7951C15F542003124D5 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A79F7941C15F542003124D5 /* PreferencesWindowController.swift */; };
 		5A886E581BF43AC900775123 /* NSWindow+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A886E571BF43AC900775123 /* NSWindow+Image.swift */; };
-		5A9606D01C0A50D60089B494 /* NSArray+BlockFiltering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9606CF1C0A50D60089B494 /* NSArray+BlockFiltering.swift */; };
 		5A9606D21C0A5A570089B494 /* NSManagedObjectContext+LibraryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9606D11C0A5A570089B494 /* NSManagedObjectContext+LibraryDatabase.swift */; };
 		5A9606D41C0A63740089B494 /* NSMutableDictionary+Pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9606D31C0A63740089B494 /* NSMutableDictionary+Pop.swift */; };
 		5A9606D61C0A7C9D0089B494 /* NSWindow+FullScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9606D51C0A7C9D0089B494 /* NSWindow+FullScreen.swift */; };
@@ -503,6 +503,10 @@
 		875CC3251E221D9800E3BEB9 /* controller_tg16_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 875CC3231E221D9800E3BEB9 /* controller_tg16_mask@2x.png */; };
 		875CC3261E221D9800E3BEB9 /* controller_tg16@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 875CC3241E221D9800E3BEB9 /* controller_tg16@2x.png */; };
 		8763A38F1D5694E90089C30B /* OEArcadeSystemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8763A38E1D5694E90089C30B /* OEArcadeSystemController.m */; };
+		876FF0D6207B0A3D002F935A /* hud_stepforward_notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 876FF0D2207B0A3C002F935A /* hud_stepforward_notification@2x.png */; };
+		876FF0D8207B1269002F935A /* hud_stepbackward_notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 876FF0D7207B1268002F935A /* hud_stepbackward_notification@2x.png */; };
+		876FF0DA207B2B96002F935A /* hud_stepbackward_notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 876FF0D9207B2B95002F935A /* hud_stepbackward_notification.png */; };
+		876FF0DC207B2BA6002F935A /* hud_stepforward_notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 876FF0DB207B2BA5002F935A /* hud_stepforward_notification.png */; };
 		877EDD151E24BC63004D68E7 /* controller_pce_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 877EDD101E24BC63004D68E7 /* controller_pce_mask.png */; };
 		877EDD161E24BC63004D68E7 /* controller_pce_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 877EDD111E24BC63004D68E7 /* controller_pce_mask@2x.png */; };
 		877EDD171E24BC63004D68E7 /* controller_pce.png in Resources */ = {isa = PBXBuildFile; fileRef = 877EDD121E24BC63004D68E7 /* controller_pce.png */; };
@@ -515,6 +519,10 @@
 		877EDD231E24BEE0004D68E7 /* Controller-Preferences-JAP.plist in Resources */ = {isa = PBXBuildFile; fileRef = 877EDD1E1E24BEE0004D68E7 /* Controller-Preferences-JAP.plist */; };
 		879243B41C0DA5910064C515 /* controller_5200_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 879243B21C0DA5910064C515 /* controller_5200_mask@2x.png */; };
 		879243B51C0DA5910064C515 /* controller_5200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 879243B31C0DA5910064C515 /* controller_5200@2x.png */; };
+		87AA7D082071870F00E5DB80 /* hud_fastforward_notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 87AA7D032071870D00E5DB80 /* hud_fastforward_notification@2x.png */; };
+		87AA7D092071870F00E5DB80 /* hud_fastforward_notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 87AA7D072071870E00E5DB80 /* hud_fastforward_notification.png */; };
+		87AA7D0C2071871E00E5DB80 /* hud_rewind_notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 87AA7D0A2071871E00E5DB80 /* hud_rewind_notification.png */; };
+		87AA7D0D2071871E00E5DB80 /* hud_rewind_notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 87AA7D0B2071871E00E5DB80 /* hud_rewind_notification@2x.png */; };
 		87B3DC0A1C644BCC003C65E4 /* controller_3do_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 87B3DC081C644BCC003C65E4 /* controller_3do_mask@2x.png */; };
 		87B3DC0B1C644BCC003C65E4 /* controller_3do@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 87B3DC091C644BCC003C65E4 /* controller_3do@2x.png */; };
 		87BC4DA21BA3A88600BF1F86 /* controller_7800_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 87BC4DA01BA3A88600BF1F86 /* controller_7800_mask@2x.png */; };
@@ -1814,6 +1822,8 @@
 		5A221ABD1BFDB922002FDD10 /* sg1000_library@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sg1000_library@2x.png"; sourceTree = "<group>"; };
 		5A221B0F1BFE9671002FDD10 /* 3do_library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3do_library.png; sourceTree = "<group>"; };
 		5A221B111BFE96A1002FDD10 /* 3do_library@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3do_library@2x.png"; sourceTree = "<group>"; };
+		5A2CE895206EA5E900790F89 /* NSArray+OEAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+OEAdditions.h"; sourceTree = "<group>"; };
+		5A2CE899206EA61B00790F89 /* NSArray+OEAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+OEAdditions.m"; sourceTree = "<group>"; };
 		5A3BB0341D964A1C00E10F27 /* OEAttributedTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEAttributedTextFieldCell.h; sourceTree = "<group>"; };
 		5A3BB0351D964A1C00E10F27 /* OEAttributedTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OEAttributedTextFieldCell.m; sourceTree = "<group>"; };
 		5A3BB0371D964A4500E10F27 /* OECenteredTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OECenteredTextFieldCell.h; sourceTree = "<group>"; };
@@ -1837,7 +1847,6 @@
 		5A6E80A61DCA6B210022F2AE /* OEGameCollectionViewController+TouchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OEGameCollectionViewController+TouchBar.swift"; sourceTree = "<group>"; };
 		5A79F7941C15F542003124D5 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		5A886E571BF43AC900775123 /* NSWindow+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSWindow+Image.swift"; sourceTree = "<group>"; };
-		5A9606CF1C0A50D60089B494 /* NSArray+BlockFiltering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSArray+BlockFiltering.swift"; sourceTree = "<group>"; };
 		5A9606D11C0A5A570089B494 /* NSManagedObjectContext+LibraryDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+LibraryDatabase.swift"; sourceTree = "<group>"; };
 		5A9606D31C0A63740089B494 /* NSMutableDictionary+Pop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableDictionary+Pop.swift"; sourceTree = "<group>"; };
 		5A9606D51C0A7C9D0089B494 /* NSWindow+FullScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSWindow+FullScreen.swift"; sourceTree = "<group>"; };
@@ -2200,6 +2209,10 @@
 		875CC3241E221D9800E3BEB9 /* controller_tg16@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "controller_tg16@2x.png"; sourceTree = "<group>"; };
 		8763A38D1D5694E90089C30B /* OEArcadeSystemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEArcadeSystemController.h; sourceTree = "<group>"; };
 		8763A38E1D5694E90089C30B /* OEArcadeSystemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OEArcadeSystemController.m; sourceTree = "<group>"; };
+		876FF0D2207B0A3C002F935A /* hud_stepforward_notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_stepforward_notification@2x.png"; sourceTree = "<group>"; };
+		876FF0D7207B1268002F935A /* hud_stepbackward_notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_stepbackward_notification@2x.png"; sourceTree = "<group>"; };
+		876FF0D9207B2B95002F935A /* hud_stepbackward_notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hud_stepbackward_notification.png; sourceTree = "<group>"; };
+		876FF0DB207B2BA5002F935A /* hud_stepforward_notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hud_stepforward_notification.png; sourceTree = "<group>"; };
 		877EDD101E24BC63004D68E7 /* controller_pce_mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controller_pce_mask.png; sourceTree = "<group>"; };
 		877EDD111E24BC63004D68E7 /* controller_pce_mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "controller_pce_mask@2x.png"; sourceTree = "<group>"; };
 		877EDD121E24BC63004D68E7 /* controller_pce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controller_pce.png; sourceTree = "<group>"; };
@@ -2212,6 +2225,10 @@
 		877EDD1E1E24BEE0004D68E7 /* Controller-Preferences-JAP.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Controller-Preferences-JAP.plist"; sourceTree = "<group>"; };
 		879243B21C0DA5910064C515 /* controller_5200_mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "controller_5200_mask@2x.png"; sourceTree = "<group>"; };
 		879243B31C0DA5910064C515 /* controller_5200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "controller_5200@2x.png"; sourceTree = "<group>"; };
+		87AA7D032071870D00E5DB80 /* hud_fastforward_notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_fastforward_notification@2x.png"; sourceTree = "<group>"; };
+		87AA7D072071870E00E5DB80 /* hud_fastforward_notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hud_fastforward_notification.png; sourceTree = "<group>"; };
+		87AA7D0A2071871E00E5DB80 /* hud_rewind_notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hud_rewind_notification.png; sourceTree = "<group>"; };
+		87AA7D0B2071871E00E5DB80 /* hud_rewind_notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_rewind_notification@2x.png"; sourceTree = "<group>"; };
 		87ACB6BD1D2509B300138B7E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/OEMigrationWindowController.strings; sourceTree = "<group>"; };
 		87ACB6BE1D2509B500138B7E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/OELibraryGamesViewController.strings; sourceTree = "<group>"; };
 		87ACB6BF1D2509B600138B7E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/OEPrefControlsController.strings; sourceTree = "<group>"; };
@@ -3616,7 +3633,8 @@
 				5A9606E91C0BD2BD0089B494 /* DLog.swift */,
 				83E8927819748C20004D4489 /* NS(Attributed)String+Geometrics.h */,
 				83E8927919748C20004D4489 /* NS(Attributed)String+Geometrics.m */,
-				5A9606CF1C0A50D60089B494 /* NSArray+BlockFiltering.swift */,
+				5A2CE895206EA5E900790F89 /* NSArray+OEAdditions.h */,
+				5A2CE899206EA61B00790F89 /* NSArray+OEAdditions.m */,
 				5A9606DD1C0B0E220089B494 /* NSAttributedString+Hyperlink.swift */,
 				EFBD5D7614EFE19A00FBD1E0 /* NSColor+OEAdditions.h */,
 				EFBD5D7714EFE19A00FBD1E0 /* NSColor+OEAdditions.m */,
@@ -3730,8 +3748,10 @@
 				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
 				19C28FB0FE9D524F11CA2CBB /* Products */,
 			);
+			indentWidth = 4;
 			name = OpenEmu;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		2A37F4ABFDCFA73011CA2CEA /* Classes */ = {
 			isa = PBXGroup;
@@ -4068,10 +4088,18 @@
 		53439B9D13B93920005C0CC8 /* Interface Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				87AA7D072071870E00E5DB80 /* hud_fastforward_notification.png */,
+				87AA7D032071870D00E5DB80 /* hud_fastforward_notification@2x.png */,
 				83F6076F1BD3E4C9001236FC /* hud_quicksave_notification.png */,
 				83F607701BD3E4C9001236FC /* hud_quicksave_notification@2x.png */,
+				87AA7D0A2071871E00E5DB80 /* hud_rewind_notification.png */,
+				87AA7D0B2071871E00E5DB80 /* hud_rewind_notification@2x.png */,
 				83F607711BD3E4C9001236FC /* hud_screenshot_notification.png */,
 				83F607721BD3E4C9001236FC /* hud_screenshot_notification@2x.png */,
+				876FF0D9207B2B95002F935A /* hud_stepbackward_notification.png */,
+				876FF0D7207B1268002F935A /* hud_stepbackward_notification@2x.png */,
+				876FF0DB207B2BA5002F935A /* hud_stepforward_notification.png */,
+				876FF0D2207B0A3C002F935A /* hud_stepforward_notification@2x.png */,
 				83338C2117A281C7007E32E9 /* secret.mp3 */,
 			);
 			name = "Interface Graphics";
@@ -6740,7 +6768,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				TargetAttributes = {
 					081A46251B95744A00565444 = {
 						CreatedOnToolsVersion = 6.4;
@@ -7040,13 +7068,17 @@
 				8306CD261BD3AC3D0025BC6C /* OESidebarController.xib in Resources */,
 				1B32151514DDD49E00C5B50A /* OpenEmu.dae in Resources */,
 				1B32151614DDD49E00C5B50A /* OpenEmuText.dae in Resources */,
+				876FF0DC207B2BA6002F935A /* hud_stepforward_notification.png in Resources */,
 				1BFC26D0116C1CA300B95689 /* OpenEmuHelperApp in Resources */,
 				8F5074741C10BCEC00F52B83 /* OELibraryGamesViewController.xib in Resources */,
 				82DD29DB12369F1100B58A8F /* KeyboardUsages.plist in Resources */,
 				833ADC4D196B078E00217D9A /* OECollectionViewController.xib in Resources */,
+				876FF0DA207B2B96002F935A /* hud_stepbackward_notification.png in Resources */,
 				83F607761BD3E4C9001236FC /* hud_screenshot_notification@2x.png in Resources */,
 				83F607751BD3E4C9001236FC /* hud_screenshot_notification.png in Resources */,
+				87AA7D0D2071871E00E5DB80 /* hud_rewind_notification@2x.png in Resources */,
 				8F071F3B1C255362007B76DA /* Credits.rtf in Resources */,
+				87AA7D082071870F00E5DB80 /* hud_fastforward_notification@2x.png in Resources */,
 				83DEF7C1196C403400C7DF57 /* ControlLabels.strings in Resources */,
 				83B04E421968610F00CB985E /* Localizable.strings in Resources */,
 				87191CC61F6F5524006D2EE3 /* dsa_pub.pem in Resources */,
@@ -7065,13 +7097,17 @@
 				83F607731BD3E4C9001236FC /* hud_quicksave_notification.png in Resources */,
 				838E2A231600A05C00CF7198 /* Theme.plist in Resources */,
 				C6F696C01648F64B00B243DB /* Controller-Database.plist in Resources */,
+				87AA7D092071870F00E5DB80 /* hud_fastforward_notification.png in Resources */,
 				83FE965919685F6700DD8DB9 /* OEGameScanner.xib in Resources */,
 				83B04E411968610F00CB985E /* InfoPlist.strings in Resources */,
+				876FF0D8207B1269002F935A /* hud_stepbackward_notification@2x.png in Resources */,
 				83F607741BD3E4C9001236FC /* hud_quicksave_notification@2x.png in Resources */,
 				83FE963C1968596C00DD8DB9 /* OEMigrationWindowController.xib in Resources */,
+				876FF0D6207B0A3D002F935A /* hud_stepforward_notification@2x.png in Resources */,
 				83495DD819A38F3D009DB6E5 /* OEPrefBiosController.xib in Resources */,
 				83338C2217A281C7007E32E9 /* secret.mp3 in Resources */,
 				94AE2C1017B07D450018DFBB /* cheats-database.xml in Resources */,
+				87AA7D0C2071871E00E5DB80 /* hud_rewind_notification.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7882,7 +7918,6 @@
 				8301557B1456BF7A0093D681 /* OEGameViewController.m in Sources */,
 				83AAC32914581699005ADD16 /* OESetupAssistantBackgroundView.m in Sources */,
 				83BABBEE1458978B0097F6B2 /* OESetupAssistantTableView.m in Sources */,
-				5A9606D01C0A50D60089B494 /* NSArray+BlockFiltering.swift in Sources */,
 				83025E60146BDD5E00A06EF9 /* OECoreTableButtonCell.m in Sources */,
 				83025E66146BE68E00A06EF9 /* OECoreTableProgressCell.m in Sources */,
 				8375E14F1477FC0D0018DA1F /* OECoreUpdater.m in Sources */,
@@ -7894,6 +7929,7 @@
 				EF2FDBED14CFFE1B002A64F2 /* OEControlsKeySeparatorView.m in Sources */,
 				1B6DA4A914DDE6A40067F7F6 /* OESetupAssistantQCOpenGLLayer.m in Sources */,
 				83F4DE1314DFF9C200A82E36 /* OEInputLimitFormatter.m in Sources */,
+				5A2CE89A206EA61B00790F89 /* NSArray+OEAdditions.m in Sources */,
 				83096F0314E98FC000F7EBC2 /* NSFileManager+OEHashingAdditions.m in Sources */,
 				EFBD5D7814EFE19A00FBD1E0 /* NSColor+OEAdditions.m in Sources */,
 				EFBD5D7F14EFE26300FBD1E0 /* OEGridView.m in Sources */,
@@ -8889,7 +8925,7 @@
 					"-pagezero_size",
 					0x1000,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.openemu.OpenEmu.OpenEmuHelperApp;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openemu.OpenEmuHelperApp;
 				PRODUCT_NAME = OpenEmuHelperApp;
 				VALID_ARCHS = x86_64;
 			};
@@ -8922,7 +8958,7 @@
 					"-pagezero_size",
 					0x1000,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.openemu.OpenEmu.OpenEmuHelperApp;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openemu.OpenEmuHelperApp;
 				PRODUCT_NAME = OpenEmuHelperApp;
 				VALID_ARCHS = x86_64;
 			};
@@ -10698,11 +10734,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -10752,11 +10790,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;

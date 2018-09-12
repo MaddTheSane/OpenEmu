@@ -327,6 +327,14 @@ static NSString * const OESelectedGamesKey = @"OESelectedGamesKey";
 
 #pragma mark - UI Actions
 
+- (BOOL)validateMenuItem:(NSMenuItem *)item
+{
+    SEL action = [item action];
+    if (action == @selector(showInFinder:))
+        return [[self selectedGames] count] > 0;
+    return [super validateMenuItem:item];
+}
+
 - (void)search:(id)sender
 {
     self.currentSearchTerm = [sender stringValue];
@@ -350,7 +358,7 @@ static NSString * const OESelectedGamesKey = @"OESelectedGamesKey";
     [self.gridView reloadData];
 }
 
-- (IBAction)showSelectedGamesInFinder:(id)sender
+- (IBAction)showInFinder:(id)sender
 {
     NSArray *selectedGames = [self selectedGames];
     NSArray *urls = [selectedGames valueForKeyPath:@"defaultROM.URL.absoluteURL"];
@@ -635,7 +643,7 @@ static NSString * const OESelectedGamesKey = @"OESelectedGamesKey";
 
         if(hasLocalFiles)
         {
-            [menu addItemWithTitle:NSLocalizedString(@"Show in Finder", @"") action:@selector(showSelectedGamesInFinder:) keyEquivalent:@""];
+            [menu addItemWithTitle:NSLocalizedString(@"Show in Finder", @"") action:@selector(showInFinder:) keyEquivalent:@""];
             if(hasRemoteFiles)
                 [menu addItemWithTitle:NSLocalizedString(@"Trash downloaded Files", @"") action:@selector(trashDownloadedFiles:) keyEquivalent:@""];
         }
@@ -674,7 +682,7 @@ static NSString * const OESelectedGamesKey = @"OESelectedGamesKey";
         
         if(hasLocalFiles)
         {
-            [menu addItemWithTitle:NSLocalizedString(@"Show in Finder", @"") action:@selector(showSelectedGamesInFinder:) keyEquivalent:@""];
+            [menu addItemWithTitle:NSLocalizedString(@"Show in Finder", @"") action:@selector(showInFinder:) keyEquivalent:@""];
             if(hasRemoteFiles)
                 [menu addItemWithTitle:NSLocalizedString(@"Trash downloaded Files", @"") action:@selector(trashDownloadedFiles:) keyEquivalent:@""];
         }
