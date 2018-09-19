@@ -138,7 +138,11 @@ NSString *const OECoreUpdaterErrorDomain = @"OECoreUpdaterErrorDomain";
             [updater setAutomaticallyDownloadsUpdates:YES];
 
             [updater resetUpdateCycle];
+			@try {
             [updater checkForUpdateInformation];
+			} @catch(id thrown) {
+				
+			}
         }
     }
 }

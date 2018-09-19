@@ -566,7 +566,7 @@ class AppDelegate: NSDocumentController {
         }
 
         // Remove beta-era core plug-ins.
-        let betaPlugins = OECorePlugin.allPlugins.filter { ($0.infoDictionary["SUFeedURL"] as! String).contains("openemu.org/update") }
+        let betaPlugins = OECorePlugin.allPlugins.filter { ($0.infoDictionary["SUFeedURL"] as? String)?.contains("openemu.org/update") ?? false }
         for plugin in betaPlugins {
             let coreBundleURL = plugin.bundle.bundleURL
             try? FileManager.default.removeItem(at: coreBundleURL)
