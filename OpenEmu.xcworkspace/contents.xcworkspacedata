@@ -77,6 +77,9 @@
       location = "group:SNES9x/SNES9x.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:DuckStation/DuckStation.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Stella/Stella.xcodeproj">
    </FileRef>
    <FileRef
